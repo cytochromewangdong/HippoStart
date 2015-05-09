@@ -1,0 +1,34 @@
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+	version="2.0">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<!-- schema>OWNERS_SCHEMA</schema -->
+			<catalog>hippo</catalog>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<package>com.dt.hippo.datajpa.model.jpa</package>
+	<entity class="Contact">
+		<table name="CONTACT" catalog="hippo" />
+	</entity>
+	<!-- attributes>
+		<one-to-many name="players" fetch="LAZY">
+			<map-key name="name" />
+			<join-column name="driver" />
+			<join-column name="number" />
+		</one-to-many>
+		<many-to-many name="roads" target-entity="Administration">
+			<order-by>maxSpeed</order-by>
+			<join-table name="bus_road">
+				<join-column name="driver" />
+				<join-column name="number" />
+				<inverse-join-column name="road_id" />
+				<unique-constraint>
+					<column-name>driver</column-name>
+					<column-name>number</column-name>
+				</unique-constraint>
+			</join-table>
+		</many-to-many>
+	</attributes-->
+</entity-mappings>
