@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Telosys Database Repository --><root>
-<tableList databaseId="0" databaseName="MYSQL" databaseProductName="MySQL" generation="2015-05-10 22:14:32">
+<tableList databaseId="0" databaseName="MYSQL" databaseProductName="MySQL" generation="2015-05-11 23:05:22">
 <table catalog="hippo" databaseType="TABLE" javaBean="Account" name="account" schema="">
 <column dbDefaultValue="0" dbName="uid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="uid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Uid" notNull="true" selected="true"/>
 <column dbDefaultValue="" dbName="userName" dbNotNull="false" dbPosition="2" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="username" javaType="java.lang.String" jdbcTypeCode="12" label="Username" maxLength="50" notNull="false" selected="true"/>
@@ -58,6 +58,7 @@
 <column dbDefaultValue="" dbName="modifyUser" dbNotNull="false" dbPosition="9" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="modifyuser" javaType="java.lang.String" jdbcTypeCode="12" label="Modifyuser" maxLength="50" notNull="false" selected="true"/>
 <column dbDefaultValue="0" dbName="delFlg" dbNotNull="false" dbPosition="10" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="delflg" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Delflg" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="platform" dbNotNull="false" dbPosition="11" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="platform" javaType="java.lang.String" jdbcTypeCode="12" label="Platform" maxLength="50" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="category_c" id="LINK_FK_category_c_I" inverseSideOf="LINK_FK_category_c_O" javaName="listOfDishinfo" javaType="java.util.List" joinTableName="" mappedBy="category" optional="UNDEFINED" owningSide="false" sourceTableName="category" targetEntity="Dishinfo" targetTableName="dishinfo" used="true"/>
 </table>
 <table catalog="hippo" databaseType="TABLE" javaBean="Cateringcorpinfo" name="cateringcorpinfo" schema="">
 <column dbDefaultValue="0" dbName="uid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="uid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Uid" notNull="true" selected="true"/>
@@ -76,7 +77,7 @@
 </table>
 <table catalog="hippo" databaseType="TABLE" javaBean="Comboinfo" name="comboinfo" schema="">
 <column dbDefaultValue="0" dbName="uid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="uid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Uid" notNull="true" selected="true"/>
-<column dbDefaultValue="0" dbName="childId" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="childid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Childid" notNull="true" selected="true"/>
+<column dbDefaultValue="0" dbForeignKey="true" dbName="childId" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="childid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Childid" notNull="true" selected="true"/>
 <column dbDefaultValue="0" dbName="specificationId" dbNotNull="true" dbPosition="3" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="specificationid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Specificationid" notNull="true" selected="true"/>
 <column dbDefaultValue="" dbName="placeholder" dbNotNull="false" dbPosition="4" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="placeholder" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Placeholder" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="orderInPlaceholder" dbNotNull="false" dbPosition="5" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="orderinplaceholder" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Orderinplaceholder" notNull="false" selected="true"/>
@@ -88,9 +89,17 @@
 <column dbDefaultValue="" dbName="modifyUser" dbNotNull="false" dbPosition="11" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="modifyuser" javaType="java.lang.String" jdbcTypeCode="12" label="Modifyuser" maxLength="50" notNull="false" selected="true"/>
 <column dbDefaultValue="0" dbName="delFlg" dbNotNull="false" dbPosition="12" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="delflg" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Delflg" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="platform" dbNotNull="false" dbPosition="13" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="platform" javaType="java.lang.String" jdbcTypeCode="12" label="Platform" maxLength="50" notNull="false" selected="true"/>
+<fk name="dish_comboinfo_c">
+<fkcol colname="childId" colref="uid" deferrable="7" deleterule="0" sequence="1" tablename="comboinfo" tableref="dishinfo" updaterule="0"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="dish_comboinfo_c" id="LINK_FK_dish_comboinfo_c_O" inverseSideOf="" javaName="dishinfo" javaType="Dishinfo" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="comboinfo" targetEntity="Dishinfo" targetTableName="dishinfo" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="childId" nullable="true" referencedColumnName="uid" unique="false" updatable="false"/>
+</joinColumns>
+</link>
 </table>
 <table catalog="hippo" databaseType="TABLE" javaBean="Dishspecificationinfo" name="dishSpecificationInfo" schema="">
-<column dbDefaultValue="0" dbName="dishId" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="dishid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Dishid" notNull="true" selected="true"/>
+<column dbDefaultValue="0" dbForeignKey="true" dbName="dishId" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="dishid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Dishid" notNull="true" selected="true"/>
 <column dbDefaultValue="0" dbName="uid" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="uid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Uid" notNull="true" selected="true"/>
 <column dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="3" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="50" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="dishName" dbNotNull="false" dbPosition="4" dbSize="200" dbTypeName="VARCHAR" inputType="text" javaName="dishname" javaType="java.lang.String" jdbcTypeCode="12" label="Dishname" maxLength="200" notNull="false" selected="true"/>
@@ -107,12 +116,20 @@
 <column dbDefaultValue="" dbName="modifyUser" dbNotNull="false" dbPosition="15" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="modifyuser" javaType="java.lang.String" jdbcTypeCode="12" label="Modifyuser" maxLength="50" notNull="false" selected="true"/>
 <column dbDefaultValue="0" dbName="delFlg" dbNotNull="false" dbPosition="16" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="delflg" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Delflg" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="platform" dbNotNull="false" dbPosition="17" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="platform" javaType="java.lang.String" jdbcTypeCode="12" label="Platform" maxLength="50" notNull="false" selected="true"/>
+<fk name="dish_c">
+<fkcol colname="dishId" colref="uid" deferrable="7" deleterule="0" sequence="1" tablename="dishSpecificationInfo" tableref="dishinfo" updaterule="0"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="dish_c" id="LINK_FK_dish_c_O" inverseSideOf="" javaName="dishinfo" javaType="Dishinfo" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="dishSpecificationInfo" targetEntity="Dishinfo" targetTableName="dishinfo" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="dishId" nullable="true" referencedColumnName="uid" unique="false" updatable="false"/>
+</joinColumns>
+</link>
 </table>
 <table catalog="hippo" databaseType="TABLE" javaBean="Dishinfo" name="dishinfo" schema="">
 <column dbAutoIncremented="true" dbDefaultValue="" dbName="uid" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="uid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Uid" notNull="true" selected="true"/>
-<column dbDefaultValue="" dbName="corpId" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="corpid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Corpid" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="corpId" dbNotNull="false" dbPosition="2" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="corpid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Corpid" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="no" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="VARCHAR" inputType="text" javaName="no" javaType="java.lang.String" jdbcTypeCode="12" label="No" maxLength="10" notNull="false" selected="true"/>
-<column dbDefaultValue="" dbName="categoryId" dbNotNull="false" dbPosition="4" dbSize="5" dbTypeName="VARCHAR" inputType="text" javaName="categoryid" javaType="java.lang.String" jdbcTypeCode="12" label="Categoryid" maxLength="5" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="categoryId" dbNotNull="true" dbPosition="4" dbSize="5" dbTypeName="VARCHAR" inputType="text" javaName="categoryid" javaType="java.lang.String" jdbcTypeCode="12" label="Categoryid" maxLength="5" notEmpty="true" notNull="true" selected="true"/>
 <column dbDefaultValue="" dbName="dishName" dbNotNull="false" dbPosition="5" dbSize="200" dbTypeName="VARCHAR" inputType="text" javaName="dishname" javaType="java.lang.String" jdbcTypeCode="12" label="Dishname" maxLength="200" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="dishDescription" dbNotNull="false" dbPosition="6" dbSize="300" dbTypeName="VARCHAR" inputType="text" javaName="dishdescription" javaType="java.lang.String" jdbcTypeCode="12" label="Dishdescription" maxLength="300" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="imageUrl" dbNotNull="false" dbPosition="7" dbSize="300" dbTypeName="VARCHAR" inputType="text" javaName="imageurl" javaType="java.lang.String" jdbcTypeCode="12" label="Imageurl" maxLength="300" notNull="false" selected="true"/>
@@ -131,6 +148,18 @@
 <column dbDefaultValue="" dbName="modifyUser" dbNotNull="false" dbPosition="20" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="modifyuser" javaType="java.lang.String" jdbcTypeCode="12" label="Modifyuser" maxLength="50" notNull="false" selected="true"/>
 <column dbDefaultValue="0" dbName="delFlg" dbNotNull="false" dbPosition="21" dbSize="3" dbTypeName="TINYINT" inputType="number" javaName="delflg" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Delflg" notNull="false" selected="true"/>
 <column dbDefaultValue="" dbName="platform" dbNotNull="false" dbPosition="22" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="platform" javaType="java.lang.String" jdbcTypeCode="12" label="Platform" maxLength="50" notNull="false" selected="true"/>
+<fk name="category_c">
+<fkcol colname="corpId" colref="corpId" deferrable="7" deleterule="3" sequence="1" tablename="dishinfo" tableref="category" updaterule="0"/>
+<fkcol colname="categoryId" colref="uid" deferrable="7" deleterule="3" sequence="2" tablename="dishinfo" tableref="category" updaterule="0"/>
+</fk>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="dish_comboinfo_c" id="LINK_FK_dish_comboinfo_c_I" inverseSideOf="LINK_FK_dish_comboinfo_c_O" javaName="listOfComboinfo" javaType="java.util.List" joinTableName="" mappedBy="dishinfo" optional="UNDEFINED" owningSide="false" sourceTableName="dishinfo" targetEntity="Comboinfo" targetTableName="comboinfo" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="dish_c" id="LINK_FK_dish_c_I" inverseSideOf="LINK_FK_dish_c_O" javaName="listOfDishspecificationinfo" javaType="java.util.List" joinTableName="" mappedBy="dishinfo" optional="UNDEFINED" owningSide="false" sourceTableName="dishinfo" targetEntity="Dishspecificationinfo" targetTableName="dishSpecificationInfo" used="true"/>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="category_c" id="LINK_FK_category_c_O" inverseSideOf="" javaName="category" javaType="Category" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="dishinfo" targetEntity="Category" targetTableName="category" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="corpId" nullable="true" referencedColumnName="corpId" unique="false" updatable="false"/>
+<joinColumn insertable="false" name="categoryId" nullable="true" referencedColumnName="uid" unique="false" updatable="false"/>
+</joinColumns>
+</link>
 </table>
 <table catalog="hippo" databaseType="TABLE" javaBean="Externalaccount" name="externalaccount" schema="">
 <column dbDefaultValue="0" dbName="userId" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="19" dbTypeName="BIGINT" inputType="number" javaName="userid" javaType="java.lang.Long" jdbcTypeCode="-5" label="Userid" notNull="true" selected="true"/>
