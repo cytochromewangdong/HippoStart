@@ -6,17 +6,18 @@ package com.dt.hippo.service;
 import java.io.IOException;
 import java.util.Set;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.intercept.RunAsUserToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,8 +25,8 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 
-import com.dt.hippo.datajpa.business.service.UserService;
-import com.dt.hippo.datajpa.model.jpa.User;
+import com.dt.hippo.auto.model.Account;
+import com.dt.hippo.my.service.MyAccountService;
 import com.dt.hippo.web.security.SecurityUser;
 
 /**
@@ -36,8 +37,8 @@ import com.dt.hippo.web.security.SecurityUser;
 public class CustomUserDetailsService implements UserDetailsService,
 		AuthenticationSuccessHandler {
 
-	@Autowired
-	private UserService userService;
+	@Resource
+	private MyAccountService myAccountService;
 
 //    @Autowired
 //    private AuthenticationSuccessHandler defaultAuthenticationSuccessHandler;
@@ -45,7 +46,7 @@ public class CustomUserDetailsService implements UserDetailsService,
 	@Override
 	public UserDetails loadUserByUsername(String userName)
 			throws UsernameNotFoundException {
-		User user = userService.findUserByEmail(userName);
+		Account user = myAccountService.getUser(userName);//userService.findUserByEmail(userName);
 		if (user == null) {
 			throw new UsernameNotFoundException("UserName " + userName
 					+ " not found");
@@ -74,7 +75,7 @@ public class CustomUserDetailsService implements UserDetailsService,
 
 	public void authenticateUserAndSetSession(User user,
 			HttpServletRequest request) {
-		String username = user.getName();
+		String username = user.getUsername();
 		String password = user.getPassword();
 		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
 				username, password);
@@ -95,7 +96,7 @@ public class CustomUserDetailsService implements UserDetailsService,
 		SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
 	}
 	
-	public void authenticateUserWithoutPasswordAndSetSession(User user,
+	public void authenticateUserWithoutPasswordAndSetSession(Account user,
 			HttpServletRequest request) {
 
 		UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(new SecurityUser(user), null,SecurityUser.extractAuthoritiesFromUser(user));

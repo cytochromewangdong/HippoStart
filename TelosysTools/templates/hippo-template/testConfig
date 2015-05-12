@@ -1,0 +1,7 @@
+
+# Test
+Mock values              ; MockValues.java                ; ${TEST_SRC}/${ROOT_PKG}/test ; test/MockValues.vm                 ; 1
+Entity Factory for tests ; ${BEANNAME}EntityFactoryForTest.java ; ${TEST_SRC}/${ROOT_PKG}/test ; test/ENTITY_EntityFactoryForTest_java.vm ; *
+Factory for tests ; ${BEANNAME}FactoryForTest.java ; ${TEST_SRC}/${ROOT_PKG}/test ; test/ENTITY_FactoryForTest_java.vm ; *
+Service Implementation Test ; ${BEANNAME}ServiceImplTest.java ; ${TEST_SRC}/${ROOT_PKG}/business/service/impl ; business/service_impl_test.vm ; *
+#Service Mapper Test ; ${BEANNAME}ServiceMapperTest.java ; ${TEST_SRC}/${ROOT_PKG}/business/service/mapping ; business/service_mapper_test.vm ; *

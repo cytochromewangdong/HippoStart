@@ -1,0 +1,38 @@
+<div xmlns:s="http://www.springframework.org/tags" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<jsp:output omit-xml-declaration="yes" />
+	<s:message var="app_name" code="application_name" htmlEscape="false" />
+	<s:message var="title" code="welcome_titlepane" arguments="${app_name}" htmlEscape="false" />
+    
+    <div class="container">
+		<h3>
+			<s:message code="welcome_h3" arguments="${app_name}" />
+		</h3>
+      
+		<ul class="entity">
+            <li><a href="account">Account</a></li>
+            <li><a href="administrator">Administrator</a></li>
+            <li><a href="category">Category</a></li>
+            <li><a href="cateringcorpinfo">Cateringcorpinfo</a></li>
+            <li><a href="comboinfo">Comboinfo</a></li>
+            <li><a href="dishspecificationinfo">Dishspecificationinfo</a></li>
+            <li><a href="dishinfo">Dishinfo</a></li>
+            <li><a href="externalaccount">Externalaccount</a></li>
+            <li><a href="mediaresource">Mediaresource</a></li>
+            <li><a href="orderdetail">Orderdetail</a></li>
+            <li><a href="orderheader">Orderheader</a></li>
+            <li><a href="payment">Payment</a></li>
+            <li><a href="paymentlog">Paymentlog</a></li>
+            <li><a href="pointrule">Pointrule</a></li>
+            <li><a href="promotiondetailinfo">Promotiondetailinfo</a></li>
+            <li><a href="promotioninfo">Promotioninfo</a></li>
+            <li><a href="scoreinfo">Scoreinfo</a></li>
+            <li><a href="sequence">Sequence</a></li>
+            <li><a href="storeinfo">Storeinfo</a></li>
+            <li><a href="systemparameter">Systemparameter</a></li>
+            <li><a href="verifyrecord">Verifyrecord</a></li>
+            <li><a href="vouchergeneratorinfo">Vouchergeneratorinfo</a></li>
+	    </ul>
+
+    </div> <!-- /container -->
+</div>

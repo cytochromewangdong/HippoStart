@@ -17,7 +17,12 @@
 #foreach( $field in $entity.attributes )
 	"${fn.uncapitalize($entity.name)}.${field.formattedName(0)}" : "${field.formattedName(0)}",
 #end
+	"${fn.uncapitalize($entity.name)}.id.not.defined" : "${entity.name} identifier is not defined",
 #end
+	
+	"server.not.responding": "The server is not responding",
+	"url.invalid": "Invalid URL : {value}",
+	"url.bad": "Bad URL : {value}",
 
 	"app.version" : "Version"
 }

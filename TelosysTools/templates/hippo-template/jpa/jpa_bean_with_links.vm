@@ -1,6 +1,6 @@
 ##----------------------------------------------------------------------------------------------------
 ## JPA beans suffix
-###set ( $env.entityClassNameSuffix = "Entity" )
+#set ( $env.entityClassNameSuffix = "Entity" )
 ##--------------------------------------------------------------------------------------------------------
 ## Data fields = fields not in Primary Key and not in selected Links    
 #set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
@@ -58,14 +58,14 @@ $jpa.entityAnnotations(0, $entity)
 } )
 public class ${entity.name} implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    protected static final long serialVersionUID = 1L;
 
 #if ( $entity.hasCompositePrimaryKey() )
     //----------------------------------------------------------------------
     // ENTITY PRIMARY KEY ( EMBEDDED IN AN EXTERNAL CLASS )  
     //----------------------------------------------------------------------
 	@EmbeddedId
-    private ${entity.name}Key compositePrimaryKey ;
+    protected ${entity.name}Key compositePrimaryKey ;
 
 #else 
     //----------------------------------------------------------------------
@@ -73,7 +73,7 @@ public class ${entity.name} implements Serializable {
     //----------------------------------------------------------------------
 #foreach( $field in $entity.keyAttributes )
 $jpa.fieldAnnotations(4, $field)
-    private $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
+    protected $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
 #end
 
 #end
@@ -91,7 +91,7 @@ $jpa.fieldAnnotations(4, $field)
 ##     
 ## #end
 $jpa.fieldAnnotations(4, $field)
-    private $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
+    protected $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
 
 #end
 #foreach( $field in $linkFields )
@@ -105,7 +105,7 @@ $jpa.fieldAnnotations(4, $field)
 ## #foreach( $link in $entity.links )
 #foreach( $link in $entity.selectedLinks )
 $jpa.linkAnnotations(4, $link, $allMappedFields)
-    private ${link.formattedFieldType(0)} $link.formattedFieldName(12);
+    protected ${link.formattedFieldType(0)} $link.formattedFieldName(12);
 
 #end
 

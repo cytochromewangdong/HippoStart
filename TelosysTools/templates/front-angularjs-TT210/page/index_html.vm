@@ -64,9 +64,11 @@
 	<script src="lib/angular-strap/angular-strap.min.js"></script>
 	<script src="lib/angular-strap/angular-strap.tpl.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/i18n.js"></script>
 	<script src="js/services.js"></script>
-	<script src="js/controllers.js"></script>
+	<script src="js/messages_handler.js"></script>
 #foreach($entity in ${selectedEntities})
+	<script src="js/${entity.name.toLowerCase()}/${entity.name.toLowerCase()}_module.js"></script>
 	<script src="js/${entity.name.toLowerCase()}/${entity.name.toLowerCase()}_factory.js"></script>
 	<script src="js/${entity.name.toLowerCase()}/${entity.name.toLowerCase()}_controller.js"></script>
 #end

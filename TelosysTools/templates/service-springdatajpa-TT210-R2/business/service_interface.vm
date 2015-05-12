@@ -6,7 +6,7 @@ package ${target.javaPackageFromFolder(${SRC})};
 
 import java.util.List;
 
-import ${ENTITY_PKG}.jpa.${entity.name};
+import ${ENTITY_PKG}.${entity.name};
 
 /**
  * Business Service Interface for entity ${entity.name}.

@@ -8,10 +8,10 @@
 			<catalog>hippo</catalog>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<package>com.dt.hippo.datajpa.model.jpa</package>
-	<entity class="Contact">
+	<package>com.dt.hippo.auto.model.jpa</package>
+	<!--entity class="Contact">
 		<table name="CONTACT" catalog="hippo" />
-	</entity>
+	</entity-->
 	<!-- attributes>
 		<one-to-many name="players" fetch="LAZY">
 			<map-key name="name" />

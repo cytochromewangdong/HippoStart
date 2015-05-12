@@ -1,6 +1,6 @@
 ##----------------------------------------------------------------------------------------------------
 ## JPA beans suffix
-###set ( $env.entityClassNameSuffix = "Entity" )
+#set ( $env.entityClassNameSuffix = "Entity" )
 ##----------------------------------------------------------------------------------------------------
 /*
  * Created on $today.date ( Time $today.time )

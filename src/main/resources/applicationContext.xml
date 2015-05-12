@@ -24,5 +24,5 @@
 	<!--mvc:default-servlet-handler/-->
 
 	<!-- Configures Spring Data JPA and sets the base package of my DAOs. -->
-	<jpa:repositories base-package="com.dt.hippo.datajpa.data.repository" entity-manager-factory-ref="entityManagerFactoryBean"/>
+	<jpa:repositories base-package="com.dt.hippo.auto.data.repository.jpa,com.dt.hippo.my.repository" entity-manager-factory-ref="entityManagerFactoryBean"/>
 </beans>

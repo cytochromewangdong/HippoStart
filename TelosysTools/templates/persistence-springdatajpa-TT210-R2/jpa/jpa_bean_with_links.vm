@@ -1,6 +1,6 @@
 ##----------------------------------------------------------------------------------------------------
 ## JPA beans suffix
-###set ( $env.entityClassNameSuffix = "Entity" )
+#set ( $env.entityClassNameSuffix = "Entity" )
 ##--------------------------------------------------------------------------------------------------------
 ## Data fields = fields not in Primary Key and not in selected Links    
 #set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
