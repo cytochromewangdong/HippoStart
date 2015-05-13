@@ -1,0 +1,112 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Externalaccount' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="externalaccount_userid" class="col-sm-2 control-label">{{ 'externalaccount.userid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_userid" name="userid" ng-model="externalaccount.userid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_usersource" class="col-sm-2 control-label">{{ 'externalaccount.usersource' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_usersource" name="usersource" ng-model="externalaccount.usersource" class="form-control" maxLength="4"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_externaluserid" class="col-sm-2 control-label">{{ 'externalaccount.externaluserid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_externaluserid" name="externaluserid" ng-model="externalaccount.externaluserid" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_accesstoken" class="col-sm-2 control-label">{{ 'externalaccount.accesstoken' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_accesstoken" name="accesstoken" ng-model="externalaccount.accesstoken" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_tokensecret" class="col-sm-2 control-label">{{ 'externalaccount.tokensecret' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_tokensecret" name="tokensecret" ng-model="externalaccount.tokensecret" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_refreshtoken" class="col-sm-2 control-label">{{ 'externalaccount.refreshtoken' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_refreshtoken" name="refreshtoken" ng-model="externalaccount.refreshtoken" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_usersourcename" class="col-sm-2 control-label">{{ 'externalaccount.usersourcename' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_usersourcename" name="usersourcename" ng-model="externalaccount.usersourcename" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_sharestatus" class="col-sm-2 control-label">{{ 'externalaccount.sharestatus' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_sharestatus" name="sharestatus" ng-model="externalaccount.sharestatus" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_expiretime" class="col-sm-2 control-label">{{ 'externalaccount.expiretime' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_expiretime" name="expiretime" ng-model="externalaccount.expiretime" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_createdate" class="col-sm-2 control-label">{{ 'externalaccount.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="externalaccount_createdate" bs-datepicker data-autoclose="1" ng-model="externalaccount.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_modifydate" class="col-sm-2 control-label">{{ 'externalaccount.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="externalaccount_modifydate" bs-datepicker data-autoclose="1" ng-model="externalaccount.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_createuser" class="col-sm-2 control-label">{{ 'externalaccount.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_createuser" name="createuser" ng-model="externalaccount.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_modifyuser" class="col-sm-2 control-label">{{ 'externalaccount.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_modifyuser" name="modifyuser" ng-model="externalaccount.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_delflg" class="col-sm-2 control-label">{{ 'externalaccount.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_delflg" name="delflg" ng-model="externalaccount.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="externalaccount_platform" class="col-sm-2 control-label">{{ 'externalaccount.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="externalaccount_platform" name="platform" ng-model="externalaccount.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(externalaccount.userid, externalaccount.usersource)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/externalaccount">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

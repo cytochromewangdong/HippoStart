@@ -1,0 +1,106 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Verifyrecord' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="verifyrecord_uid" class="col-sm-2 control-label">{{ 'verifyrecord.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_uid" name="uid" ng-model="verifyrecord.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_verifytype" class="col-sm-2 control-label">{{ 'verifyrecord.verifytype' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_verifytype" name="verifytype" ng-model="verifyrecord.verifytype" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_userid" class="col-sm-2 control-label">{{ 'verifyrecord.userid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_userid" name="userid" ng-model="verifyrecord.userid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_username" class="col-sm-2 control-label">{{ 'verifyrecord.username' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_username" name="username" ng-model="verifyrecord.username" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_email" class="col-sm-2 control-label">{{ 'verifyrecord.email' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_email" name="email" ng-model="verifyrecord.email" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_randomcode" class="col-sm-2 control-label">{{ 'verifyrecord.randomcode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_randomcode" name="randomcode" ng-model="verifyrecord.randomcode" class="form-control" maxLength="30" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_expiretime" class="col-sm-2 control-label">{{ 'verifyrecord.expiretime' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="verifyrecord_expiretime" bs-datepicker data-autoclose="1" ng-model="verifyrecord.expiretime" name="expiretime" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_resetflg" class="col-sm-2 control-label">{{ 'verifyrecord.resetflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_resetflg" name="resetflg" ng-model="verifyrecord.resetflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_createdate" class="col-sm-2 control-label">{{ 'verifyrecord.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="verifyrecord_createdate" bs-datepicker data-autoclose="1" ng-model="verifyrecord.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_modifydate" class="col-sm-2 control-label">{{ 'verifyrecord.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="verifyrecord_modifydate" bs-datepicker data-autoclose="1" ng-model="verifyrecord.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_createuser" class="col-sm-2 control-label">{{ 'verifyrecord.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_createuser" name="createuser" ng-model="verifyrecord.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_modifyuser" class="col-sm-2 control-label">{{ 'verifyrecord.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_modifyuser" name="modifyuser" ng-model="verifyrecord.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_delflg" class="col-sm-2 control-label">{{ 'verifyrecord.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_delflg" name="delflg" ng-model="verifyrecord.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="verifyrecord_platform" class="col-sm-2 control-label">{{ 'verifyrecord.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="verifyrecord_platform" name="platform" ng-model="verifyrecord.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(verifyrecord.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/verifyrecord">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

@@ -1,0 +1,48 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Paymentlog' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'paymentlog.uid' | translate }}</th>
+						<th>{{ 'paymentlog.userid' | translate }}</th>
+						<th>{{ 'paymentlog.projectid' | translate }}</th>
+						<th>{{ 'paymentlog.tradeno' | translate }}</th>
+						<th>{{ 'paymentlog.orderno' | translate }}</th>
+						<th>{{ 'paymentlog.operation' | translate }}</th>
+						<th>{{ 'paymentlog.tradedate' | translate }}</th>
+						<th>{{ 'paymentlog.useragent' | translate }}</th>
+						<th>{{ 'paymentlog.ip' | translate }}</th>
+						<th>{{ 'paymentlog.createdate' | translate }}</th>
+						<th>{{ 'paymentlog.modifydate' | translate }}</th>
+						<th>{{ 'paymentlog.createuser' | translate }}</th>
+						<th>{{ 'paymentlog.modifyuser' | translate }}</th>
+						<th>{{ 'paymentlog.delflg' | translate }}</th>
+						<th>{{ 'paymentlog.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/paymentlog/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="paymentlog in paymentlogs">
+						<td>{{paymentlog.uid}}</td>
+						<td>{{paymentlog.userid | number }}</td>
+						<td>{{paymentlog.projectid | number }}</td>
+						<td>{{paymentlog.tradeno}}</td>
+						<td>{{paymentlog.orderno}}</td>
+						<td>{{paymentlog.operation}}</td>
+						<td>{{paymentlog.tradedate | date:'shortDate'}}</td>
+						<td>{{paymentlog.useragent}}</td>
+						<td>{{paymentlog.ip}}</td>
+						<td>{{paymentlog.createdate | date:'shortDate'}}</td>
+						<td>{{paymentlog.modifydate | date:'shortDate'}}</td>
+						<td>{{paymentlog.createuser}}</td>
+						<td>{{paymentlog.modifyuser}}</td>
+						<td>{{paymentlog.delflg}}</td>
+						<td>{{paymentlog.platform}}</td>
+						<td><a class="btn btn-info" href="#/paymentlog/{{paymentlog.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

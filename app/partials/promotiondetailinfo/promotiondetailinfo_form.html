@@ -1,0 +1,88 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Promotiondetailinfo' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="promotiondetailinfo_uid" class="col-sm-2 control-label">{{ 'promotiondetailinfo.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_uid" name="uid" ng-model="promotiondetailinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_dishid" class="col-sm-2 control-label">{{ 'promotiondetailinfo.dishid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="promotiondetailinfo_dishid" ng-model="promotiondetailinfo.dishid" name="dishid" class="form-control" ng-disabled="mode != 'create'">
+						<option value=""></option>
+                        <option ng-repeat="dishinfo in items.dishinfos" title="{{dishinfo.label}}" ng-selected="{{dishinfo.value == promotiondetailinfo.dishid}}" value="{{dishinfo.value}}">{{dishinfo.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_specificationid" class="col-sm-2 control-label">{{ 'promotiondetailinfo.specificationid' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="promotiondetailinfo_specificationid" ng-model="promotiondetailinfo.specificationid" name="specificationid" class="form-control" ng-disabled="mode != 'create'">
+						<option value=""></option>
+                        <option ng-repeat="dishspecificationinfo in items.dishspecificationinfos" title="{{dishspecificationinfo.label}}" ng-selected="{{dishspecificationinfo.value == promotiondetailinfo.specificationid}}" value="{{dishspecificationinfo.value}}">{{dishspecificationinfo.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_price" class="col-sm-2 control-label">{{ 'promotiondetailinfo.price' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_price" name="price" ng-model="promotiondetailinfo.price" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_createdate" class="col-sm-2 control-label">{{ 'promotiondetailinfo.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotiondetailinfo_createdate" bs-datepicker data-autoclose="1" ng-model="promotiondetailinfo.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_modifydate" class="col-sm-2 control-label">{{ 'promotiondetailinfo.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotiondetailinfo_modifydate" bs-datepicker data-autoclose="1" ng-model="promotiondetailinfo.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_createuser" class="col-sm-2 control-label">{{ 'promotiondetailinfo.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_createuser" name="createuser" ng-model="promotiondetailinfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_modifyuser" class="col-sm-2 control-label">{{ 'promotiondetailinfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_modifyuser" name="modifyuser" ng-model="promotiondetailinfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_delflg" class="col-sm-2 control-label">{{ 'promotiondetailinfo.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_delflg" name="delflg" ng-model="promotiondetailinfo.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotiondetailinfo_platform" class="col-sm-2 control-label">{{ 'promotiondetailinfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotiondetailinfo_platform" name="platform" ng-model="promotiondetailinfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(promotiondetailinfo.uid, promotiondetailinfo.dishid, promotiondetailinfo.specificationid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/promotiondetailinfo">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

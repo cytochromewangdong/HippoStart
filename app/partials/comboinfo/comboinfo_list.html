@@ -1,0 +1,44 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Comboinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'comboinfo.uid' | translate }}</th>
+						<th>{{ 'comboinfo.childid' | translate }}</th>
+						<th>{{ 'comboinfo.specificationid' | translate }}</th>
+						<th>{{ 'comboinfo.placeholder' | translate }}</th>
+						<th>{{ 'comboinfo.orderinplaceholder' | translate }}</th>
+						<th>{{ 'comboinfo.amount' | translate }}</th>
+						<th>{{ 'comboinfo.pricedifference' | translate }}</th>
+						<th>{{ 'comboinfo.createdate' | translate }}</th>
+						<th>{{ 'comboinfo.modifydate' | translate }}</th>
+						<th>{{ 'comboinfo.createuser' | translate }}</th>
+						<th>{{ 'comboinfo.modifyuser' | translate }}</th>
+						<th>{{ 'comboinfo.delflg' | translate }}</th>
+						<th>{{ 'comboinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/comboinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="comboinfo in comboinfos">
+						<td>{{comboinfo.uid}}</td>
+						<td>{{comboinfo.childid}}</td>
+						<td>{{comboinfo.specificationid}}</td>
+						<td>{{comboinfo.placeholder}}</td>
+						<td>{{comboinfo.orderinplaceholder}}</td>
+						<td>{{comboinfo.amount | number }}</td>
+						<td>{{comboinfo.pricedifference | number }}</td>
+						<td>{{comboinfo.createdate | date:'shortDate'}}</td>
+						<td>{{comboinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{comboinfo.createuser}}</td>
+						<td>{{comboinfo.modifyuser}}</td>
+						<td>{{comboinfo.delflg}}</td>
+						<td>{{comboinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/comboinfo/{{comboinfo.uid}}/{{comboinfo.childid}}/{{comboinfo.specificationid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

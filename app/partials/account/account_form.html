@@ -1,0 +1,166 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Account' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="account_uid" class="col-sm-2 control-label">{{ 'account.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_uid" name="uid" ng-model="account.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_username" class="col-sm-2 control-label">{{ 'account.username' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_username" name="username" ng-model="account.username" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_usernamehashcode" class="col-sm-2 control-label">{{ 'account.usernamehashcode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_usernamehashcode" name="usernamehashcode" ng-model="account.usernamehashcode" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_email" class="col-sm-2 control-label">{{ 'account.email' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_email" name="email" ng-model="account.email" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_emailhashcode" class="col-sm-2 control-label">{{ 'account.emailhashcode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_emailhashcode" name="emailhashcode" ng-model="account.emailhashcode" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_md5email" class="col-sm-2 control-label">{{ 'account.md5email' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_md5email" name="md5email" ng-model="account.md5email" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_password" class="col-sm-2 control-label">{{ 'account.password' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_password" name="password" ng-model="account.password" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_imageurl" class="col-sm-2 control-label">{{ 'account.imageurl' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_imageurl" name="imageurl" ng-model="account.imageurl" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_nickname" class="col-sm-2 control-label">{{ 'account.nickname' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_nickname" name="nickname" ng-model="account.nickname" class="form-control" maxLength="30" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_address" class="col-sm-2 control-label">{{ 'account.address' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_address" name="address" ng-model="account.address" class="form-control" maxLength="250" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_location" class="col-sm-2 control-label">{{ 'account.location' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_location" name="location" ng-model="account.location" class="form-control" maxLength="80" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_usersource" class="col-sm-2 control-label">{{ 'account.usersource' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_usersource" name="usersource" ng-model="account.usersource" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_usersourcename" class="col-sm-2 control-label">{{ 'account.usersourcename' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_usersourcename" name="usersourcename" ng-model="account.usersourcename" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_externaluid" class="col-sm-2 control-label">{{ 'account.externaluid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_externaluid" name="externaluid" ng-model="account.externaluid" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_externalusername" class="col-sm-2 control-label">{{ 'account.externalusername' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_externalusername" name="externalusername" ng-model="account.externalusername" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_emailverified" class="col-sm-2 control-label">{{ 'account.emailverified' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_emailverified" name="emailverified" ng-model="account.emailverified" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_mobiletoken" class="col-sm-2 control-label">{{ 'account.mobiletoken' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_mobiletoken" name="mobiletoken" ng-model="account.mobiletoken" class="form-control" maxLength="64" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_language" class="col-sm-2 control-label">{{ 'account.language' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_language" name="language" ng-model="account.language" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_createdate" class="col-sm-2 control-label">{{ 'account.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="account_createdate" bs-datepicker data-autoclose="1" ng-model="account.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_modifydate" class="col-sm-2 control-label">{{ 'account.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="account_modifydate" bs-datepicker data-autoclose="1" ng-model="account.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_createuser" class="col-sm-2 control-label">{{ 'account.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_createuser" name="createuser" ng-model="account.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_modifyuser" class="col-sm-2 control-label">{{ 'account.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_modifyuser" name="modifyuser" ng-model="account.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_delflg" class="col-sm-2 control-label">{{ 'account.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_delflg" name="delflg" ng-model="account.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="account_platform" class="col-sm-2 control-label">{{ 'account.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="account_platform" name="platform" ng-model="account.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(account.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/account">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>
