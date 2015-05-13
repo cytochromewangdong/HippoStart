@@ -13,6 +13,7 @@ import com.dt.hippo.auto.model.Account;
 import com.dt.hippo.core.base.BaseController;
 import com.dt.hippo.core.base.BaseResult;
 import com.dt.hippo.cst.ErroConstant;
+import com.dt.hippo.my.service.MyComboinfoService;
 import com.dt.hippo.service.CustomUserDetailsService;
 
 @Controller
@@ -51,6 +52,17 @@ public class LoginController extends BaseController {
 				"/register");
 	}
 
+	@Resource 
+	private MyComboinfoService myComboinfoService;
+	@RequestMapping(value = "/test")
+	// , method = RequestMethod.GET
+	@ResponseBody
+	public BaseResult test(HttpServletRequest request) {
+		myComboinfoService.createComboInfo();
+		return new BaseResult(ErroConstant.NOT_LOGIN, this.getNotLoginError(),
+				"/register");
+	}
+	
 //	@RequestMapping(value = "/test")
 //	// , method = RequestMethod.GET
 //	@ResponseBody

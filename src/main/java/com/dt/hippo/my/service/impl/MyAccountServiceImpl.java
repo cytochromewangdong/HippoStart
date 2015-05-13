@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dt.hippo.auto.business.service.impl.AccountServiceImpl;
+import com.dt.hippo.auto.data.repository.jpa.AccountJpaRepository;
 import com.dt.hippo.auto.model.Account;
-import com.dt.hippo.my.repository.MyAccountJpaRepository;
 import com.dt.hippo.my.service.MyAccountService;
 
 @Service
@@ -15,7 +15,7 @@ import com.dt.hippo.my.service.MyAccountService;
 public class MyAccountServiceImpl extends AccountServiceImpl implements MyAccountService {
 
 	@Resource
-	protected MyAccountJpaRepository myAccountJpaRepository;
+	protected AccountJpaRepository accountJpaRepository;
 
 	@Transactional(readOnly=true)
 	public Account getUser(String username) {
@@ -24,7 +24,7 @@ public class MyAccountServiceImpl extends AccountServiceImpl implements MyAccoun
 		}
 		username = username.toLowerCase();
 		return accountServiceMapper
-				.mapAccountEntityToAccount(myAccountJpaRepository
+				.mapAccountEntityToAccount(accountJpaRepository
 						.findUserByUsernameAndUsernamehashcode(username,
 								username.hashCode()));
 	}

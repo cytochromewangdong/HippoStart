@@ -51,7 +51,6 @@ public class PersistantConfig {
 				.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
 		dataSource.setPassword(environment
 				.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
-
 		// cpds.setMinPoolSize(1);
 		// cpds.setAcquireIncrement(1);
 		dataSource.setMaxPoolSize(environment.getRequiredProperty(
@@ -91,8 +90,7 @@ public class PersistantConfig {
 
 		entityManagerFactoryBean.setDataSource(dataSource());
 		entityManagerFactoryBean
-				.setPackagesToScan(environment
-						.getRequiredProperty(PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN));
+				.setPackagesToScan("com.dt.hippo.auto.model.jpa", "com.dt.hippo.my.jpa");
 		entityManagerFactoryBean
 				.setPersistenceProviderClass(HibernatePersistenceProvider.class);
 		entityManagerFactoryBean.setMappingResources("orm.xml");
