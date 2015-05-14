@@ -31,8 +31,8 @@ import javax.persistence.*;
 } )
 @AttributeOverrides({
  @AttributeOverride(name = "uid", column = @Column(name = "uid", insertable = false, updatable = false))
- ,  @AttributeOverride(name = "childid", column = @Column(name = "childId", insertable = false, updatable = false))
- ,  @AttributeOverride(name = "specificationid", column = @Column(name = "specificationId", insertable = false, updatable = false))
+ //,  @AttributeOverride(name = "childid", column = @Column(name = "childId", insertable = false, updatable = false))
+ //,  @AttributeOverride(name = "specificationid", column = @Column(name = "specificationId", insertable = false, updatable = false))
 
 })
 public class ComboinfoEntity extends com.dt.hippo.auto.model.jpa.base.ComboinfoEntity implements Serializable {
@@ -53,11 +53,11 @@ public class ComboinfoEntity extends com.dt.hippo.auto.model.jpa.base.ComboinfoE
 	}
 	@ManyToOne
     @JoinColumns( { 
-        @JoinColumn(name="childId", referencedColumnName="dishId"),
-        @JoinColumn(name="specificationId", referencedColumnName="uid") } )
+        @JoinColumn(name="childId", referencedColumnName="dishId",insertable = false, updatable = false),
+        @JoinColumn(name="specificationId", referencedColumnName="uid", insertable = false, updatable = false) } )
     protected DishspecificationinfoEntity dishspecificationinfo;
     @ManyToOne
-    @JoinColumn(name="childId", referencedColumnName="uid")
+    @JoinColumn(name="childId", referencedColumnName="uid",insertable = false, updatable = false)
     protected DishinfoEntity dishinfo    ;
 
 
