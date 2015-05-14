@@ -57,6 +57,14 @@ $jpa.entityAnnotations(0, $entity)
 @NamedQueries ( {
   @NamedQuery ( name="${entity.name}.countAll", query="SELECT COUNT(x) FROM ${entity.name} x" )
 } )
+@AttributeOverrides({
+#set( $count = 0 )
+#foreach( $f in $linkFields )
+#if( $count > 0 ) , #end @AttributeOverride(name = "${f.name}", column = @Column(name = "${f.databaseName}", insertable = false, updatable = false))
+#set( $count = $count + 1 )
+#end
+
+})
 public class ${entity.name} extends ${ENTITY_PKG}.jpa.base.${entity.name} implements Serializable {
 
    protected static final long serialVersionUID = 8L;
@@ -68,7 +76,6 @@ public class ${entity.name} extends ${ENTITY_PKG}.jpa.base.${entity.name} implem
 #foreach( $link in $entity.selectedLinks )
 $jpa.linkAnnotations(4, $link, $allMappedFields)
     protected ${link.formattedFieldType(0)} $link.formattedFieldName(12);
-
 #end
 
 

@@ -3,7 +3,8 @@
 #set ( $env.entityClassNameSuffix = "Entity" )
 ##--------------------------------------------------------------------------------------------------------
 ## Data fields = fields not in Primary Key and not in selected Links    
-#set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
+###set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
+#set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY) )
 ##--------------------------------------------------------------------------------------------------------
 ## Link fields = fields not in Primary Key and used as FK in selected Links    
 #set( $linkFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.IN_SELECTED_LINKS ) )

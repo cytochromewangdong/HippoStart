@@ -37,6 +37,7 @@ public class GlobalRestControllerExceptionHandler {
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public Map handleException(Exception exception) {
 		logger.error("error", exception);
+		exception.printStackTrace();
 		return getExceptionAsMap(exception, new ArrayList<Throwable>());
 	}
 	

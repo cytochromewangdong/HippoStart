@@ -71,14 +71,14 @@ public class ${entity.name}ServiceImpl implements ${entity.name}Service {
 	@Override
 	public ${entity.name} create(${entity.name} ${fn.uncapitalize($entity.name)}) {
 #if( $entity.hasCompositePrimaryKey() )
-		${entityKeyType} id = new ${entityKeyType}(${fn.argumentsListWithGetter($fn.uncapitalize($entity.name),$entity.keyAttributes)});
-		${entity.name}Entity ${fn.uncapitalize($entity.name)}Entity = ${fn.uncapitalize($entity.name)}JpaRepository.findOne(id);
+//		${entityKeyType} id = new ${entityKeyType}(${fn.argumentsListWithGetter($fn.uncapitalize($entity.name),$entity.keyAttributes)});
+//		${entity.name}Entity ${fn.uncapitalize($entity.name)}Entity = ${fn.uncapitalize($entity.name)}JpaRepository.findOne(id);
 #else
-		${entity.name}Entity ${fn.uncapitalize($entity.name)}Entity = ${fn.uncapitalize($entity.name)}JpaRepository.findOne(${fn.argumentsListWithGetter($fn.uncapitalize($entity.name),$entity.keyAttributes)});
+//		${entity.name}Entity ${fn.uncapitalize($entity.name)}Entity = ${fn.uncapitalize($entity.name)}JpaRepository.findOne(${fn.argumentsListWithGetter($fn.uncapitalize($entity.name),$entity.keyAttributes)});
 #end
-		if( ${fn.uncapitalize($entity.name)}Entity != null ) {
-			throw new IllegalStateException("already.exists");
-		}
+//		if( ${fn.uncapitalize($entity.name)}Entity != null ) {
+//			throw new IllegalStateException("already.exists");
+//		}
 		${fn.uncapitalize($entity.name)}Entity = new ${entity.name}Entity();
 		${fn.uncapitalize($entity.name)}ServiceMapper.map${entity.name}To${entity.name}Entity(${fn.uncapitalize($entity.name)}, ${fn.uncapitalize($entity.name)}Entity);
 		${entity.name}Entity ${fn.uncapitalize($entity.name)}EntitySaved = ${fn.uncapitalize($entity.name)}JpaRepository.save(${fn.uncapitalize($entity.name)}Entity);

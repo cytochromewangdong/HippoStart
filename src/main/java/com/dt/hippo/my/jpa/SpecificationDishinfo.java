@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 
 import com.dt.hippo.auto.model.jpa.DishinfoEntity;
 
-@Entity
-@DiscriminatorValue("0")
+//@Entity
+//@DiscriminatorValue("0")
 public class SpecificationDishinfo extends DishinfoEntity{
 
 	/**

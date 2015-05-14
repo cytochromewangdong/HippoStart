@@ -64,8 +64,7 @@ public class AccountRestController {
 	}
 	
 	@RequestMapping( value="/account",
-			method = RequestMethod.POST,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+			method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Account create(@RequestBody Account account) {
@@ -90,4 +89,10 @@ public class AccountRestController {
 		accountService.delete(uid);
 	}
 	
+	
+	@RequestMapping( value="/mytest")
+	@ResponseBody
+	public Account mytest(Account account) {
+		return accountService.create(account);
+	}
 }

@@ -29,7 +29,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  * 
  */
 @Configuration
-@ComponentScan(basePackages = { "com.dt.hippo.web"}) 
+@ComponentScan(basePackages = { "com.dt.hippo.web","com.dt.hippo.auto.rest","com.dt.hippo.auto.web"}) 
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter
 {
@@ -77,7 +77,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter
 				.getObjectMapper()
 				.setSerializationInclusion(JsonInclude.Include.NON_NULL)
 				.configure(SerializationFeature.WRAP_ROOT_VALUE, false)
-				.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true)
+				.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false)
 				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
 						false);
     	
