@@ -79,7 +79,7 @@ public class ${entity.name}ServiceImpl implements ${entity.name}Service {
 //		if( ${fn.uncapitalize($entity.name)}Entity != null ) {
 //			throw new IllegalStateException("already.exists");
 //		}
-		${fn.uncapitalize($entity.name)}Entity = new ${entity.name}Entity();
+		${entity.name}Entity ${fn.uncapitalize($entity.name)}Entity = new ${entity.name}Entity();
 		${fn.uncapitalize($entity.name)}ServiceMapper.map${entity.name}To${entity.name}Entity(${fn.uncapitalize($entity.name)}, ${fn.uncapitalize($entity.name)}Entity);
 		${entity.name}Entity ${fn.uncapitalize($entity.name)}EntitySaved = ${fn.uncapitalize($entity.name)}JpaRepository.save(${fn.uncapitalize($entity.name)}Entity);
 		return ${fn.uncapitalize($entity.name)}ServiceMapper.map${entity.name}EntityTo${entity.name}(${fn.uncapitalize($entity.name)}EntitySaved);
