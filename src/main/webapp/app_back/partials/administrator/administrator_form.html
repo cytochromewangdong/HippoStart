@@ -1,0 +1,124 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Administrator' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="administrator_uid" class="col-sm-2 control-label">{{ 'administrator.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_uid" name="uid" ng-model="administrator.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_username" class="col-sm-2 control-label">{{ 'administrator.username' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_username" name="username" ng-model="administrator.username" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_upperusername" class="col-sm-2 control-label">{{ 'administrator.upperusername' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_upperusername" name="upperusername" ng-model="administrator.upperusername" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_usernamehashcode" class="col-sm-2 control-label">{{ 'administrator.usernamehashcode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_usernamehashcode" name="usernamehashcode" ng-model="administrator.usernamehashcode" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_email" class="col-sm-2 control-label">{{ 'administrator.email' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_email" name="email" ng-model="administrator.email" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_upperemail" class="col-sm-2 control-label">{{ 'administrator.upperemail' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_upperemail" name="upperemail" ng-model="administrator.upperemail" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_emailhashcode" class="col-sm-2 control-label">{{ 'administrator.emailhashcode' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_emailhashcode" name="emailhashcode" ng-model="administrator.emailhashcode" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_md5email" class="col-sm-2 control-label">{{ 'administrator.md5email' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_md5email" name="md5email" ng-model="administrator.md5email" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_password" class="col-sm-2 control-label">{{ 'administrator.password' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_password" name="password" ng-model="administrator.password" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_random" class="col-sm-2 control-label">{{ 'administrator.random' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_random" name="random" ng-model="administrator.random" class="form-control" maxLength="6" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_imageurl" class="col-sm-2 control-label">{{ 'administrator.imageurl' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_imageurl" name="imageurl" ng-model="administrator.imageurl" class="form-control" maxLength="150" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_createdate" class="col-sm-2 control-label">{{ 'administrator.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="administrator_createdate" bs-datepicker data-autoclose="1" ng-model="administrator.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_modifydate" class="col-sm-2 control-label">{{ 'administrator.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="administrator_modifydate" bs-datepicker data-autoclose="1" ng-model="administrator.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_createuser" class="col-sm-2 control-label">{{ 'administrator.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_createuser" name="createuser" ng-model="administrator.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_modifyuser" class="col-sm-2 control-label">{{ 'administrator.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_modifyuser" name="modifyuser" ng-model="administrator.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_delflg" class="col-sm-2 control-label">{{ 'administrator.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_delflg" name="delflg" ng-model="administrator.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="administrator_platform" class="col-sm-2 control-label">{{ 'administrator.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="administrator_platform" name="platform" ng-model="administrator.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(administrator.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/administrator">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

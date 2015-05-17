@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.PromotioninfoListItem;
  * Spring MVC controller for 'Promotioninfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class PromotioninfoRestController {
 
 	@Resource

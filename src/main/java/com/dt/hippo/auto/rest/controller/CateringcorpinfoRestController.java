@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.CateringcorpinfoListItem;
  * Spring MVC controller for 'Cateringcorpinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class CateringcorpinfoRestController {
 
 	@Resource

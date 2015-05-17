@@ -1,0 +1,142 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Storeinfo' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="storeinfo_uid" class="col-sm-2 control-label">{{ 'storeinfo.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_uid" name="uid" ng-model="storeinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_parentcorpid" class="col-sm-2 control-label">{{ 'storeinfo.parentcorpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_parentcorpid" name="parentcorpid" ng-model="storeinfo.parentcorpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_storeno" class="col-sm-2 control-label">{{ 'storeinfo.storeno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_storeno" name="storeno" ng-model="storeinfo.storeno" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_storename" class="col-sm-2 control-label">{{ 'storeinfo.storename' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_storename" name="storename" ng-model="storeinfo.storename" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_storedescription" class="col-sm-2 control-label">{{ 'storeinfo.storedescription' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_storedescription" name="storedescription" ng-model="storeinfo.storedescription" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_cityid" class="col-sm-2 control-label">{{ 'storeinfo.cityid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_cityid" name="cityid" ng-model="storeinfo.cityid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_address" class="col-sm-2 control-label">{{ 'storeinfo.address' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_address" name="address" ng-model="storeinfo.address" class="form-control" maxLength="400" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_phone" class="col-sm-2 control-label">{{ 'storeinfo.phone' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_phone" name="phone" ng-model="storeinfo.phone" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_type" class="col-sm-2 control-label">{{ 'storeinfo.type' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_type" name="type" ng-model="storeinfo.type" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_businesshours" class="col-sm-2 control-label">{{ 'storeinfo.businesshours' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_businesshours" name="businesshours" ng-model="storeinfo.businesshours" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_deliverydescription" class="col-sm-2 control-label">{{ 'storeinfo.deliverydescription' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_deliverydescription" name="deliverydescription" ng-model="storeinfo.deliverydescription" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_ordercount" class="col-sm-2 control-label">{{ 'storeinfo.ordercount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_ordercount" name="ordercount" ng-model="storeinfo.ordercount" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_lng" class="col-sm-2 control-label">{{ 'storeinfo.lng' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_lng" name="lng" ng-model="storeinfo.lng" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_lat" class="col-sm-2 control-label">{{ 'storeinfo.lat' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_lat" name="lat" ng-model="storeinfo.lat" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_createdate" class="col-sm-2 control-label">{{ 'storeinfo.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="storeinfo_createdate" bs-datepicker data-autoclose="1" ng-model="storeinfo.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_modifydate" class="col-sm-2 control-label">{{ 'storeinfo.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="storeinfo_modifydate" bs-datepicker data-autoclose="1" ng-model="storeinfo.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_createuser" class="col-sm-2 control-label">{{ 'storeinfo.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_createuser" name="createuser" ng-model="storeinfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_modifyuser" class="col-sm-2 control-label">{{ 'storeinfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_modifyuser" name="modifyuser" ng-model="storeinfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_delflg" class="col-sm-2 control-label">{{ 'storeinfo.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_delflg" name="delflg" ng-model="storeinfo.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="storeinfo_platform" class="col-sm-2 control-label">{{ 'storeinfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="storeinfo_platform" name="platform" ng-model="storeinfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(storeinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/storeinfo">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

@@ -1,0 +1,66 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Account' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'account.uid' | translate }}</th>
+						<th>{{ 'account.username' | translate }}</th>
+						<th>{{ 'account.usernamehashcode' | translate }}</th>
+						<th>{{ 'account.email' | translate }}</th>
+						<th>{{ 'account.emailhashcode' | translate }}</th>
+						<th>{{ 'account.md5email' | translate }}</th>
+						<th>{{ 'account.password' | translate }}</th>
+						<th>{{ 'account.imageurl' | translate }}</th>
+						<th>{{ 'account.nickname' | translate }}</th>
+						<th>{{ 'account.address' | translate }}</th>
+						<th>{{ 'account.location' | translate }}</th>
+						<th>{{ 'account.usersource' | translate }}</th>
+						<th>{{ 'account.usersourcename' | translate }}</th>
+						<th>{{ 'account.externaluid' | translate }}</th>
+						<th>{{ 'account.externalusername' | translate }}</th>
+						<th>{{ 'account.emailverified' | translate }}</th>
+						<th>{{ 'account.mobiletoken' | translate }}</th>
+						<th>{{ 'account.language' | translate }}</th>
+						<th>{{ 'account.createdate' | translate }}</th>
+						<th>{{ 'account.modifydate' | translate }}</th>
+						<th>{{ 'account.createuser' | translate }}</th>
+						<th>{{ 'account.modifyuser' | translate }}</th>
+						<th>{{ 'account.delflg' | translate }}</th>
+						<th>{{ 'account.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/account/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="account in accounts">
+						<td>{{account.uid}}</td>
+						<td>{{account.username}}</td>
+						<td>{{account.usernamehashcode | number }}</td>
+						<td>{{account.email}}</td>
+						<td>{{account.emailhashcode | number }}</td>
+						<td>{{account.md5email}}</td>
+						<td>{{account.password}}</td>
+						<td>{{account.imageurl}}</td>
+						<td>{{account.nickname}}</td>
+						<td>{{account.address}}</td>
+						<td>{{account.location}}</td>
+						<td>{{account.usersource}}</td>
+						<td>{{account.usersourcename}}</td>
+						<td>{{account.externaluid}}</td>
+						<td>{{account.externalusername}}</td>
+						<td>{{account.emailverified}}</td>
+						<td>{{account.mobiletoken}}</td>
+						<td>{{account.language}}</td>
+						<td>{{account.createdate | date:'shortDate'}}</td>
+						<td>{{account.modifydate | date:'shortDate'}}</td>
+						<td>{{account.createuser}}</td>
+						<td>{{account.modifyuser}}</td>
+						<td>{{account.delflg}}</td>
+						<td>{{account.platform}}</td>
+						<td><a class="btn btn-info" href="#/account/{{account.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

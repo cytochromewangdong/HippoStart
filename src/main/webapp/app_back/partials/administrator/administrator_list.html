@@ -1,0 +1,52 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Administrator' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'administrator.uid' | translate }}</th>
+						<th>{{ 'administrator.username' | translate }}</th>
+						<th>{{ 'administrator.upperusername' | translate }}</th>
+						<th>{{ 'administrator.usernamehashcode' | translate }}</th>
+						<th>{{ 'administrator.email' | translate }}</th>
+						<th>{{ 'administrator.upperemail' | translate }}</th>
+						<th>{{ 'administrator.emailhashcode' | translate }}</th>
+						<th>{{ 'administrator.md5email' | translate }}</th>
+						<th>{{ 'administrator.password' | translate }}</th>
+						<th>{{ 'administrator.random' | translate }}</th>
+						<th>{{ 'administrator.imageurl' | translate }}</th>
+						<th>{{ 'administrator.createdate' | translate }}</th>
+						<th>{{ 'administrator.modifydate' | translate }}</th>
+						<th>{{ 'administrator.createuser' | translate }}</th>
+						<th>{{ 'administrator.modifyuser' | translate }}</th>
+						<th>{{ 'administrator.delflg' | translate }}</th>
+						<th>{{ 'administrator.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/administrator/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="administrator in administrators">
+						<td>{{administrator.uid}}</td>
+						<td>{{administrator.username}}</td>
+						<td>{{administrator.upperusername}}</td>
+						<td>{{administrator.usernamehashcode | number }}</td>
+						<td>{{administrator.email}}</td>
+						<td>{{administrator.upperemail}}</td>
+						<td>{{administrator.emailhashcode | number }}</td>
+						<td>{{administrator.md5email}}</td>
+						<td>{{administrator.password}}</td>
+						<td>{{administrator.random}}</td>
+						<td>{{administrator.imageurl}}</td>
+						<td>{{administrator.createdate | date:'shortDate'}}</td>
+						<td>{{administrator.modifydate | date:'shortDate'}}</td>
+						<td>{{administrator.createuser}}</td>
+						<td>{{administrator.modifyuser}}</td>
+						<td>{{administrator.delflg}}</td>
+						<td>{{administrator.platform}}</td>
+						<td><a class="btn btn-info" href="#/administrator/{{administrator.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

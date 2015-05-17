@@ -1,0 +1,46 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Promotioninfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'promotioninfo.uid' | translate }}</th>
+						<th>{{ 'promotioninfo.corpid' | translate }}</th>
+						<th>{{ 'promotioninfo.name' | translate }}</th>
+						<th>{{ 'promotioninfo.description' | translate }}</th>
+						<th>{{ 'promotioninfo.imageurl' | translate }}</th>
+						<th>{{ 'promotioninfo.promotiontime' | translate }}</th>
+						<th>{{ 'promotioninfo.promotionendtime' | translate }}</th>
+						<th>{{ 'promotioninfo.isapplied' | translate }}</th>
+						<th>{{ 'promotioninfo.createdate' | translate }}</th>
+						<th>{{ 'promotioninfo.modifydate' | translate }}</th>
+						<th>{{ 'promotioninfo.createuser' | translate }}</th>
+						<th>{{ 'promotioninfo.modifyuser' | translate }}</th>
+						<th>{{ 'promotioninfo.delflg' | translate }}</th>
+						<th>{{ 'promotioninfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/promotioninfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="promotioninfo in promotioninfos">
+						<td>{{promotioninfo.uid}}</td>
+						<td>{{promotioninfo.corpid | number }}</td>
+						<td>{{promotioninfo.name}}</td>
+						<td>{{promotioninfo.description}}</td>
+						<td>{{promotioninfo.imageurl}}</td>
+						<td>{{promotioninfo.promotiontime | number }}</td>
+						<td>{{promotioninfo.promotionendtime | number }}</td>
+						<td>{{promotioninfo.isapplied}}</td>
+						<td>{{promotioninfo.createdate | date:'shortDate'}}</td>
+						<td>{{promotioninfo.modifydate | date:'shortDate'}}</td>
+						<td>{{promotioninfo.createuser}}</td>
+						<td>{{promotioninfo.modifyuser}}</td>
+						<td>{{promotioninfo.delflg}}</td>
+						<td>{{promotioninfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/promotioninfo/{{promotioninfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

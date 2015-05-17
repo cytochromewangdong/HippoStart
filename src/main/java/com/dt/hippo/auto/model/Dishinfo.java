@@ -5,11 +5,12 @@
 package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, 
+property = "@uid")
 public class Dishinfo extends com.dt.hippo.auto.model.base.Dishinfo implements Serializable {
 
     private static final long serialVersionUID = 1L;

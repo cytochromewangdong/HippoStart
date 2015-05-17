@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.PaymentListItem;
  * Spring MVC controller for 'Payment' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class PaymentRestController {
 
 	@Resource

@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.StoreinfoListItem;
  * Spring MVC controller for 'Storeinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class StoreinfoRestController {
 
 	@Resource

@@ -15,12 +15,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages = {"com.dt.hippo.service","com.dt.hippo.config","com.dt.hippo.auto","com.dt.hippo.my"})
+@ComponentScan(basePackages = {"com.dt.hippo.service","com.dt.hippo.auto","com.dt.hippo.my"})//"com.dt.hippo.config",
 @EnableTransactionManagement
-@EnableWebMvc
+//@EnableWebMvc
 @ImportResource("classpath:applicationContext.xml")
 @PropertySource("classpath:application.properties")
-@Import({CacheConfig.class, PersistantConfig.class, SecurityConfig.class})
+@Import({CacheConfig.class, PersistantConfig.class, SecurityConfig.class})//
 
 public class ApplicationContext {
     

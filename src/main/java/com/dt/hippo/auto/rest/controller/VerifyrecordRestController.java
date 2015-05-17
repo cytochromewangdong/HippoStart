@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.VerifyrecordListItem;
  * Spring MVC controller for 'Verifyrecord' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class VerifyrecordRestController {
 
 	@Resource

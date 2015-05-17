@@ -1,0 +1,52 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Dishspecificationinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'dishspecificationinfo.dishid' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.uid' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.name' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.dishname' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.dishdescription' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.imageurl' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.price' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.orderindex' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.promotiontime' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.promotionendtime' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.promotionprice' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.createdate' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.modifydate' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.createuser' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.modifyuser' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.delflg' | translate }}</th>
+						<th>{{ 'dishspecificationinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/dishspecificationinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="dishspecificationinfo in dishspecificationinfos">
+						<td>{{dishspecificationinfo.dishid}}</td>
+						<td>{{dishspecificationinfo.uid}}</td>
+						<td>{{dishspecificationinfo.name}}</td>
+						<td>{{dishspecificationinfo.dishname}}</td>
+						<td>{{dishspecificationinfo.dishdescription}}</td>
+						<td>{{dishspecificationinfo.imageurl}}</td>
+						<td>{{dishspecificationinfo.price | number }}</td>
+						<td>{{dishspecificationinfo.orderindex | number }}</td>
+						<td>{{dishspecificationinfo.promotiontime | number }}</td>
+						<td>{{dishspecificationinfo.promotionendtime | number }}</td>
+						<td>{{dishspecificationinfo.promotionprice | number }}</td>
+						<td>{{dishspecificationinfo.createdate | date:'shortDate'}}</td>
+						<td>{{dishspecificationinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{dishspecificationinfo.createuser}}</td>
+						<td>{{dishspecificationinfo.modifyuser}}</td>
+						<td>{{dishspecificationinfo.delflg}}</td>
+						<td>{{dishspecificationinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/dishspecificationinfo/{{dishspecificationinfo.dishid}}/{{dishspecificationinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.CategoryListItem;
  * Spring MVC controller for 'Category' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class CategoryRestController {
 
 	@Resource

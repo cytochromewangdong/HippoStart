@@ -1,0 +1,60 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Payment' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'payment.uid' | translate }}</th>
+						<th>{{ 'payment.userid' | translate }}</th>
+						<th>{{ 'payment.projectid' | translate }}</th>
+						<th>{{ 'payment.tradeno' | translate }}</th>
+						<th>{{ 'payment.orderno' | translate }}</th>
+						<th>{{ 'payment.ordercurrency' | translate }}</th>
+						<th>{{ 'payment.orderamount' | translate }}</th>
+						<th>{{ 'payment.orderstatus' | translate }}</th>
+						<th>{{ 'payment.orderinfo' | translate }}</th>
+						<th>{{ 'payment.riskinfo' | translate }}</th>
+						<th>{{ 'payment.paymentmethod' | translate }}</th>
+						<th>{{ 'payment.ismobile' | translate }}</th>
+						<th>{{ 'payment.tradedate' | translate }}</th>
+						<th>{{ 'payment.useragent' | translate }}</th>
+						<th>{{ 'payment.rawreponsefrompaygate' | translate }}</th>
+						<th>{{ 'payment.createdate' | translate }}</th>
+						<th>{{ 'payment.modifydate' | translate }}</th>
+						<th>{{ 'payment.createuser' | translate }}</th>
+						<th>{{ 'payment.modifyuser' | translate }}</th>
+						<th>{{ 'payment.delflg' | translate }}</th>
+						<th>{{ 'payment.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/payment/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="payment in payments">
+						<td>{{payment.uid}}</td>
+						<td>{{payment.userid | number }}</td>
+						<td>{{payment.projectid | number }}</td>
+						<td>{{payment.tradeno}}</td>
+						<td>{{payment.orderno}}</td>
+						<td>{{payment.ordercurrency}}</td>
+						<td>{{payment.orderamount}}</td>
+						<td>{{payment.orderstatus}}</td>
+						<td>{{payment.orderinfo}}</td>
+						<td>{{payment.riskinfo}}</td>
+						<td>{{payment.paymentmethod}}</td>
+						<td>{{payment.ismobile}}</td>
+						<td>{{payment.tradedate | date:'shortDate'}}</td>
+						<td>{{payment.useragent}}</td>
+						<td>{{payment.rawreponsefrompaygate}}</td>
+						<td>{{payment.createdate | date:'shortDate'}}</td>
+						<td>{{payment.modifydate | date:'shortDate'}}</td>
+						<td>{{payment.createuser}}</td>
+						<td>{{payment.modifyuser}}</td>
+						<td>{{payment.delflg}}</td>
+						<td>{{payment.platform}}</td>
+						<td><a class="btn btn-info" href="#/payment/{{payment.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

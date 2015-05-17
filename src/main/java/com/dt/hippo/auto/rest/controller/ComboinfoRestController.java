@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.ComboinfoListItem;
  * Spring MVC controller for 'Comboinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class ComboinfoRestController {
 
 	@Resource

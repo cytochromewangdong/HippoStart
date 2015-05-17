@@ -1,0 +1,118 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Orderdetail' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="orderdetail_orderno" class="col-sm-2 control-label">{{ 'orderdetail.orderno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_orderno" name="orderno" ng-model="orderdetail.orderno" class="form-control" maxLength="50"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_uid" class="col-sm-2 control-label">{{ 'orderdetail.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_uid" name="uid" ng-model="orderdetail.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_no" class="col-sm-2 control-label">{{ 'orderdetail.no' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_no" name="no" ng-model="orderdetail.no" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_orderidno" class="col-sm-2 control-label">{{ 'orderdetail.orderidno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_orderidno" name="orderidno" ng-model="orderdetail.orderidno" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_price" class="col-sm-2 control-label">{{ 'orderdetail.price' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_price" name="price" ng-model="orderdetail.price" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_priceatsale" class="col-sm-2 control-label">{{ 'orderdetail.priceatsale' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_priceatsale" name="priceatsale" ng-model="orderdetail.priceatsale" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_amountmoney" class="col-sm-2 control-label">{{ 'orderdetail.amountmoney' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_amountmoney" name="amountmoney" ng-model="orderdetail.amountmoney" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_amountatsale" class="col-sm-2 control-label">{{ 'orderdetail.amountatsale' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_amountatsale" name="amountatsale" ng-model="orderdetail.amountatsale" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_amount" class="col-sm-2 control-label">{{ 'orderdetail.amount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_amount" name="amount" ng-model="orderdetail.amount" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_discountid" class="col-sm-2 control-label">{{ 'orderdetail.discountid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_discountid" name="discountid" ng-model="orderdetail.discountid" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_createdate" class="col-sm-2 control-label">{{ 'orderdetail.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderdetail_createdate" bs-datepicker data-autoclose="1" ng-model="orderdetail.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_modifydate" class="col-sm-2 control-label">{{ 'orderdetail.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderdetail_modifydate" bs-datepicker data-autoclose="1" ng-model="orderdetail.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_createuser" class="col-sm-2 control-label">{{ 'orderdetail.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_createuser" name="createuser" ng-model="orderdetail.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_modifyuser" class="col-sm-2 control-label">{{ 'orderdetail.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_modifyuser" name="modifyuser" ng-model="orderdetail.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_delflg" class="col-sm-2 control-label">{{ 'orderdetail.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_delflg" name="delflg" ng-model="orderdetail.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderdetail_platform" class="col-sm-2 control-label">{{ 'orderdetail.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderdetail_platform" name="platform" ng-model="orderdetail.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(orderdetail.orderno, orderdetail.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/orderdetail">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

@@ -1,0 +1,48 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Externalaccount' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'externalaccount.userid' | translate }}</th>
+						<th>{{ 'externalaccount.usersource' | translate }}</th>
+						<th>{{ 'externalaccount.externaluserid' | translate }}</th>
+						<th>{{ 'externalaccount.accesstoken' | translate }}</th>
+						<th>{{ 'externalaccount.tokensecret' | translate }}</th>
+						<th>{{ 'externalaccount.refreshtoken' | translate }}</th>
+						<th>{{ 'externalaccount.usersourcename' | translate }}</th>
+						<th>{{ 'externalaccount.sharestatus' | translate }}</th>
+						<th>{{ 'externalaccount.expiretime' | translate }}</th>
+						<th>{{ 'externalaccount.createdate' | translate }}</th>
+						<th>{{ 'externalaccount.modifydate' | translate }}</th>
+						<th>{{ 'externalaccount.createuser' | translate }}</th>
+						<th>{{ 'externalaccount.modifyuser' | translate }}</th>
+						<th>{{ 'externalaccount.delflg' | translate }}</th>
+						<th>{{ 'externalaccount.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/externalaccount/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="externalaccount in externalaccounts">
+						<td>{{externalaccount.userid}}</td>
+						<td>{{externalaccount.usersource}}</td>
+						<td>{{externalaccount.externaluserid}}</td>
+						<td>{{externalaccount.accesstoken}}</td>
+						<td>{{externalaccount.tokensecret}}</td>
+						<td>{{externalaccount.refreshtoken}}</td>
+						<td>{{externalaccount.usersourcename}}</td>
+						<td>{{externalaccount.sharestatus}}</td>
+						<td>{{externalaccount.expiretime | number }}</td>
+						<td>{{externalaccount.createdate | date:'shortDate'}}</td>
+						<td>{{externalaccount.modifydate | date:'shortDate'}}</td>
+						<td>{{externalaccount.createuser}}</td>
+						<td>{{externalaccount.modifyuser}}</td>
+						<td>{{externalaccount.delflg}}</td>
+						<td>{{externalaccount.platform}}</td>
+						<td><a class="btn btn-info" href="#/externalaccount/{{externalaccount.userid}}/{{externalaccount.usersource}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

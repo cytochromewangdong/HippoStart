@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.PointruleListItem;
  * Spring MVC controller for 'Pointrule' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class PointruleRestController {
 
 	@Resource

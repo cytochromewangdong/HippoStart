@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.OrderdetailListItem;
  * Spring MVC controller for 'Orderdetail' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class OrderdetailRestController {
 
 	@Resource

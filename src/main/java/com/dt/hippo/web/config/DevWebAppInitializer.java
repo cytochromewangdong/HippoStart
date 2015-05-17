@@ -64,7 +64,8 @@ public class DevWebAppInitializer extends
     protected Filter[] getServletFilters() {
        return new Filter[]{ 
     		   new DelegatingFilterProxy("springSecurityFilterChain"),
-    		   new OpenEntityManagerInViewFilter()};
+    		   //new OpenEntityManagerInViewFilter()
+    		   };
     } 
 //	@Override
 //	protected void registerDispatcherServlet(ServletContext servletContext) {

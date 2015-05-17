@@ -1,0 +1,100 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Cateringcorpinfo' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="cateringcorpinfo_uid" class="col-sm-2 control-label">{{ 'cateringcorpinfo.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_uid" name="uid" ng-model="cateringcorpinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_corpno" class="col-sm-2 control-label">{{ 'cateringcorpinfo.corpno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_corpno" name="corpno" ng-model="cateringcorpinfo.corpno" class="form-control" maxLength="32" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_corpname" class="col-sm-2 control-label">{{ 'cateringcorpinfo.corpname' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_corpname" name="corpname" ng-model="cateringcorpinfo.corpname" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_corpdescription" class="col-sm-2 control-label">{{ 'cateringcorpinfo.corpdescription' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_corpdescription" name="corpdescription" ng-model="cateringcorpinfo.corpdescription" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_phone" class="col-sm-2 control-label">{{ 'cateringcorpinfo.phone' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_phone" name="phone" ng-model="cateringcorpinfo.phone" class="form-control" maxLength="25" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_logourl" class="col-sm-2 control-label">{{ 'cateringcorpinfo.logourl' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_logourl" name="logourl" ng-model="cateringcorpinfo.logourl" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_storeamount" class="col-sm-2 control-label">{{ 'cateringcorpinfo.storeamount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_storeamount" name="storeamount" ng-model="cateringcorpinfo.storeamount" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_createdate" class="col-sm-2 control-label">{{ 'cateringcorpinfo.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="cateringcorpinfo_createdate" bs-datepicker data-autoclose="1" ng-model="cateringcorpinfo.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_modifydate" class="col-sm-2 control-label">{{ 'cateringcorpinfo.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="cateringcorpinfo_modifydate" bs-datepicker data-autoclose="1" ng-model="cateringcorpinfo.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_createuser" class="col-sm-2 control-label">{{ 'cateringcorpinfo.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_createuser" name="createuser" ng-model="cateringcorpinfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_modifyuser" class="col-sm-2 control-label">{{ 'cateringcorpinfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_modifyuser" name="modifyuser" ng-model="cateringcorpinfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_delflg" class="col-sm-2 control-label">{{ 'cateringcorpinfo.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_delflg" name="delflg" ng-model="cateringcorpinfo.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cateringcorpinfo_platform" class="col-sm-2 control-label">{{ 'cateringcorpinfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="cateringcorpinfo_platform" name="platform" ng-model="cateringcorpinfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(cateringcorpinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/cateringcorpinfo">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

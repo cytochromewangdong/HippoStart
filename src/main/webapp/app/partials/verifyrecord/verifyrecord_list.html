@@ -1,0 +1,46 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Verifyrecord' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'verifyrecord.uid' | translate }}</th>
+						<th>{{ 'verifyrecord.verifytype' | translate }}</th>
+						<th>{{ 'verifyrecord.userid' | translate }}</th>
+						<th>{{ 'verifyrecord.username' | translate }}</th>
+						<th>{{ 'verifyrecord.email' | translate }}</th>
+						<th>{{ 'verifyrecord.randomcode' | translate }}</th>
+						<th>{{ 'verifyrecord.expiretime' | translate }}</th>
+						<th>{{ 'verifyrecord.resetflg' | translate }}</th>
+						<th>{{ 'verifyrecord.createdate' | translate }}</th>
+						<th>{{ 'verifyrecord.modifydate' | translate }}</th>
+						<th>{{ 'verifyrecord.createuser' | translate }}</th>
+						<th>{{ 'verifyrecord.modifyuser' | translate }}</th>
+						<th>{{ 'verifyrecord.delflg' | translate }}</th>
+						<th>{{ 'verifyrecord.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/verifyrecord/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="verifyrecord in verifyrecords">
+						<td>{{verifyrecord.uid}}</td>
+						<td>{{verifyrecord.verifytype}}</td>
+						<td>{{verifyrecord.userid | number }}</td>
+						<td>{{verifyrecord.username}}</td>
+						<td>{{verifyrecord.email}}</td>
+						<td>{{verifyrecord.randomcode}}</td>
+						<td>{{verifyrecord.expiretime | date:'shortDate'}}</td>
+						<td>{{verifyrecord.resetflg}}</td>
+						<td>{{verifyrecord.createdate | date:'shortDate'}}</td>
+						<td>{{verifyrecord.modifydate | date:'shortDate'}}</td>
+						<td>{{verifyrecord.createuser}}</td>
+						<td>{{verifyrecord.modifyuser}}</td>
+						<td>{{verifyrecord.delflg}}</td>
+						<td>{{verifyrecord.platform}}</td>
+						<td><a class="btn btn-info" href="#/verifyrecord/{{verifyrecord.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

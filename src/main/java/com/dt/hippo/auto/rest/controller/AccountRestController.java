@@ -8,24 +8,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import com.dt.hippo.auto.model.Account;
+
 import com.dt.hippo.auto.business.service.AccountService;
+import com.dt.hippo.auto.model.Account;
 import com.dt.hippo.auto.web.listitem.AccountListItem;
 
 /**
  * Spring MVC controller for 'Account' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class AccountRestController {
 
 	@Resource
@@ -92,7 +96,11 @@ public class AccountRestController {
 	
 	@RequestMapping( value="/mytest")
 	@ResponseBody
-	public Account mytest(Account account) {
+	public Account mytest(@RequestBody @Valid Account account, BindingResult bindingResult) {
+		if(bindingResult.hasErrors())
+		{
+			System.out.println(bindingResult);
+		}
 		return accountService.create(account);
 	}
 }

@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Sequence' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'sequence.uid' | translate }}</th>
+						<th>{{ 'sequence.keyword' | translate }}</th>
+						<th><a class="btn btn-info" href='#/sequence/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="sequence in sequences">
+						<td>{{sequence.uid}}</td>
+						<td>{{sequence.keyword}}</td>
+						<td><a class="btn btn-info" href="#/sequence/{{sequence.uid}}/{{sequence.keyword}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

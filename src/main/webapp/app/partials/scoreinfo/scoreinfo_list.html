@@ -1,0 +1,42 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Scoreinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'scoreinfo.uid' | translate }}</th>
+						<th>{{ 'scoreinfo.scoretype' | translate }}</th>
+						<th>{{ 'scoreinfo.storeid' | translate }}</th>
+						<th>{{ 'scoreinfo.comment' | translate }}</th>
+						<th>{{ 'scoreinfo.userid' | translate }}</th>
+						<th>{{ 'scoreinfo.score' | translate }}</th>
+						<th>{{ 'scoreinfo.createdate' | translate }}</th>
+						<th>{{ 'scoreinfo.modifydate' | translate }}</th>
+						<th>{{ 'scoreinfo.createuser' | translate }}</th>
+						<th>{{ 'scoreinfo.modifyuser' | translate }}</th>
+						<th>{{ 'scoreinfo.delflg' | translate }}</th>
+						<th>{{ 'scoreinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/scoreinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="scoreinfo in scoreinfos">
+						<td>{{scoreinfo.uid}}</td>
+						<td>{{scoreinfo.scoretype}}</td>
+						<td>{{scoreinfo.storeid | number }}</td>
+						<td>{{scoreinfo.comment}}</td>
+						<td>{{scoreinfo.userid | number }}</td>
+						<td>{{scoreinfo.score}}</td>
+						<td>{{scoreinfo.createdate | date:'shortDate'}}</td>
+						<td>{{scoreinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{scoreinfo.createuser}}</td>
+						<td>{{scoreinfo.modifyuser}}</td>
+						<td>{{scoreinfo.delflg}}</td>
+						<td>{{scoreinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/scoreinfo/{{scoreinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

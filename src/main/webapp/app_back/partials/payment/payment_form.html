@@ -1,0 +1,148 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Payment' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="payment_uid" class="col-sm-2 control-label">{{ 'payment.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_uid" name="uid" ng-model="payment.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_userid" class="col-sm-2 control-label">{{ 'payment.userid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_userid" name="userid" ng-model="payment.userid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_projectid" class="col-sm-2 control-label">{{ 'payment.projectid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_projectid" name="projectid" ng-model="payment.projectid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_tradeno" class="col-sm-2 control-label">{{ 'payment.tradeno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_tradeno" name="tradeno" ng-model="payment.tradeno" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_orderno" class="col-sm-2 control-label">{{ 'payment.orderno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_orderno" name="orderno" ng-model="payment.orderno" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_ordercurrency" class="col-sm-2 control-label">{{ 'payment.ordercurrency' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_ordercurrency" name="ordercurrency" ng-model="payment.ordercurrency" class="form-control" maxLength="3" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_orderamount" class="col-sm-2 control-label">{{ 'payment.orderamount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_orderamount" name="orderamount" ng-model="payment.orderamount" class="form-control" maxLength="10" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_orderstatus" class="col-sm-2 control-label">{{ 'payment.orderstatus' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_orderstatus" name="orderstatus" ng-model="payment.orderstatus" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_orderinfo" class="col-sm-2 control-label">{{ 'payment.orderinfo' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_orderinfo" name="orderinfo" ng-model="payment.orderinfo" class="form-control" maxLength="500" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_riskinfo" class="col-sm-2 control-label">{{ 'payment.riskinfo' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_riskinfo" name="riskinfo" ng-model="payment.riskinfo" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_paymentmethod" class="col-sm-2 control-label">{{ 'payment.paymentmethod' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_paymentmethod" name="paymentmethod" ng-model="payment.paymentmethod" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_ismobile" class="col-sm-2 control-label">{{ 'payment.ismobile' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_ismobile" name="ismobile" ng-model="payment.ismobile" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_tradedate" class="col-sm-2 control-label">{{ 'payment.tradedate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="payment_tradedate" bs-datepicker data-autoclose="1" ng-model="payment.tradedate" name="tradedate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_useragent" class="col-sm-2 control-label">{{ 'payment.useragent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_useragent" name="useragent" ng-model="payment.useragent" class="form-control" maxLength="500" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_rawreponsefrompaygate" class="col-sm-2 control-label">{{ 'payment.rawreponsefrompaygate' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_rawreponsefrompaygate" name="rawreponsefrompaygate" ng-model="payment.rawreponsefrompaygate" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_createdate" class="col-sm-2 control-label">{{ 'payment.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="payment_createdate" bs-datepicker data-autoclose="1" ng-model="payment.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_modifydate" class="col-sm-2 control-label">{{ 'payment.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="payment_modifydate" bs-datepicker data-autoclose="1" ng-model="payment.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_createuser" class="col-sm-2 control-label">{{ 'payment.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_createuser" name="createuser" ng-model="payment.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_modifyuser" class="col-sm-2 control-label">{{ 'payment.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_modifyuser" name="modifyuser" ng-model="payment.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_delflg" class="col-sm-2 control-label">{{ 'payment.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_delflg" name="delflg" ng-model="payment.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_platform" class="col-sm-2 control-label">{{ 'payment.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_platform" name="platform" ng-model="payment.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(payment.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/payment">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

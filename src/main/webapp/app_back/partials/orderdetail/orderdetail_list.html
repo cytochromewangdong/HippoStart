@@ -1,0 +1,50 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Orderdetail' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'orderdetail.orderno' | translate }}</th>
+						<th>{{ 'orderdetail.uid' | translate }}</th>
+						<th>{{ 'orderdetail.no' | translate }}</th>
+						<th>{{ 'orderdetail.orderidno' | translate }}</th>
+						<th>{{ 'orderdetail.price' | translate }}</th>
+						<th>{{ 'orderdetail.priceatsale' | translate }}</th>
+						<th>{{ 'orderdetail.amountmoney' | translate }}</th>
+						<th>{{ 'orderdetail.amountatsale' | translate }}</th>
+						<th>{{ 'orderdetail.amount' | translate }}</th>
+						<th>{{ 'orderdetail.discountid' | translate }}</th>
+						<th>{{ 'orderdetail.createdate' | translate }}</th>
+						<th>{{ 'orderdetail.modifydate' | translate }}</th>
+						<th>{{ 'orderdetail.createuser' | translate }}</th>
+						<th>{{ 'orderdetail.modifyuser' | translate }}</th>
+						<th>{{ 'orderdetail.delflg' | translate }}</th>
+						<th>{{ 'orderdetail.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/orderdetail/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="orderdetail in orderdetails">
+						<td>{{orderdetail.orderno}}</td>
+						<td>{{orderdetail.uid}}</td>
+						<td>{{orderdetail.no | number }}</td>
+						<td>{{orderdetail.orderidno | number }}</td>
+						<td>{{orderdetail.price | number }}</td>
+						<td>{{orderdetail.priceatsale | number }}</td>
+						<td>{{orderdetail.amountmoney | number }}</td>
+						<td>{{orderdetail.amountatsale | number }}</td>
+						<td>{{orderdetail.amount | number }}</td>
+						<td>{{orderdetail.discountid}}</td>
+						<td>{{orderdetail.createdate | date:'shortDate'}}</td>
+						<td>{{orderdetail.modifydate | date:'shortDate'}}</td>
+						<td>{{orderdetail.createuser}}</td>
+						<td>{{orderdetail.modifyuser}}</td>
+						<td>{{orderdetail.delflg}}</td>
+						<td>{{orderdetail.platform}}</td>
+						<td><a class="btn btn-info" href="#/orderdetail/{{orderdetail.orderno}}/{{orderdetail.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

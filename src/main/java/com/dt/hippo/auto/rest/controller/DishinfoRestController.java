@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.DishinfoListItem;
  * Spring MVC controller for 'Dishinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class DishinfoRestController {
 
 	@Resource

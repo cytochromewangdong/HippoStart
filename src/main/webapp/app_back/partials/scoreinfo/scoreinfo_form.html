@@ -1,0 +1,94 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Scoreinfo' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="scoreinfo_uid" class="col-sm-2 control-label">{{ 'scoreinfo.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_uid" name="uid" ng-model="scoreinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_scoretype" class="col-sm-2 control-label">{{ 'scoreinfo.scoretype' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_scoretype" name="scoretype" ng-model="scoreinfo.scoretype" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_storeid" class="col-sm-2 control-label">{{ 'scoreinfo.storeid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_storeid" name="storeid" ng-model="scoreinfo.storeid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_comment" class="col-sm-2 control-label">{{ 'scoreinfo.comment' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_comment" name="comment" ng-model="scoreinfo.comment" class="form-control" maxLength="250" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_userid" class="col-sm-2 control-label">{{ 'scoreinfo.userid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_userid" name="userid" ng-model="scoreinfo.userid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_score" class="col-sm-2 control-label">{{ 'scoreinfo.score' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_score" name="score" ng-model="scoreinfo.score" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_createdate" class="col-sm-2 control-label">{{ 'scoreinfo.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="scoreinfo_createdate" bs-datepicker data-autoclose="1" ng-model="scoreinfo.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_modifydate" class="col-sm-2 control-label">{{ 'scoreinfo.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="scoreinfo_modifydate" bs-datepicker data-autoclose="1" ng-model="scoreinfo.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_createuser" class="col-sm-2 control-label">{{ 'scoreinfo.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_createuser" name="createuser" ng-model="scoreinfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_modifyuser" class="col-sm-2 control-label">{{ 'scoreinfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_modifyuser" name="modifyuser" ng-model="scoreinfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_delflg" class="col-sm-2 control-label">{{ 'scoreinfo.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_delflg" name="delflg" ng-model="scoreinfo.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="scoreinfo_platform" class="col-sm-2 control-label">{{ 'scoreinfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="scoreinfo_platform" name="platform" ng-model="scoreinfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(scoreinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/scoreinfo">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

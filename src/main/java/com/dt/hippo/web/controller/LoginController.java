@@ -22,17 +22,17 @@ public class LoginController extends BaseController {
 	@Resource
 	private CustomUserDetailsService customUserDetailsService;
 
-	@RequestMapping(name = "/login", method = RequestMethod.GET)
-	public void login(Model uiModel) {
-
-	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET, consumes = "application/json")
-	@ResponseBody
-	public BaseResult login(HttpServletRequest request) {
-		return new BaseResult(ErroConstant.NOT_LOGIN, this.getNotLoginError(),
-				"/login");
-	}
+//	@RequestMapping(name = "/login", method = RequestMethod.GET)
+//	public void login(Model uiModel) {
+//
+//	}
+//
+//	@RequestMapping(value = "/login", method = RequestMethod.GET, consumes = "application/json")
+//	@ResponseBody
+//	public BaseResult login(HttpServletRequest request) {
+//		return new BaseResult(ErroConstant.NOT_LOGIN, this.getNotLoginError(),
+//				"/login");
+//	}
 
 	@RequestMapping(value = "/register")
 	// , method = RequestMethod.GET

@@ -1,0 +1,154 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Orderheader' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="orderheader_uid" class="col-sm-2 control-label">{{ 'orderheader.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_uid" name="uid" ng-model="orderheader.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_orderno" class="col-sm-2 control-label">{{ 'orderheader.orderno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_orderno" name="orderno" ng-model="orderheader.orderno" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_parentorderno" class="col-sm-2 control-label">{{ 'orderheader.parentorderno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_parentorderno" name="parentorderno" ng-model="orderheader.parentorderno" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_paymentno" class="col-sm-2 control-label">{{ 'orderheader.paymentno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_paymentno" name="paymentno" ng-model="orderheader.paymentno" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_payacount" class="col-sm-2 control-label">{{ 'orderheader.payacount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_payacount" name="payacount" ng-model="orderheader.payacount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_totalacount" class="col-sm-2 control-label">{{ 'orderheader.totalacount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_totalacount" name="totalacount" ng-model="orderheader.totalacount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_discount" class="col-sm-2 control-label">{{ 'orderheader.discount' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_discount" name="discount" ng-model="orderheader.discount" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_discountid" class="col-sm-2 control-label">{{ 'orderheader.discountid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_discountid" name="discountid" ng-model="orderheader.discountid" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_orderstatus" class="col-sm-2 control-label">{{ 'orderheader.orderstatus' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_orderstatus" name="orderstatus" ng-model="orderheader.orderstatus" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_orderinfo" class="col-sm-2 control-label">{{ 'orderheader.orderinfo' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_orderinfo" name="orderinfo" ng-model="orderheader.orderinfo" class="form-control" maxLength="500" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_paymentmethod" class="col-sm-2 control-label">{{ 'orderheader.paymentmethod' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_paymentmethod" name="paymentmethod" ng-model="orderheader.paymentmethod" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_tradedate" class="col-sm-2 control-label">{{ 'orderheader.tradedate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_tradedate" bs-datepicker data-autoclose="1" ng-model="orderheader.tradedate" name="tradedate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_useragent" class="col-sm-2 control-label">{{ 'orderheader.useragent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_useragent" name="useragent" ng-model="orderheader.useragent" class="form-control" maxLength="500" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_userid" class="col-sm-2 control-label">{{ 'orderheader.userid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_userid" name="userid" ng-model="orderheader.userid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_storeid" class="col-sm-2 control-label">{{ 'orderheader.storeid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_storeid" name="storeid" ng-model="orderheader.storeid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_ip" class="col-sm-2 control-label">{{ 'orderheader.ip' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_ip" name="ip" ng-model="orderheader.ip" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_createdate" class="col-sm-2 control-label">{{ 'orderheader.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_createdate" bs-datepicker data-autoclose="1" ng-model="orderheader.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_modifydate" class="col-sm-2 control-label">{{ 'orderheader.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_modifydate" bs-datepicker data-autoclose="1" ng-model="orderheader.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_createuser" class="col-sm-2 control-label">{{ 'orderheader.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_createuser" name="createuser" ng-model="orderheader.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_modifyuser" class="col-sm-2 control-label">{{ 'orderheader.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_modifyuser" name="modifyuser" ng-model="orderheader.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_delflg" class="col-sm-2 control-label">{{ 'orderheader.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_delflg" name="delflg" ng-model="orderheader.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_platform" class="col-sm-2 control-label">{{ 'orderheader.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_platform" name="platform" ng-model="orderheader.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(orderheader.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/orderheader">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

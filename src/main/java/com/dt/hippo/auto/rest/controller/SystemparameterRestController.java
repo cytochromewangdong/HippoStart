@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.SystemparameterListItem;
  * Spring MVC controller for 'Systemparameter' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class SystemparameterRestController {
 
 	@Resource

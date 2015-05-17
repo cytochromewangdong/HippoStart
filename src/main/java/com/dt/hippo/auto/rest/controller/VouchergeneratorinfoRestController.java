@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.VouchergeneratorinfoListItem;
  * Spring MVC controller for 'Vouchergeneratorinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class VouchergeneratorinfoRestController {
 
 	@Resource

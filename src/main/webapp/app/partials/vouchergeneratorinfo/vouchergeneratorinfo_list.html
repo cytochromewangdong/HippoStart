@@ -1,0 +1,58 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Vouchergeneratorinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'vouchergeneratorinfo.uid' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.corpid' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.type' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.deliverystartdate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.deliveryenddate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.deliverystarttime' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.deliveryendtime' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.applystartdate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.applyenddate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.limitationmethod' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.timezone' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.maxamount' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.maxamountperperson' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.value' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.createdate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.modifydate' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.createuser' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.modifyuser' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.delflg' | translate }}</th>
+						<th>{{ 'vouchergeneratorinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/vouchergeneratorinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="vouchergeneratorinfo in vouchergeneratorinfos">
+						<td>{{vouchergeneratorinfo.uid}}</td>
+						<td>{{vouchergeneratorinfo.corpid | number }}</td>
+						<td>{{vouchergeneratorinfo.type | number }}</td>
+						<td>{{vouchergeneratorinfo.deliverystartdate | number }}</td>
+						<td>{{vouchergeneratorinfo.deliveryenddate | number }}</td>
+						<td>{{vouchergeneratorinfo.deliverystarttime | number }}</td>
+						<td>{{vouchergeneratorinfo.deliveryendtime | number }}</td>
+						<td>{{vouchergeneratorinfo.applystartdate | number }}</td>
+						<td>{{vouchergeneratorinfo.applyenddate | number }}</td>
+						<td>{{vouchergeneratorinfo.limitationmethod}}</td>
+						<td>{{vouchergeneratorinfo.timezone}}</td>
+						<td>{{vouchergeneratorinfo.maxamount | number }}</td>
+						<td>{{vouchergeneratorinfo.maxamountperperson | number }}</td>
+						<td>{{vouchergeneratorinfo.value | number }}</td>
+						<td>{{vouchergeneratorinfo.createdate | date:'shortDate'}}</td>
+						<td>{{vouchergeneratorinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{vouchergeneratorinfo.createuser}}</td>
+						<td>{{vouchergeneratorinfo.modifyuser}}</td>
+						<td>{{vouchergeneratorinfo.delflg}}</td>
+						<td>{{vouchergeneratorinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/vouchergeneratorinfo/{{vouchergeneratorinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

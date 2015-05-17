@@ -1,0 +1,26 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Systemparameter' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'systemparameter.uid' | translate }}</th>
+						<th>{{ 'systemparameter.keyword' | translate }}</th>
+						<th>{{ 'systemparameter.value' | translate }}</th>
+						<th>{{ 'systemparameter.property' | translate }}</th>
+						<th><a class="btn btn-info" href='#/systemparameter/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="systemparameter in systemparameters">
+						<td>{{systemparameter.uid}}</td>
+						<td>{{systemparameter.keyword}}</td>
+						<td>{{systemparameter.value}}</td>
+						<td>{{systemparameter.property}}</td>
+						<td><a class="btn btn-info" href="#/systemparameter/{{systemparameter.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

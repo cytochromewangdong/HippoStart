@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.AdministratorListItem;
  * Spring MVC controller for 'Administrator' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class AdministratorRestController {
 
 	@Resource

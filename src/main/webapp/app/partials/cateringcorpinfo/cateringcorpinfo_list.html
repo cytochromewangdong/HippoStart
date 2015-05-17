@@ -1,0 +1,44 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Cateringcorpinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'cateringcorpinfo.uid' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.corpno' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.corpname' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.corpdescription' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.phone' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.logourl' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.storeamount' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.createdate' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.modifydate' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.createuser' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.modifyuser' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.delflg' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/cateringcorpinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="cateringcorpinfo in cateringcorpinfos">
+						<td>{{cateringcorpinfo.uid}}</td>
+						<td>{{cateringcorpinfo.corpno}}</td>
+						<td>{{cateringcorpinfo.corpname}}</td>
+						<td>{{cateringcorpinfo.corpdescription}}</td>
+						<td>{{cateringcorpinfo.phone}}</td>
+						<td>{{cateringcorpinfo.logourl}}</td>
+						<td>{{cateringcorpinfo.storeamount | number }}</td>
+						<td>{{cateringcorpinfo.createdate | date:'shortDate'}}</td>
+						<td>{{cateringcorpinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{cateringcorpinfo.createuser}}</td>
+						<td>{{cateringcorpinfo.modifyuser}}</td>
+						<td>{{cateringcorpinfo.delflg}}</td>
+						<td>{{cateringcorpinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/cateringcorpinfo/{{cateringcorpinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

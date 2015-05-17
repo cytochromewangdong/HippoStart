@@ -1,0 +1,58 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Dishinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'dishinfo.uid' | translate }}</th>
+						<th>{{ 'dishinfo.no' | translate }}</th>
+						<th>{{ 'dishinfo.dishname' | translate }}</th>
+						<th>{{ 'dishinfo.dishdescription' | translate }}</th>
+						<th>{{ 'dishinfo.imageurl' | translate }}</th>
+						<th>{{ 'dishinfo.price' | translate }}</th>
+						<th>{{ 'dishinfo.type' | translate }}</th>
+						<th>{{ 'dishinfo.hasspecification' | translate }}</th>
+						<th>{{ 'dishinfo.startdate' | translate }}</th>
+						<th>{{ 'dishinfo.enddate' | translate }}</th>
+						<th>{{ 'dishinfo.paused' | translate }}</th>
+						<th>{{ 'dishinfo.promotionstarttime' | translate }}</th>
+						<th>{{ 'dishinfo.promotionendtime' | translate }}</th>
+						<th>{{ 'dishinfo.promotionprice' | translate }}</th>
+						<th>{{ 'dishinfo.createdate' | translate }}</th>
+						<th>{{ 'dishinfo.modifydate' | translate }}</th>
+						<th>{{ 'dishinfo.createuser' | translate }}</th>
+						<th>{{ 'dishinfo.modifyuser' | translate }}</th>
+						<th>{{ 'dishinfo.delflg' | translate }}</th>
+						<th>{{ 'dishinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/dishinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="dishinfo in dishinfos">
+						<td>{{dishinfo.uid}}</td>
+						<td>{{dishinfo.no}}</td>
+						<td>{{dishinfo.dishname}}</td>
+						<td>{{dishinfo.dishdescription}}</td>
+						<td>{{dishinfo.imageurl}}</td>
+						<td>{{dishinfo.price | number }}</td>
+						<td>{{dishinfo.type}}</td>
+						<td>{{dishinfo.hasspecification}}</td>
+						<td>{{dishinfo.startdate | number }}</td>
+						<td>{{dishinfo.enddate | number }}</td>
+						<td>{{dishinfo.paused}}</td>
+						<td>{{dishinfo.promotionstarttime | number }}</td>
+						<td>{{dishinfo.promotionendtime | number }}</td>
+						<td>{{dishinfo.promotionprice | number }}</td>
+						<td>{{dishinfo.createdate | date:'shortDate'}}</td>
+						<td>{{dishinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{dishinfo.createuser}}</td>
+						<td>{{dishinfo.modifyuser}}</td>
+						<td>{{dishinfo.delflg}}</td>
+						<td>{{dishinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/dishinfo/{{dishinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

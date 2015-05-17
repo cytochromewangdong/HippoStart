@@ -1,0 +1,40 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Mediaresource' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'mediaresource.uid' | translate }}</th>
+						<th>{{ 'mediaresource.type' | translate }}</th>
+						<th>{{ 'mediaresource.userid' | translate }}</th>
+						<th>{{ 'mediaresource.savepath' | translate }}</th>
+						<th>{{ 'mediaresource.url' | translate }}</th>
+						<th>{{ 'mediaresource.createdate' | translate }}</th>
+						<th>{{ 'mediaresource.modifydate' | translate }}</th>
+						<th>{{ 'mediaresource.createuser' | translate }}</th>
+						<th>{{ 'mediaresource.modifyuser' | translate }}</th>
+						<th>{{ 'mediaresource.delflg' | translate }}</th>
+						<th>{{ 'mediaresource.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/mediaresource/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="mediaresource in mediaresources">
+						<td>{{mediaresource.uid}}</td>
+						<td>{{mediaresource.type}}</td>
+						<td>{{mediaresource.userid | number }}</td>
+						<td>{{mediaresource.savepath}}</td>
+						<td>{{mediaresource.url}}</td>
+						<td>{{mediaresource.createdate | date:'shortDate'}}</td>
+						<td>{{mediaresource.modifydate | date:'shortDate'}}</td>
+						<td>{{mediaresource.createuser}}</td>
+						<td>{{mediaresource.modifyuser}}</td>
+						<td>{{mediaresource.delflg}}</td>
+						<td>{{mediaresource.platform}}</td>
+						<td><a class="btn btn-info" href="#/mediaresource/{{mediaresource.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

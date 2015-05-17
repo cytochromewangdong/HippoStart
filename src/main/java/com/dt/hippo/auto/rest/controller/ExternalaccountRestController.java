@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.ExternalaccountListItem;
  * Spring MVC controller for 'Externalaccount' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class ExternalaccountRestController {
 
 	@Resource

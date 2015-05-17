@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.ScoreinfoListItem;
  * Spring MVC controller for 'Scoreinfo' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class ScoreinfoRestController {
 
 	@Resource

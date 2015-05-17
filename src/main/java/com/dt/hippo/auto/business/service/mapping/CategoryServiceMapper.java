@@ -40,7 +40,6 @@ public class CategoryServiceMapper extends AbstractServiceMapper {
 
 		//--- Generic mapping 
 		Category category = map(categoryEntity, Category.class);
-
 		return category;
 	}
 	

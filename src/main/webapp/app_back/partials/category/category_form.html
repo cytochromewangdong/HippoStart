@@ -1,0 +1,88 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Category' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="category_corpid" class="col-sm-2 control-label">{{ 'category.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_corpid" name="corpid" ng-model="category.corpid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_uid" class="col-sm-2 control-label">{{ 'category.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_uid" name="uid" ng-model="category.uid" class="form-control" maxLength="5"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_name" class="col-sm-2 control-label">{{ 'category.name' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_name" name="name" ng-model="category.name" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_description" class="col-sm-2 control-label">{{ 'category.description' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_description" name="description" ng-model="category.description" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_imageurl" class="col-sm-2 control-label">{{ 'category.imageurl' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_imageurl" name="imageurl" ng-model="category.imageurl" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_createdate" class="col-sm-2 control-label">{{ 'category.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="category_createdate" bs-datepicker data-autoclose="1" ng-model="category.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_modifydate" class="col-sm-2 control-label">{{ 'category.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="category_modifydate" bs-datepicker data-autoclose="1" ng-model="category.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_createuser" class="col-sm-2 control-label">{{ 'category.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_createuser" name="createuser" ng-model="category.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_modifyuser" class="col-sm-2 control-label">{{ 'category.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_modifyuser" name="modifyuser" ng-model="category.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_delflg" class="col-sm-2 control-label">{{ 'category.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_delflg" name="delflg" ng-model="category.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_platform" class="col-sm-2 control-label">{{ 'category.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_platform" name="platform" ng-model="category.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(category.corpid, category.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/category">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

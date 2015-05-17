@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.SequenceListItem;
  * Spring MVC controller for 'Sequence' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class SequenceRestController {
 
 	@Resource

@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.MediaresourceListItem;
  * Spring MVC controller for 'Mediaresource' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class MediaresourceRestController {
 
 	@Resource

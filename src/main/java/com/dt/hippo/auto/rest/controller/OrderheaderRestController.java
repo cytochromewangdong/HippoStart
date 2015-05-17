@@ -26,6 +26,7 @@ import com.dt.hippo.auto.web.listitem.OrderheaderListItem;
  * Spring MVC controller for 'Orderheader' management.
  */
 @Controller
+@RequestMapping("/rest")
 public class OrderheaderRestController {
 
 	@Resource

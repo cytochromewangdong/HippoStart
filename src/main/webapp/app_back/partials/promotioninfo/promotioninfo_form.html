@@ -1,0 +1,106 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Promotioninfo' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="promotioninfo_uid" class="col-sm-2 control-label">{{ 'promotioninfo.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_uid" name="uid" ng-model="promotioninfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_corpid" class="col-sm-2 control-label">{{ 'promotioninfo.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_corpid" name="corpid" ng-model="promotioninfo.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_name" class="col-sm-2 control-label">{{ 'promotioninfo.name' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_name" name="name" ng-model="promotioninfo.name" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_description" class="col-sm-2 control-label">{{ 'promotioninfo.description' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_description" name="description" ng-model="promotioninfo.description" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_imageurl" class="col-sm-2 control-label">{{ 'promotioninfo.imageurl' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_imageurl" name="imageurl" ng-model="promotioninfo.imageurl" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_promotiontime" class="col-sm-2 control-label">{{ 'promotioninfo.promotiontime' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_promotiontime" name="promotiontime" ng-model="promotioninfo.promotiontime" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_promotionendtime" class="col-sm-2 control-label">{{ 'promotioninfo.promotionendtime' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_promotionendtime" name="promotionendtime" ng-model="promotioninfo.promotionendtime" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_isapplied" class="col-sm-2 control-label">{{ 'promotioninfo.isapplied' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_isapplied" name="isapplied" ng-model="promotioninfo.isapplied" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_createdate" class="col-sm-2 control-label">{{ 'promotioninfo.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotioninfo_createdate" bs-datepicker data-autoclose="1" ng-model="promotioninfo.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_modifydate" class="col-sm-2 control-label">{{ 'promotioninfo.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotioninfo_modifydate" bs-datepicker data-autoclose="1" ng-model="promotioninfo.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_createuser" class="col-sm-2 control-label">{{ 'promotioninfo.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_createuser" name="createuser" ng-model="promotioninfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_modifyuser" class="col-sm-2 control-label">{{ 'promotioninfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_modifyuser" name="modifyuser" ng-model="promotioninfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_delflg" class="col-sm-2 control-label">{{ 'promotioninfo.delflg' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_delflg" name="delflg" ng-model="promotioninfo.delflg" class="form-control" maxLength="4" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_platform" class="col-sm-2 control-label">{{ 'promotioninfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_platform" name="platform" ng-model="promotioninfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(promotioninfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/promotioninfo">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>
