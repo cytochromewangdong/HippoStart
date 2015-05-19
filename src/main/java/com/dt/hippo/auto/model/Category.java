@@ -5,10 +5,7 @@
 package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
-
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
+import java.util.List;
 
 public class Category extends com.dt.hippo.auto.model.base.Category implements Serializable {
 
@@ -18,9 +15,21 @@ public class Category extends com.dt.hippo.auto.model.base.Category implements S
     //----------------------------------------------------------------------
 
 
-
+    protected List<Dishinfo> listOfDishinfo;
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
+
+
+	public List<Dishinfo> getListOfDishinfo()
+	{
+		return listOfDishinfo;
+	}
+
+
+	public void setListOfDishinfo(List<Dishinfo> listOfDishinfo)
+	{
+		this.listOfDishinfo = listOfDishinfo;
+	}
 
 }

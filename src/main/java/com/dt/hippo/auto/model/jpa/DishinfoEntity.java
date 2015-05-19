@@ -47,7 +47,9 @@ public class DishinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishinfoEnt
         @JoinColumn(name="corpId", referencedColumnName="corpId"),
         @JoinColumn(name="categoryId", referencedColumnName="uid") } )
     protected CategoryEntity category    ;
+    
     @OneToMany(mappedBy="dishinfo", targetEntity=DishspecificationinfoEntity.class)
+    @OrderBy("orderindex ASC")
     protected List<DishspecificationinfoEntity> listOfDishspecificationinfo;
 
 

@@ -204,7 +204,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	public SwaggerSpringMvcPlugin customImplementation() {
 
 		return new SwaggerSpringMvcPlugin(this.springSwaggerConfig).apiInfo(
-				apiInfo()).includePatterns(".*api.*"); // assuming the API lives
+				apiInfo()).includePatterns(".*api.*");//.includePatterns(".*api.*"); // assuming the API lives
 														// at something like
 														// http://myapp/api
 	}
