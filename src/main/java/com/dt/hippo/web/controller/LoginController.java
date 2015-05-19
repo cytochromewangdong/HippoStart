@@ -73,7 +73,7 @@ public class LoginController extends BaseController
 	{
 		// myComboinfoService.createComboInfo();
 //		categoryJpaRepository.findWhatIWant(1);
-		categoryJpaRepository.findByName("test"); 
+//		categoryJpaRepository.findByName("test"); 
 //		customerServiceProxy.getSeqence();
 		return new BaseResult(ErroConstant.NOT_LOGIN,
 				this.getNotLoginError(), "/register");

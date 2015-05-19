@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -36,12 +37,13 @@ import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
  */
 @Configuration
 @ComponentScan(basePackages = { "com.dt.hippo.web.controller",
-		"com.dt.hippo.auto.web", "com.dt.hippo.auto.rest" })
+		"com.dt.hippo.auto.web", "com.dt.hippo.auto.rest","com.dt.hippo.web.common" })
 // ,"com.dt.hippo.auto.rest","com.dt.hippo.auto.web"
 // @ComponentScan(basePackages = { "com.dt.hippo.web.test"})
 // //,"com.dt.hippo.auto.rest","com.dt.hippo.auto.web"
 @EnableSwagger
 @EnableWebMvc
+@EnableAspectJAutoProxy
 // @ImportResource("classpath:dispatcher-servlet.xml")
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 

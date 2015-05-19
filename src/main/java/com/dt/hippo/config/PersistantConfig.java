@@ -19,7 +19,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages="com.dt.hippo.auto.data.repository.jpa,com.dt.hippo.my.repository")
+@EnableJpaRepositories(basePackages={"com.dt.hippo.auto.data.repository.jpa","com.dt.hippo.my.repository"},entityManagerFactoryRef="entityManagerFactoryBean")
 public class PersistantConfig {
 
     private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";

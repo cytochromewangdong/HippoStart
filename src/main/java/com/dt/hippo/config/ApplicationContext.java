@@ -6,13 +6,13 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan(basePackages = {"com.dt.hippo.service","com.dt.hippo.auto","com.dt.hippo.my", "com.dt.hippo.business"})//"com.dt.hippo.config",
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ImportResource("classpath:applicationContext.xml")
 @PropertySource("classpath:application.properties")
 @Import({CacheConfig.class, PersistantConfig.class, SecurityConfig.class})//
-
+@EnableAspectJAutoProxy
 public class ApplicationContext {
     
 //    private static final String VIEW_RESOLVER_PREFIX = "/WEB-INF/jsp/";

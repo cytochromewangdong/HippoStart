@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.dt.hippo.auto.business.service.mapping.CategoryServiceMapper;
 import com.dt.hippo.auto.model.Category;
 import com.dt.hippo.auto.model.jpa.CategoryEntity;
@@ -13,6 +16,8 @@ import com.dt.hippo.business.base.SuperService;
 import com.dt.hippo.my.repository.CstCategoryJpaRepository;
 import com.dt.hippo.my.service.CstBusinessService;
 
+@Service
+@Transactional
 public class CstBusinessServiceImpl extends SuperService
 		implements CstBusinessService
 {
@@ -21,7 +26,8 @@ public class CstBusinessServiceImpl extends SuperService
 
 	@Resource
 	protected CategoryServiceMapper categoryServiceMapper;
-	
+
+	@Transactional(readOnly = true)
 	public List<Category> getAllValidCategoryAndDishInfoOfCorp(
 			long corpid)
 	{
@@ -30,17 +36,20 @@ public class CstBusinessServiceImpl extends SuperService
 		List<Category> beans = new ArrayList<Category>();
 		for (CategoryEntity category : categoryList)
 		{
-			category.setListOfDishinfo(this.filterStatus(category.getListOfDishinfo()));
-			for(DishinfoEntity dish : category.getListOfDishinfo())
+			category.setListOfDishinfo(this
+					.filterStatus(category.getListOfDishinfo()));
+			for (DishinfoEntity dish : category
+					.getListOfDishinfo())
 			{
-				dish.setListOfDishspecificationinfo(this.filterStatus(dish.getListOfDishspecificationinfo()));
-				
+				dish.setListOfDishspecificationinfo(this.filterStatus(dish
+						.getListOfDishspecificationinfo()));
+
 			}
-			beans.add(categoryServiceMapper.mapCategoryEntityToCategory(category));
+			beans.add(categoryServiceMapper
+					.mapCategoryEntityToCategory(category));
 		}
-		
+
 		return beans;
-		
 
 	}
 }
