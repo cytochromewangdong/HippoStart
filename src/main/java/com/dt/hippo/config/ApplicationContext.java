@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages = {"com.dt.hippo.service","com.dt.hippo.auto","com.dt.hippo.my"})//"com.dt.hippo.config",
+@ComponentScan(basePackages = {"com.dt.hippo.service","com.dt.hippo.auto","com.dt.hippo.my", "com.dt.hippo.business"})//"com.dt.hippo.config",
 @EnableTransactionManagement
 //@EnableWebMvc
 @ImportResource("classpath:applicationContext.xml")

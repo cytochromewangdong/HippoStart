@@ -1,7 +1,6 @@
 package com.dt.hippo.auto.data.repository.jpa;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-
 import com.dt.hippo.auto.model.jpa.AccountEntity;
 
 /**
@@ -9,5 +8,5 @@ import com.dt.hippo.auto.model.jpa.AccountEntity;
  */
 public interface AccountJpaRepository extends PagingAndSortingRepository<AccountEntity, Long> {
 
-	AccountEntity findUserByUsernameAndUsernamehashcode(String username, Integer usernamehashcode);
+	AccountEntity findUserByUsernameAndUsernamehashcode(String username, int hashcode);
 }

@@ -6,12 +6,12 @@ package com.dt.hippo.web.config;
 import java.util.List;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -25,6 +25,10 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
+import com.mangofactory.swagger.models.dto.ApiInfo;
+import com.mangofactory.swagger.plugin.EnableSwagger;
+import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
 
 /**
  * @author Siva
@@ -32,10 +36,11 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  */
 @Configuration
 @ComponentScan(basePackages = { "com.dt.hippo.web.controller",
-		"com.dt.hippo.auto.web","com.dt.hippo.auto.rest" })
+		"com.dt.hippo.auto.web", "com.dt.hippo.auto.rest" })
 // ,"com.dt.hippo.auto.rest","com.dt.hippo.auto.web"
 // @ComponentScan(basePackages = { "com.dt.hippo.web.test"})
 // //,"com.dt.hippo.auto.rest","com.dt.hippo.auto.web"
+@EnableSwagger
 @EnableWebMvc
 // @ImportResource("classpath:dispatcher-servlet.xml")
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
@@ -62,6 +67,21 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		return bean;
 	}
 
+	// <beans:bean id="documentationController"
+	// class="com.knappsack.swagger4springweb.controller.ApiDocumentationController"
+	// p:basePath="http://localhost:8080/yourapp"
+	// p:baseControllerPackage="com.knappsack.swagger4springweb.controllers.api"
+	// p:baseModelPackage="com.knappsack.swagger4springweb.models"
+	// p:apiVersion="v1" />
+	// @Bean
+	// public ApiDocumentationController documentationController()
+	// {
+	// ApiDocumentationController documentationController = new
+	// ApiDocumentationController();
+	// documentationController.setBaseControllerPackage("com.dt.hippo.auto.rest");
+	// documentationController.setApiVersion("v1");
+	// return documentationController;
+	// }
 	@Bean
 	public UrlBasedViewResolver resolver() {
 		// InternalResourceViewResolver url = new
@@ -103,8 +123,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations(
-				"/resources/");
+		registry.addResourceHandler("/resources/**", "*.html")
+				.addResourceLocations("/resources/", "/");
+		// <mvc:resources mapping="*.html" location="/" />
 		// registry.addResourceHandler("/js/**").addResourceLocations("/js/");
 		// .addResourceLocations("/resources/")
 		// .addResourceLocations("/css/**")
@@ -132,6 +153,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	MappingJackson2HttpMessageConverter converter() {
 		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
 		// converter.getObjectMapper()
+		// converter.setObjectMapper(new
+		// com.knappsack.swagger4springweb.util.ScalaObjectMapper());
 		converter
 				.getObjectMapper()
 				.setSerializationInclusion(JsonInclude.Include.NON_NULL)
@@ -139,7 +162,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 				.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false)
 				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
 						false);
-
 		// .setSerializationInclusion(JsonInclude.Include.NON_NULL)
 		// .configure(SerializationFeature.WRAP_ROOT_VALUE, true)
 		// .configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true)
@@ -166,5 +188,29 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		mappings.put("org.springframework.dao.DataAccessException", "error");
 		b.setExceptionMappings(mappings);
 		return b;
+	}
+
+	private SpringSwaggerConfig springSwaggerConfig;
+
+	// @SuppressWarnings("SpringJavaAutowiringInspection")
+	@Autowired
+	public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig) {
+		this.springSwaggerConfig = springSwaggerConfig;
+	}
+
+	@Bean
+	public SwaggerSpringMvcPlugin customImplementation() {
+
+		return new SwaggerSpringMvcPlugin(this.springSwaggerConfig).apiInfo(
+				apiInfo()).includePatterns(".*api.*"); // assuming the API lives
+														// at something like
+														// http://myapp/api
+	}
+
+	private ApiInfo apiInfo() {
+		ApiInfo apiInfo = new ApiInfo("Hippo API List",
+				"This is a description of your API.", "API",
+				"me@wherever.com", "API License", "API License URL");
+		return apiInfo;
 	}
 }

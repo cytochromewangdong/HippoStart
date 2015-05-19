@@ -61,7 +61,7 @@ import $import;
 //@NamedQueries ( {
 //  @NamedQuery ( name="${entity.name}.countAll", query="SELECT COUNT(x) FROM ${entity.name} x" )
 //} )
-public class ${entity.name} implements Serializable {
+public class ${entity.name} extends com.dt.hippo.core.base.BaseBeanCommon implements Serializable {
 
     protected static final long serialVersionUID = 1L;
 

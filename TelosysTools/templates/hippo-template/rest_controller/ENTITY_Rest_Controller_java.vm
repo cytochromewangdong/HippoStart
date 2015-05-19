@@ -52,6 +52,7 @@ import ${ROOT_PKG}.web.listitem.${entity.name}ListItem;
  * Spring MVC controller for '${entity.name}' management.
  */
 @Controller
+@RequestMapping("/api")
 public class ${entity.name}RestController {
 
 	@Resource

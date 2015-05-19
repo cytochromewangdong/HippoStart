@@ -42,7 +42,7 @@ public class MyComboinfoServiceImpl extends ComboinfoServiceImpl implements
 		dishinfoEntity.setCorpid(1l);
 		dishinfoEntity.setNo("210");
 		dishinfoEntity.setDishname("wangdong");
-		dishinfoEntity.setPrice(5.8);
+//		dishinfoEntity.setPrice(5.8);
 		// dishinfoEntity.setType((byte)1);
 		dishinfoJpaRepository.save(dishinfoEntity);
 
@@ -103,38 +103,38 @@ public class MyComboinfoServiceImpl extends ComboinfoServiceImpl implements
 																				// DishinfoEntity();
 		// CategoryEntity category = dishinfoEntity.getCategory();
 
-		List<ComboinfoEntity> list2 = dishinfoEntity.getListOfComboinfo();
+//		List<ComboinfoEntity> list2 = dishinfoEntity.getListOfComboinfo();
 		CategoryEntityKey categoryKey = new CategoryEntityKey(1l, "C01");
 
 		categoryKey = new CategoryEntityKey(1l, "C04");
 		// category = categoryJpaRepository.findOne(categoryKey);
 		// List<DishinfoEntity> list = category.getListOfDishinfo();
 		// System.out.println(list);
-		System.out.println(list2);
+//		System.out.println(list2);
 		dishinfoEntity = new DishinfoEntity();
 		dishinfoEntity.setCategoryid("C01");
 		dishinfoEntity.setCorpid(1l);
 		// dishinfoEntity.setCategory(category);
 		dishinfoEntity.setNo("114");
 		dishinfoEntity.setDishname("测试套餐");
-		dishinfoEntity.setPrice(18.0);
-		dishinfoEntity.setType((byte) 1);
+//		dishinfoEntity.setPrice(18.0);
+//		dishinfoEntity.setType((byte) 1);
 
 //		dishinfoEntity = dishinfoJpaRepository.save(dishinfoEntity);
 
 		List<ComboinfoEntity> comboList = new ArrayList<ComboinfoEntity>();
-		dishinfoEntity.setListOfComboinfo(comboList);
+//		dishinfoEntity.setListOfComboinfo(comboList);
 		ComboinfoEntity comboinfoEntity = new ComboinfoEntity();
 		// comboinfoEntity.setDishinfo(dishinfoEntity);
 //		comboinfoEntity.setUid(dishinfoEntity.getUid());
 //		comboinfoEntity.setChildid(7l);
 //		comboinfoEntity.setSpecificationid(0L);
-		comboinfoEntity.setMainDishinfo(dishinfoEntity);
-		comboinfoEntity.setDishinfo(dishinfoJpaRepository.findOne(7l));
-		comboinfoEntity.setPlaceholder((byte) 1);
-		comboinfoEntity.setOrderinplaceholder((byte) 1);
-		comboinfoEntity.setAmount(2);
-		comboinfoEntity.setPricedifference(0.0);
+//		comboinfoEntity.setMainDishinfo(dishinfoEntity);
+//		comboinfoEntity.setDishinfo(dishinfoJpaRepository.findOne(7l));
+//		comboinfoEntity.setPlaceholder((byte) 1);
+//		comboinfoEntity.setOrderinplaceholder((byte) 1);
+//		comboinfoEntity.setAmount(2);
+//		comboinfoEntity.setPricedifference(0.0);
 		
 		DishspecificationinfoEntity  specification = new DishspecificationinfoEntity();
 		comboinfoEntity.setDishspecificationinfo(specification);

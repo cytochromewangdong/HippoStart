@@ -26,7 +26,7 @@ import javax.validation.constraints.*;
 import $import;
 #end
 
-public class $entity.name implements Serializable {
+public class $entity.name extends com.dt.hippo.core.base.BaseBeanCommon implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
