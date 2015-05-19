@@ -15,6 +15,9 @@ import com.dt.hippo.auto.model.jpa.DishinfoEntity;
 import com.dt.hippo.business.base.SuperService;
 import com.dt.hippo.my.repository.CstCategoryJpaRepository;
 import com.dt.hippo.my.service.CstBusinessService;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.Lists;
 
 @Service
 @Transactional
@@ -36,8 +39,25 @@ public class CstBusinessServiceImpl extends SuperService
 		List<Category> beans = new ArrayList<Category>();
 		for (CategoryEntity category : categoryList)
 		{
-			category.setListOfDishinfo(this
-					.filterStatus(category.getListOfDishinfo()));
+//			category.setListOfDishinfo(this
+//					.filterStatus(category.getListOfDishinfo()));
+			category.setListOfDishinfo(Lists
+					.newArrayList(Collections2.filter(
+							category.getListOfDishinfo(),
+							new Predicate<DishinfoEntity>()
+							{
+
+								@Override
+								public boolean apply(
+										DishinfoEntity input)
+								{
+									return (input.getStatus() == null || input
+											.getStatus().equals(
+													0))
+											&& input.getPaused() == 0;
+								}
+							})));
+			
 			for (DishinfoEntity dish : category
 					.getListOfDishinfo())
 			{
@@ -52,4 +72,5 @@ public class CstBusinessServiceImpl extends SuperService
 		return beans;
 
 	}
+	
 }

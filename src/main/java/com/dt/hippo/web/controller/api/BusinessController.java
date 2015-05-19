@@ -29,7 +29,6 @@ public class BusinessController
 	{
 		DishCom com = new DishCom();
 		com.setCategoryList(cstBusinessService.getAllValidCategoryAndDishInfoOfCorp(corpid));
-		testAoP.test123();
 		return com;
 	}
 }
