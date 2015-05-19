@@ -54,7 +54,7 @@ public class CstBusinessServiceImpl extends SuperService
 									return (input.getStatus() == null || input
 											.getStatus().equals(
 													0))
-											&& input.getPaused() == 0;
+											&& input.getPaused() == 0 && input.getNotforsale() == 0;
 								}
 							})));
 			
