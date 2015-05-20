@@ -7,5 +7,5 @@ import com.dt.hippo.auto.model.Category;
 public interface CstBusinessService
 {
 	public List<Category> getAllValidCategoryAndDishInfoOfCorp(
-			long corpid);
+			long storeid);
 }
