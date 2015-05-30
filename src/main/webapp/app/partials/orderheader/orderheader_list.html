@@ -8,12 +8,12 @@
 					<tr>
 						<th>{{ 'orderheader.uid' | translate }}</th>
 						<th>{{ 'orderheader.orderno' | translate }}</th>
+						<th>{{ 'orderheader.corpid' | translate }}</th>
+						<th>{{ 'orderheader.parentuid' | translate }}</th>
 						<th>{{ 'orderheader.parentorderno' | translate }}</th>
 						<th>{{ 'orderheader.paymentno' | translate }}</th>
-						<th>{{ 'orderheader.payacount' | translate }}</th>
-						<th>{{ 'orderheader.totalacount' | translate }}</th>
-						<th>{{ 'orderheader.discount' | translate }}</th>
-						<th>{{ 'orderheader.discountid' | translate }}</th>
+						<th>{{ 'orderheader.realpaymentamount' | translate }}</th>
+						<th>{{ 'orderheader.paymentamount' | translate }}</th>
 						<th>{{ 'orderheader.orderstatus' | translate }}</th>
 						<th>{{ 'orderheader.orderinfo' | translate }}</th>
 						<th>{{ 'orderheader.paymentmethod' | translate }}</th>
@@ -21,12 +21,15 @@
 						<th>{{ 'orderheader.useragent' | translate }}</th>
 						<th>{{ 'orderheader.userid' | translate }}</th>
 						<th>{{ 'orderheader.storeid' | translate }}</th>
+						<th>{{ 'orderheader.delievertime' | translate }}</th>
+						<th>{{ 'orderheader.canceltime' | translate }}</th>
+						<th>{{ 'orderheader.confirmtime' | translate }}</th>
 						<th>{{ 'orderheader.ip' | translate }}</th>
 						<th>{{ 'orderheader.createdate' | translate }}</th>
 						<th>{{ 'orderheader.modifydate' | translate }}</th>
 						<th>{{ 'orderheader.createuser' | translate }}</th>
 						<th>{{ 'orderheader.modifyuser' | translate }}</th>
-						<th>{{ 'orderheader.delflg' | translate }}</th>
+						<th>{{ 'orderheader.status' | translate }}</th>
 						<th>{{ 'orderheader.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/orderheader/new'>{{ 'create' | translate }}</a></th>
 					</tr>
@@ -35,25 +38,28 @@
 					<tr ng-repeat="orderheader in orderheaders">
 						<td>{{orderheader.uid}}</td>
 						<td>{{orderheader.orderno}}</td>
+						<td>{{orderheader.corpid | number }}</td>
+						<td>{{orderheader.parentuid | number }}</td>
 						<td>{{orderheader.parentorderno}}</td>
 						<td>{{orderheader.paymentno}}</td>
-						<td>{{orderheader.payacount | number }}</td>
-						<td>{{orderheader.totalacount | number }}</td>
-						<td>{{orderheader.discount | number }}</td>
-						<td>{{orderheader.discountid}}</td>
-						<td>{{orderheader.orderstatus}}</td>
+						<td>{{orderheader.realpaymentamount | number }}</td>
+						<td>{{orderheader.paymentamount | number }}</td>
+						<td>{{orderheader.orderstatus | number }}</td>
 						<td>{{orderheader.orderinfo}}</td>
-						<td>{{orderheader.paymentmethod}}</td>
+						<td>{{orderheader.paymentmethod | number }}</td>
 						<td>{{orderheader.tradedate | date:'shortDate'}}</td>
 						<td>{{orderheader.useragent}}</td>
 						<td>{{orderheader.userid | number }}</td>
 						<td>{{orderheader.storeid | number }}</td>
+						<td>{{orderheader.delievertime | date:'shortDate'}}</td>
+						<td>{{orderheader.canceltime | date:'shortDate'}}</td>
+						<td>{{orderheader.confirmtime | date:'shortDate'}}</td>
 						<td>{{orderheader.ip}}</td>
 						<td>{{orderheader.createdate | date:'shortDate'}}</td>
 						<td>{{orderheader.modifydate | date:'shortDate'}}</td>
 						<td>{{orderheader.createuser}}</td>
 						<td>{{orderheader.modifyuser}}</td>
-						<td>{{orderheader.delflg}}</td>
+						<td>{{orderheader.status | number }}</td>
 						<td>{{orderheader.platform}}</td>
 						<td><a class="btn btn-info" href="#/orderheader/{{orderheader.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>

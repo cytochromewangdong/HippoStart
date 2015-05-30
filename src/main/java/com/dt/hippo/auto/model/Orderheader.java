@@ -5,11 +5,11 @@
 package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
 public class Orderheader extends com.dt.hippo.auto.model.base.Orderheader implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,10 +17,21 @@ public class Orderheader extends com.dt.hippo.auto.model.base.Orderheader implem
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
 
+    private List<Orderdetail> listOfOrderDetail;
 
 
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
 
+    public List<Orderdetail> getListOfOrderDetail()
+    {
+        return listOfOrderDetail;
+    }
+
+    public void setListOfOrderDetail(List<Orderdetail> listOfOrderDetail)
+    {
+        this.listOfOrderDetail = listOfOrderDetail;
+    }
+    
 }

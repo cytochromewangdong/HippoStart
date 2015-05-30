@@ -1,0 +1,40 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Adlist' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'adlist.uid' | translate }}</th>
+						<th>{{ 'adlist.dishid' | translate }}</th>
+						<th>{{ 'adlist.corpid' | translate }}</th>
+						<th>{{ 'adlist.startdate' | translate }}</th>
+						<th>{{ 'adlist.enddate' | translate }}</th>
+						<th>{{ 'adlist.createdate' | translate }}</th>
+						<th>{{ 'adlist.modifydate' | translate }}</th>
+						<th>{{ 'adlist.createuser' | translate }}</th>
+						<th>{{ 'adlist.modifyuser' | translate }}</th>
+						<th>{{ 'adlist.status' | translate }}</th>
+						<th>{{ 'adlist.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/adlist/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="adlist in adlists">
+						<td>{{adlist.uid}}</td>
+						<td>{{adlist.dishid | number }}</td>
+						<td>{{adlist.corpid | number }}</td>
+						<td>{{adlist.startdate | date:'shortDate'}}</td>
+						<td>{{adlist.enddate | date:'shortDate'}}</td>
+						<td>{{adlist.createdate | date:'shortDate'}}</td>
+						<td>{{adlist.modifydate | date:'shortDate'}}</td>
+						<td>{{adlist.createuser}}</td>
+						<td>{{adlist.modifyuser}}</td>
+						<td>{{adlist.status | number }}</td>
+						<td>{{adlist.platform}}</td>
+						<td><a class="btn btn-info" href="#/adlist/{{adlist.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

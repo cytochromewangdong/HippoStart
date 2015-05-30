@@ -18,12 +18,6 @@ promotiondetailinfoModule.factory('Promotiondetailinfo', ['$http', 'restURL', fu
         if( promotiondetailinfo.uid == null || promotiondetailinfo.uid == '' ) {
 			errors.push('promotiondetailinfo.id.not.defined');
 		}
-        if( promotiondetailinfo.dishid == null || promotiondetailinfo.dishid == '' ) {
-			errors.push('promotiondetailinfo.id.not.defined');
-		}
-        if( promotiondetailinfo.specificationid == null || promotiondetailinfo.specificationid == '' ) {
-			errors.push('promotiondetailinfo.id.not.defined');
-		}
 		if(errors.length > 0) {
 			throw errors;
 		}
@@ -49,12 +43,10 @@ promotiondetailinfoModule.factory('Promotiondetailinfo', ['$http', 'restURL', fu
         /**
          * Get promotiondetailinfo
          * @param uid uid
-         * @param dishid dishid
-         * @param specificationid specificationid
          * @return promotiondetailinfo
          */
-    	get: function(uid, dishid, specificationid) {
-    	    var url = entityURL + '/' + uid + '/' + dishid + '/' + specificationid;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -76,18 +68,16 @@ promotiondetailinfoModule.factory('Promotiondetailinfo', ['$http', 'restURL', fu
          */
     	update: function(promotiondetailinfo) {
 			validate(promotiondetailinfo)
-			var url = entityURL + '/' + promotiondetailinfo.uid + '/' + promotiondetailinfo.dishid + '/' + promotiondetailinfo.specificationid;
+			var url = entityURL + '/' + promotiondetailinfo.uid;
 			return $http.put(url, promotiondetailinfo);
     	},
 
 		/**
          * Delete promotiondetailinfo
          * @param uid uid
-         * @param dishid dishid
-         * @param specificationid specificationid
          */
-    	delete: function(uid, dishid, specificationid) {
-        	var url = entityURL + '/' + uid + '/' + dishid + '/' + specificationid;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

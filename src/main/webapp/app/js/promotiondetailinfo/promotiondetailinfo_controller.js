@@ -3,8 +3,8 @@
 /**
  * Controller for Promotiondetailinfo
  **/
-promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetailinfo',  'Dishinfo', 'Dishspecificationinfo', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Promotiondetailinfo, Dishinfo, Dishspecificationinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
-	 'Dishinfo',  'Dishspecificationinfo',     // edition mode
+promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetailinfo',  'Dishspecificationinfo', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Promotiondetailinfo, Dishspecificationinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+	 'Dishspecificationinfo',     // edition mode
     $scope.mode = null;
     
 	// list of promotiondetailinfos
@@ -14,8 +14,6 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
 
 	// referencies entities
 	$scope.items = {};
-    // dishinfos
-	$scope.items.dishinfos = [];
     // dishspecificationinfos
 	$scope.items.dishspecificationinfos = [];
 
@@ -23,11 +21,6 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
      * Load all referencies entities
      */
 	$scope.loadAllReferencies = function() {
-		Dishinfo.getAllAsListItems().then(
-				function(success) {
-        	        $scope.items.dishinfos = success.data;
-            	}, 
-	            MessageHandler.manageError);
 		Dishspecificationinfo.getAllAsListItems().then(
 				function(success) {
         	        $scope.items.dishspecificationinfos = success.data;
@@ -53,10 +46,10 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
     /**
      * Refresh promotiondetailinfo
      */
-    $scope.refreshPromotiondetailinfo = function(uid, dishid, specificationid) {
+    $scope.refreshPromotiondetailinfo = function(uid) {
     	try {
         	$scope.promotiondetailinfo = null;
-	        Promotiondetailinfo.get(uid, dishid, specificationid).then(
+	        Promotiondetailinfo.get(uid).then(
 				function(success) {
         	        $scope.promotiondetailinfo = success.data;
             	}, 
@@ -76,9 +69,9 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
     /**
      * Go to the promotiondetailinfo edit page
      */
-    $scope.goToPromotiondetailinfo = function(uid, dishid, specificationid) {
-        $scope.refreshPromotiondetailinfo(uid, dishid, specificationid);
-        $location.path('/promotiondetailinfo/'+uid+'/'+dishid+'/'+specificationid);
+    $scope.goToPromotiondetailinfo = function(uid) {
+        $scope.refreshPromotiondetailinfo(uid);
+        $location.path('/promotiondetailinfo/'+uid);
     }
 
     // Actions
@@ -108,10 +101,10 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
     /**
      * Delete promotiondetailinfo
      */
-    $scope.delete = function(uid, dishid, specificationid) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Promotiondetailinfo.delete(uid, dishid, specificationid).then(
+    	    Promotiondetailinfo.delete(uid).then(
 				function(success) {
                 	$scope.goToPromotiondetailinfoList();
             	}, 
@@ -129,10 +122,10 @@ promotiondetailinfoModule.controller('PromotiondetailinfoCtrl', ['Promotiondetai
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.uid != null && $routeParams.dishid != null && $routeParams.specificationid != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshPromotiondetailinfo($routeParams.uid, $routeParams.dishid, $routeParams.specificationid);
+		$scope.refreshPromotiondetailinfo($routeParams.uid);
     } else {
         // List page
         $scope.refreshPromotiondetailinfoList();

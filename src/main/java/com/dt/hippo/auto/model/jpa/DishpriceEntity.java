@@ -40,8 +40,6 @@ public class DishpriceEntity extends com.dt.hippo.auto.model.jpa.base.DishpriceE
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-    @ManyToOne
-    @JoinColumn(name="specificationId", referencedColumnName="uid")
     protected DishspecificationinfoEntity dishspecificationinfo;
 
 
@@ -51,6 +49,8 @@ public class DishpriceEntity extends com.dt.hippo.auto.model.jpa.base.DishpriceE
     public void setDishspecificationinfo( DishspecificationinfoEntity dishspecificationinfo ) {
         this.dishspecificationinfo = dishspecificationinfo;
     }
+    @ManyToOne
+    @JoinColumn(name="specificationId", referencedColumnName="uid")
     public DishspecificationinfoEntity getDishspecificationinfo() {
         return this.dishspecificationinfo;
     }

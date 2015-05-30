@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.dt.hippo.business.TestAoP;
 import com.dt.hippo.business.model.com.DishCom;
 import com.dt.hippo.my.service.CstBusinessService;
+import com.wordnik.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/api")
@@ -22,14 +23,16 @@ public class BusinessController
 	@Resource
 	TestAoP testAoP;
 
-	@RequestMapping(value = "/dish/{corpid}", method = {
+	@ApiOperation(value = "get the category list by store id", notes = "Return all past orders as well as the menus, prices, vouchers")
+	@RequestMapping(value = "/dish/{storeid}", method = {
 			RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
-	public DishCom category(@PathVariable("corpid") Long corpid)
+	public DishCom store(@PathVariable("storeid") Long storeid)
 	{
 		DishCom com = new DishCom();
-		com.setCategoryList(cstBusinessService
-				.getAllValidCategoryAndDishInfoOfCorp(corpid));
+//		com.setCategoryList(cstBusinessService
+//				.getStoreInfo(storeid).getCategoryList());
+		cstBusinessService.getStoreinfoForUser(storeid);
 		return com;
 	}
 }

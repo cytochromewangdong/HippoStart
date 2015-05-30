@@ -3,8 +3,8 @@
 /**
  * Controller for Comboinfo
  **/
-comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspecificationinfo', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Comboinfo, Dishinfo, Dishspecificationinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
-	 'Dishinfo',  'Dishspecificationinfo',     // edition mode
+comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishspecificationinfo', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Comboinfo, Dishspecificationinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+	 'Dishspecificationinfo',     // edition mode
     $scope.mode = null;
     
 	// list of comboinfos
@@ -14,8 +14,6 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
 
 	// referencies entities
 	$scope.items = {};
-    // dishinfos
-	$scope.items.dishinfos = [];
     // dishspecificationinfos
 	$scope.items.dishspecificationinfos = [];
 
@@ -23,11 +21,6 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
      * Load all referencies entities
      */
 	$scope.loadAllReferencies = function() {
-		Dishinfo.getAllAsListItems().then(
-				function(success) {
-        	        $scope.items.dishinfos = success.data;
-            	}, 
-	            MessageHandler.manageError);
 		Dishspecificationinfo.getAllAsListItems().then(
 				function(success) {
         	        $scope.items.dishspecificationinfos = success.data;
@@ -53,10 +46,10 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
     /**
      * Refresh comboinfo
      */
-    $scope.refreshComboinfo = function(id) {
+    $scope.refreshComboinfo = function(uid) {
     	try {
         	$scope.comboinfo = null;
-	        Comboinfo.get(id).then(
+	        Comboinfo.get(uid).then(
 				function(success) {
         	        $scope.comboinfo = success.data;
             	}, 
@@ -76,9 +69,9 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
     /**
      * Go to the comboinfo edit page
      */
-    $scope.goToComboinfo = function(id) {
-        $scope.refreshComboinfo(id);
-        $location.path('/comboinfo/'+id);
+    $scope.goToComboinfo = function(uid) {
+        $scope.refreshComboinfo(uid);
+        $location.path('/comboinfo/'+uid);
     }
 
     // Actions
@@ -108,10 +101,10 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
     /**
      * Delete comboinfo
      */
-    $scope.delete = function(id) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Comboinfo.delete(id).then(
+    	    Comboinfo.delete(uid).then(
 				function(success) {
                 	$scope.goToComboinfoList();
             	}, 
@@ -129,10 +122,10 @@ comboinfoModule.controller('ComboinfoCtrl', ['Comboinfo',  'Dishinfo', 'Dishspec
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.id != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshComboinfo($routeParams.id);
+		$scope.refreshComboinfo($routeParams.uid);
     } else {
         // List page
         $scope.refreshComboinfoList();

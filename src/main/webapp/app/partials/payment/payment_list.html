@@ -8,7 +8,8 @@
 					<tr>
 						<th>{{ 'payment.uid' | translate }}</th>
 						<th>{{ 'payment.userid' | translate }}</th>
-						<th>{{ 'payment.projectid' | translate }}</th>
+						<th>{{ 'payment.corpid' | translate }}</th>
+						<th>{{ 'payment.storeid' | translate }}</th>
 						<th>{{ 'payment.tradeno' | translate }}</th>
 						<th>{{ 'payment.orderno' | translate }}</th>
 						<th>{{ 'payment.ordercurrency' | translate }}</th>
@@ -21,6 +22,7 @@
 						<th>{{ 'payment.tradedate' | translate }}</th>
 						<th>{{ 'payment.useragent' | translate }}</th>
 						<th>{{ 'payment.rawreponsefrompaygate' | translate }}</th>
+						<th>{{ 'payment.paytype' | translate }}</th>
 						<th>{{ 'payment.createdate' | translate }}</th>
 						<th>{{ 'payment.modifydate' | translate }}</th>
 						<th>{{ 'payment.createuser' | translate }}</th>
@@ -34,19 +36,21 @@
 					<tr ng-repeat="payment in payments">
 						<td>{{payment.uid}}</td>
 						<td>{{payment.userid | number }}</td>
-						<td>{{payment.projectid | number }}</td>
+						<td>{{payment.corpid | number }}</td>
+						<td>{{payment.storeid | number }}</td>
 						<td>{{payment.tradeno}}</td>
 						<td>{{payment.orderno}}</td>
 						<td>{{payment.ordercurrency}}</td>
 						<td>{{payment.orderamount}}</td>
-						<td>{{payment.orderstatus}}</td>
+						<td>{{payment.orderstatus | number }}</td>
 						<td>{{payment.orderinfo}}</td>
 						<td>{{payment.riskinfo}}</td>
-						<td>{{payment.paymentmethod}}</td>
-						<td>{{payment.ismobile}}</td>
+						<td>{{payment.paymentmethod | number }}</td>
+						<td>{{payment.ismobile | number }}</td>
 						<td>{{payment.tradedate | date:'shortDate'}}</td>
 						<td>{{payment.useragent}}</td>
 						<td>{{payment.rawreponsefrompaygate}}</td>
+						<td>{{payment.paytype | number }}</td>
 						<td>{{payment.createdate | date:'shortDate'}}</td>
 						<td>{{payment.modifydate | date:'shortDate'}}</td>
 						<td>{{payment.createuser}}</td>

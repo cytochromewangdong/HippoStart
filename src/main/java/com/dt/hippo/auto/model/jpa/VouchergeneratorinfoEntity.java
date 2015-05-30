@@ -8,14 +8,17 @@
 package com.dt.hippo.auto.model.jpa;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
-
-import java.util.Date;
-
-import javax.persistence.*;
-
 //import com.dt.hippo.auto.model.jpa.base.VouchergeneratorinfoEntity;
 /**
  * Persistent class for entity stored in table "voucherGeneratorInfo"
@@ -41,9 +44,24 @@ public class VouchergeneratorinfoEntity extends com.dt.hippo.auto.model.jpa.base
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
 
+   protected List<LottoryvoucherinfoEntity> listOfLottoryvoucherinfo;
+
 
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
+   
+   @OneToMany(mappedBy="vouchergeneratorinfo", targetEntity=LottoryvoucherinfoEntity.class)
+   public List<LottoryvoucherinfoEntity> getListOfLottoryvoucherinfo()
+   {
+       return listOfLottoryvoucherinfo;
+   }
+
+   public void setListOfLottoryvoucherinfo(
+           List<LottoryvoucherinfoEntity> listOfLottoryvoucherinfo)
+   {
+       this.listOfLottoryvoucherinfo = listOfLottoryvoucherinfo;
+   }
+
 
 }

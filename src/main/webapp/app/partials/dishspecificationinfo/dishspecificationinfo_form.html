@@ -5,18 +5,21 @@
    		
 		<form class="well form-horizontal">
 			<div class="form-group">
-				<label for="dishspecificationinfo_dishid" class="col-sm-2 control-label">{{ 'dishspecificationinfo.dishid' | translate }}</label>
-				<div class="col-sm-10">
-                    <select id="dishspecificationinfo_dishid" ng-model="dishspecificationinfo.dishid" name="dishid" class="form-control" ng-disabled="mode != 'create'">
-						<option value=""></option>
-                        <option ng-repeat="dishinfo in items.dishinfos" title="{{dishinfo.label}}" ng-selected="{{dishinfo.value == dishspecificationinfo.dishid}}" value="{{dishinfo.value}}">{{dishinfo.label}}</option>
-                    </select>
-				</div>
-			</div>
-			<div class="form-group">
 				<label for="dishspecificationinfo_uid" class="col-sm-2 control-label">{{ 'dishspecificationinfo.uid' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="dishspecificationinfo_uid" name="uid" ng-model="dishspecificationinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishspecificationinfo_dishid" class="col-sm-2 control-label">{{ 'dishspecificationinfo.dishid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishspecificationinfo_dishid" name="dishid" ng-model="dishspecificationinfo.dishid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishspecificationinfo_ggno" class="col-sm-2 control-label">{{ 'dishspecificationinfo.ggno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishspecificationinfo_ggno" name="ggno" ng-model="dishspecificationinfo.ggno" class="form-control" maxLength="10" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -26,9 +29,21 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="dishspecificationinfo_corpid" class="col-sm-2 control-label">{{ 'dishspecificationinfo.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishspecificationinfo_corpid" name="corpid" ng-model="dishspecificationinfo.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="dishspecificationinfo_dishname" class="col-sm-2 control-label">{{ 'dishspecificationinfo.dishname' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="dishspecificationinfo_dishname" name="dishname" ng-model="dishspecificationinfo.dishname" class="form-control" maxLength="200" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishspecificationinfo_simplename" class="col-sm-2 control-label">{{ 'dishspecificationinfo.simplename' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishspecificationinfo_simplename" name="simplename" ng-model="dishspecificationinfo.simplename" class="form-control" maxLength="30" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -56,24 +71,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="dishspecificationinfo_promotiontime" class="col-sm-2 control-label">{{ 'dishspecificationinfo.promotiontime' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="dishspecificationinfo_promotiontime" name="promotiontime" ng-model="dishspecificationinfo.promotiontime" class="form-control" maxLength="11" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="dishspecificationinfo_promotionendtime" class="col-sm-2 control-label">{{ 'dishspecificationinfo.promotionendtime' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="dishspecificationinfo_promotionendtime" name="promotionendtime" ng-model="dishspecificationinfo.promotionendtime" class="form-control" maxLength="11" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="dishspecificationinfo_promotionprice" class="col-sm-2 control-label">{{ 'dishspecificationinfo.promotionprice' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="dishspecificationinfo_promotionprice" name="promotionprice" ng-model="dishspecificationinfo.promotionprice" class="form-control" maxLength="20" />
-				</div>
-			</div>
-			<div class="form-group">
 				<label for="dishspecificationinfo_createdate" class="col-sm-2 control-label">{{ 'dishspecificationinfo.createdate' | translate }}</label>
 				<div class="col-sm-10">
 					<input id="dishspecificationinfo_createdate" bs-datepicker data-autoclose="1" ng-model="dishspecificationinfo.createdate" name="createdate" class="form-control" />
@@ -98,9 +95,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="dishspecificationinfo_delflg" class="col-sm-2 control-label">{{ 'dishspecificationinfo.delflg' | translate }}</label>
+				<label for="dishspecificationinfo_status" class="col-sm-2 control-label">{{ 'dishspecificationinfo.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishspecificationinfo_delflg" name="delflg" ng-model="dishspecificationinfo.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="dishspecificationinfo_status" name="status" ng-model="dishspecificationinfo.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -113,7 +110,7 @@
 			<!-- ACTION BUTTONS -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-2">
-					<a role="button" class="btn btn-danger btn-block" ng-click="delete(dishspecificationinfo.dishid, dishspecificationinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(dishspecificationinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
 				</div>
     			<div class="col-sm-offset-4 col-sm-2">
 					<a role="button" class="btn btn-default btn-block" href="#/dishspecificationinfo">{{ 'cancel' | translate }}</a>

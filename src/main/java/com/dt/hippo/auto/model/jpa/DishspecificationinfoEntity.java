@@ -25,63 +25,74 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="dishSpecificationInfo", catalog="hippo" )
+@Table(name = "dishSpecificationInfo", catalog = "hippo")
 // Define named queries here
-@NamedQueries ( {
-  @NamedQuery ( name="DishspecificationinfoEntity.countAll", query="SELECT COUNT(x) FROM DishspecificationinfoEntity x" )
-} )
-@AttributeOverrides({
- @AttributeOverride(name = "dishid", column = @Column(name = "dishId", insertable = false, updatable = false))
+@NamedQueries({ @NamedQuery(name = "DishspecificationinfoEntity.countAll", query = "SELECT COUNT(x) FROM DishspecificationinfoEntity x") })
+@AttributeOverrides({ @AttributeOverride(name = "dishid", column = @Column(name = "dishId", insertable = false, updatable = false))
 
 })
-public class DishspecificationinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishspecificationinfoEntity implements Serializable {
+public class DishspecificationinfoEntity
+		extends
+		com.dt.hippo.auto.model.jpa.base.DishspecificationinfoEntity
+		implements Serializable
+{
 
-   protected static final long serialVersionUID = 8L;
+	protected static final long serialVersionUID = 8L;
 
-     //----------------------------------------------------------------------
-    // ENTITY LINKS ( RELATIONSHIP )
-    //----------------------------------------------------------------------
-    @ManyToOne
-    @JoinColumn(name="dishId", referencedColumnName="uid")
-    protected DishinfoEntity dishinfo    ;
-    @OneToMany(mappedBy="dishspecificationinfo", targetEntity=DishpriceEntity.class)
-    protected List<DishpriceEntity> listOfDishprice;
-    @OneToMany(mappedBy="dishspecificationinfo", targetEntity=ComboinfoEntity.class)
-    protected List<ComboinfoEntity> listOfComboinfo;
-    @OneToMany(mappedBy="dishspecificationinfo", targetEntity=PromotiondetailinfoEntity.class)
-    protected List<PromotiondetailinfoEntity> listOfPromotiondetailinfo;
+	// ----------------------------------------------------------------------
+	// ENTITY LINKS ( RELATIONSHIP )
+	// ----------------------------------------------------------------------
+	protected DishinfoEntity dishinfo;
+
+	protected List<DishpriceEntity> listOfDishprice;
+
+	 protected List<ComboinfoEntity> listOfComboinfo;
+//	 @OneToMany(mappedBy="dishspecificationinfo",
+	// targetEntity=PromotiondetailinfoEntity.class)
+	// protected List<PromotiondetailinfoEntity> listOfPromotiondetailinfo;
 
 
-    //----------------------------------------------------------------------
-    // GETTERS & SETTERS FOR LINKS
-    //----------------------------------------------------------------------
-    public void setDishinfo( DishinfoEntity dishinfo ) {
-        this.dishinfo = dishinfo;
-    }
-    public DishinfoEntity getDishinfo() {
-        return this.dishinfo;
-    }
+	// ----------------------------------------------------------------------
+	// GETTERS & SETTERS FOR LINKS
+	// ----------------------------------------------------------------------
+	public void setDishinfo(DishinfoEntity dishinfo)
+	{
+		this.dishinfo = dishinfo;
+	}
+	@ManyToOne
+	@JoinColumn(name = "dishId", referencedColumnName = "uid")
+	public DishinfoEntity getDishinfo()
+	{
+		return this.dishinfo;
+	}
 
-    public void setListOfDishprice( List<DishpriceEntity> listOfDishprice ) {
-        this.listOfDishprice = listOfDishprice;
-    }
-    public List<DishpriceEntity> getListOfDishprice() {
-        return this.listOfDishprice;
-    }
+	public void setListOfDishprice(
+			List<DishpriceEntity> listOfDishprice)
+	{
+		this.listOfDishprice = listOfDishprice;
+	}
 
-    public void setListOfComboinfo( List<ComboinfoEntity> listOfComboinfo ) {
-        this.listOfComboinfo = listOfComboinfo;
-    }
-    public List<ComboinfoEntity> getListOfComboinfo() {
-        return this.listOfComboinfo;
-    }
+	@OneToMany(mappedBy = "dishspecificationinfo", targetEntity = DishpriceEntity.class)
+	public List<DishpriceEntity> getListOfDishprice()
+	{
+		return this.listOfDishprice;
+	}
 
-    public void setListOfPromotiondetailinfo( List<PromotiondetailinfoEntity> listOfPromotiondetailinfo ) {
-        this.listOfPromotiondetailinfo = listOfPromotiondetailinfo;
-    }
-    public List<PromotiondetailinfoEntity> getListOfPromotiondetailinfo() {
-        return this.listOfPromotiondetailinfo;
-    }
+	 public void setListOfComboinfo( List<ComboinfoEntity> listOfComboinfo ) {
+	 this.listOfComboinfo = listOfComboinfo;
+	 }
+	 @OneToMany(mappedBy="dishspecificationinfo",
+	 targetEntity=ComboinfoEntity.class)
+	 public List<ComboinfoEntity> getListOfComboinfo() {
+	 return this.listOfComboinfo;
+	 }
 
+	// public void setListOfPromotiondetailinfo( List<PromotiondetailinfoEntity>
+	// listOfPromotiondetailinfo ) {
+	// this.listOfPromotiondetailinfo = listOfPromotiondetailinfo;
+	// }
+	// public List<PromotiondetailinfoEntity> getListOfPromotiondetailinfo() {
+	// return this.listOfPromotiondetailinfo;
+	// }
 
 }

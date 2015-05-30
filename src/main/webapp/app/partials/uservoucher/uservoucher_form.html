@@ -1,0 +1,148 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Uservoucher' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="uservoucher_uid" class="col-sm-2 control-label">{{ 'uservoucher.uid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_uid" name="uid" ng-model="uservoucher.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_ownerid" class="col-sm-2 control-label">{{ 'uservoucher.ownerid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_ownerid" name="ownerid" ng-model="uservoucher.ownerid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_version" class="col-sm-2 control-label">{{ 'uservoucher.version' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_version" name="version" ng-model="uservoucher.version" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_corpid" class="col-sm-2 control-label">{{ 'uservoucher.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_corpid" name="corpid" ng-model="uservoucher.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_voucherid" class="col-sm-2 control-label">{{ 'uservoucher.voucherid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_voucherid" name="voucherid" ng-model="uservoucher.voucherid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_voucherdetailid" class="col-sm-2 control-label">{{ 'uservoucher.voucherdetailid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_voucherdetailid" name="voucherdetailid" ng-model="uservoucher.voucherdetailid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_value" class="col-sm-2 control-label">{{ 'uservoucher.value' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_value" name="value" ng-model="uservoucher.value" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_objecttosend" class="col-sm-2 control-label">{{ 'uservoucher.objecttosend' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_objecttosend" name="objecttosend" ng-model="uservoucher.objecttosend" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_orderuid" class="col-sm-2 control-label">{{ 'uservoucher.orderuid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_orderuid" name="orderuid" ng-model="uservoucher.orderuid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_usedate" class="col-sm-2 control-label">{{ 'uservoucher.usedate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uservoucher_usedate" bs-datepicker data-autoclose="1" ng-model="uservoucher.usedate" name="usedate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_applystartdate" class="col-sm-2 control-label">{{ 'uservoucher.applystartdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uservoucher_applystartdate" bs-datepicker data-autoclose="1" ng-model="uservoucher.applystartdate" name="applystartdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_applyenddate" class="col-sm-2 control-label">{{ 'uservoucher.applyenddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uservoucher_applyenddate" bs-datepicker data-autoclose="1" ng-model="uservoucher.applyenddate" name="applyenddate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_applytoallstore" class="col-sm-2 control-label">{{ 'uservoucher.applytoallstore' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_applytoallstore" name="applytoallstore" ng-model="uservoucher.applytoallstore" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_applytoalldish" class="col-sm-2 control-label">{{ 'uservoucher.applytoalldish' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_applytoalldish" name="applytoalldish" ng-model="uservoucher.applytoalldish" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_overlayuse" class="col-sm-2 control-label">{{ 'uservoucher.overlayuse' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_overlayuse" name="overlayuse" ng-model="uservoucher.overlayuse" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_createdate" class="col-sm-2 control-label">{{ 'uservoucher.createdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uservoucher_createdate" bs-datepicker data-autoclose="1" ng-model="uservoucher.createdate" name="createdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_modifydate" class="col-sm-2 control-label">{{ 'uservoucher.modifydate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="uservoucher_modifydate" bs-datepicker data-autoclose="1" ng-model="uservoucher.modifydate" name="modifydate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_createuser" class="col-sm-2 control-label">{{ 'uservoucher.createuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_createuser" name="createuser" ng-model="uservoucher.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_modifyuser" class="col-sm-2 control-label">{{ 'uservoucher.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_modifyuser" name="modifyuser" ng-model="uservoucher.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_status" class="col-sm-2 control-label">{{ 'uservoucher.status' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_status" name="status" ng-model="uservoucher.status" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="uservoucher_platform" class="col-sm-2 control-label">{{ 'uservoucher.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="uservoucher_platform" name="platform" ng-model="uservoucher.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(uservoucher.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/uservoucher">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

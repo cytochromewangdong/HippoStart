@@ -1,0 +1,40 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Targetlist' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'targetlist.uid' | translate }}</th>
+						<th>{{ 'targetlist.targetid' | translate }}</th>
+						<th>{{ 'targetlist.type' | translate }}</th>
+						<th>{{ 'targetlist.corpid' | translate }}</th>
+						<th>{{ 'targetlist.targetvalue' | translate }}</th>
+						<th>{{ 'targetlist.createdate' | translate }}</th>
+						<th>{{ 'targetlist.modifydate' | translate }}</th>
+						<th>{{ 'targetlist.createuser' | translate }}</th>
+						<th>{{ 'targetlist.modifyuser' | translate }}</th>
+						<th>{{ 'targetlist.status' | translate }}</th>
+						<th>{{ 'targetlist.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/targetlist/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="targetlist in targetlists">
+						<td>{{targetlist.uid}}</td>
+						<td>{{targetlist.targetid | number }}</td>
+						<td>{{targetlist.type | number }}</td>
+						<td>{{targetlist.corpid | number }}</td>
+						<td>{{targetlist.targetvalue | number }}</td>
+						<td>{{targetlist.createdate | date:'shortDate'}}</td>
+						<td>{{targetlist.modifydate | date:'shortDate'}}</td>
+						<td>{{targetlist.createuser}}</td>
+						<td>{{targetlist.modifyuser}}</td>
+						<td>{{targetlist.status | number }}</td>
+						<td>{{targetlist.platform}}</td>
+						<td><a class="btn btn-info" href="#/targetlist/{{targetlist.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

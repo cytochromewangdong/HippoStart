@@ -42,7 +42,6 @@ public class CategoryEntity extends com.dt.hippo.auto.model.jpa.base.CategoryEnt
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-    @OneToMany(mappedBy="category", targetEntity=DishinfoEntity.class)
     protected List<DishinfoEntity> listOfDishinfo;
 
 
@@ -52,6 +51,7 @@ public class CategoryEntity extends com.dt.hippo.auto.model.jpa.base.CategoryEnt
     public void setListOfDishinfo( List<DishinfoEntity> listOfDishinfo ) {
         this.listOfDishinfo = listOfDishinfo;
     }
+    @OneToMany(mappedBy="category", targetEntity=DishinfoEntity.class)
     public List<DishinfoEntity> getListOfDishinfo() {
         return this.listOfDishinfo;
     }

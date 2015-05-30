@@ -12,6 +12,7 @@ import java.io.Serializable;
 //import org.hibernate.validator.constraints.* ;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -44,5 +45,20 @@ public class OrderheaderEntity extends com.dt.hippo.auto.model.jpa.base.Orderhea
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
+	protected List<OrderdetailEntity> listOfOrderdetail;
+
+	@OneToMany
+	@JoinColumn(name = "orderuid", referencedColumnName = "uid")
+	public List<OrderdetailEntity> getListOfOrderdetail()
+	{
+		return listOfOrderdetail;
+	}
+
+	public void setListOfOrderdetail(
+			List<OrderdetailEntity> listOfOrderdetail)
+	{
+		this.listOfOrderdetail = listOfOrderdetail;
+	}
+
 
 }

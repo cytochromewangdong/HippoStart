@@ -17,9 +17,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="payment_projectid" class="col-sm-2 control-label">{{ 'payment.projectid' | translate }}</label>
+				<label for="payment_corpid" class="col-sm-2 control-label">{{ 'payment.corpid' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="payment_projectid" name="projectid" ng-model="payment.projectid" class="form-control" maxLength="20" />
+					<input type="text" id="payment_corpid" name="corpid" ng-model="payment.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_storeid" class="col-sm-2 control-label">{{ 'payment.storeid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_storeid" name="storeid" ng-model="payment.storeid" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -49,7 +55,7 @@
 			<div class="form-group">
 				<label for="payment_orderstatus" class="col-sm-2 control-label">{{ 'payment.orderstatus' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="payment_orderstatus" name="orderstatus" ng-model="payment.orderstatus" class="form-control" maxLength="4" />
+					<input type="text" id="payment_orderstatus" name="orderstatus" ng-model="payment.orderstatus" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -67,13 +73,13 @@
 			<div class="form-group">
 				<label for="payment_paymentmethod" class="col-sm-2 control-label">{{ 'payment.paymentmethod' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="payment_paymentmethod" name="paymentmethod" ng-model="payment.paymentmethod" class="form-control" maxLength="4" />
+					<input type="text" id="payment_paymentmethod" name="paymentmethod" ng-model="payment.paymentmethod" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="payment_ismobile" class="col-sm-2 control-label">{{ 'payment.ismobile' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="payment_ismobile" name="ismobile" ng-model="payment.ismobile" class="form-control" maxLength="4" />
+					<input type="text" id="payment_ismobile" name="ismobile" ng-model="payment.ismobile" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -92,6 +98,12 @@
 				<label for="payment_rawreponsefrompaygate" class="col-sm-2 control-label">{{ 'payment.rawreponsefrompaygate' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="payment_rawreponsefrompaygate" name="rawreponsefrompaygate" ng-model="payment.rawreponsefrompaygate" class="form-control" maxLength="1000" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="payment_paytype" class="col-sm-2 control-label">{{ 'payment.paytype' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="payment_paytype" name="paytype" ng-model="payment.paytype" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">

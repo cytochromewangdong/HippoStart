@@ -7,6 +7,11 @@ package com.dt.hippo.auto.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
+//IntSequenceGenerator
 public class Category extends com.dt.hippo.auto.model.base.Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,6 +25,19 @@ public class Category extends com.dt.hippo.auto.model.base.Category implements S
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
 
+    protected List<Dishinfo> newAddedDishList;
+
+	public List<Dishinfo> getNewAddedDishList()
+	{
+		return newAddedDishList;
+	}
+
+
+	public void setNewAddedDishList(List<Dishinfo> newAddedDishList)
+	{
+		this.newAddedDishList = newAddedDishList;
+	}
+
 
 	public List<Dishinfo> getListOfDishinfo()
 	{
@@ -31,5 +49,7 @@ public class Category extends com.dt.hippo.auto.model.base.Category implements S
 	{
 		this.listOfDishinfo = listOfDishinfo;
 	}
+
+
 
 }

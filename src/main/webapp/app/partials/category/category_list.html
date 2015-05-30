@@ -6,34 +6,38 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>{{ 'category.corpid' | translate }}</th>
 						<th>{{ 'category.uid' | translate }}</th>
+						<th>{{ 'category.corpid' | translate }}</th>
+						<th>{{ 'category.categoryid' | translate }}</th>
 						<th>{{ 'category.name' | translate }}</th>
 						<th>{{ 'category.description' | translate }}</th>
 						<th>{{ 'category.imageurl' | translate }}</th>
+						<th>{{ 'category.type' | translate }}</th>
 						<th>{{ 'category.createdate' | translate }}</th>
 						<th>{{ 'category.modifydate' | translate }}</th>
 						<th>{{ 'category.createuser' | translate }}</th>
 						<th>{{ 'category.modifyuser' | translate }}</th>
-						<th>{{ 'category.delflg' | translate }}</th>
+						<th>{{ 'category.status' | translate }}</th>
 						<th>{{ 'category.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/category/new'>{{ 'create' | translate }}</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="category in categorys">
-						<td>{{category.corpid}}</td>
 						<td>{{category.uid}}</td>
+						<td>{{category.corpid | number }}</td>
+						<td>{{category.categoryid}}</td>
 						<td>{{category.name}}</td>
 						<td>{{category.description}}</td>
 						<td>{{category.imageurl}}</td>
+						<td>{{category.type | number }}</td>
 						<td>{{category.createdate | date:'shortDate'}}</td>
 						<td>{{category.modifydate | date:'shortDate'}}</td>
 						<td>{{category.createuser}}</td>
 						<td>{{category.modifyuser}}</td>
-						<td>{{category.delflg}}</td>
+						<td>{{category.status | number }}</td>
 						<td>{{category.platform}}</td>
-						<td><a class="btn btn-info" href="#/category/{{category.corpid}}/{{category.uid}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" href="#/category/{{category.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

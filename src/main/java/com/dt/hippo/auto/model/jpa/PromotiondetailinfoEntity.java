@@ -40,20 +40,20 @@ public class PromotiondetailinfoEntity extends com.dt.hippo.auto.model.jpa.base.
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-    @ManyToOne
-    @JoinColumn(name="specificationId", referencedColumnName="uid")
-    protected DishspecificationinfoEntity dishspecificationinfo;
-
-
-    //----------------------------------------------------------------------
-    // GETTERS & SETTERS FOR LINKS
-    //----------------------------------------------------------------------
-    public void setDishspecificationinfo( DishspecificationinfoEntity dishspecificationinfo ) {
-        this.dishspecificationinfo = dishspecificationinfo;
-    }
-    public DishspecificationinfoEntity getDishspecificationinfo() {
-        return this.dishspecificationinfo;
-    }
+//    @ManyToOne
+//    @JoinColumn(name="specificationId", referencedColumnName="uid")
+//    protected DishspecificationinfoEntity dishspecificationinfo;
+//
+//
+//    //----------------------------------------------------------------------
+//    // GETTERS & SETTERS FOR LINKS
+//    //----------------------------------------------------------------------
+//    public void setDishspecificationinfo( DishspecificationinfoEntity dishspecificationinfo ) {
+//        this.dishspecificationinfo = dishspecificationinfo;
+//    }
+//    public DishspecificationinfoEntity getDishspecificationinfo() {
+//        return this.dishspecificationinfo;
+//    }
 
 
 }

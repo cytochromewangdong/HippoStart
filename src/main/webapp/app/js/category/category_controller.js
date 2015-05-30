@@ -39,10 +39,10 @@ categoryModule.controller('CategoryCtrl', ['Category',  '$scope', '$routeParams'
     /**
      * Refresh category
      */
-    $scope.refreshCategory = function(corpid, uid) {
+    $scope.refreshCategory = function(uid) {
     	try {
         	$scope.category = null;
-	        Category.get(corpid, uid).then(
+	        Category.get(uid).then(
 				function(success) {
         	        $scope.category = success.data;
             	}, 
@@ -62,9 +62,9 @@ categoryModule.controller('CategoryCtrl', ['Category',  '$scope', '$routeParams'
     /**
      * Go to the category edit page
      */
-    $scope.goToCategory = function(corpid, uid) {
-        $scope.refreshCategory(corpid, uid);
-        $location.path('/category/'+corpid+'/'+uid);
+    $scope.goToCategory = function(uid) {
+        $scope.refreshCategory(uid);
+        $location.path('/category/'+uid);
     }
 
     // Actions
@@ -94,10 +94,10 @@ categoryModule.controller('CategoryCtrl', ['Category',  '$scope', '$routeParams'
     /**
      * Delete category
      */
-    $scope.delete = function(corpid, uid) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Category.delete(corpid, uid).then(
+    	    Category.delete(uid).then(
 				function(success) {
                 	$scope.goToCategoryList();
             	}, 
@@ -115,10 +115,10 @@ categoryModule.controller('CategoryCtrl', ['Category',  '$scope', '$routeParams'
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.corpid != null && $routeParams.uid != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshCategory($routeParams.corpid, $routeParams.uid);
+		$scope.refreshCategory($routeParams.uid);
     } else {
         // List page
         $scope.refreshCategoryList();

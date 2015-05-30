@@ -15,10 +15,7 @@ externalaccountModule.factory('Externalaccount', ['$http', 'restURL', function($
      */
 	var validate = function (externalaccount) {
 		var errors = [];
-        if( externalaccount.userid == null || externalaccount.userid == '' ) {
-			errors.push('externalaccount.id.not.defined');
-		}
-        if( externalaccount.usersource == null || externalaccount.usersource == '' ) {
+        if( externalaccount.uid == null || externalaccount.uid == '' ) {
 			errors.push('externalaccount.id.not.defined');
 		}
 		if(errors.length > 0) {
@@ -45,12 +42,11 @@ externalaccountModule.factory('Externalaccount', ['$http', 'restURL', function($
 
         /**
          * Get externalaccount
-         * @param userid userid
-         * @param usersource usersource
+         * @param uid uid
          * @return externalaccount
          */
-    	get: function(userid, usersource) {
-    	    var url = entityURL + '/' + userid + '/' + usersource;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -72,17 +68,16 @@ externalaccountModule.factory('Externalaccount', ['$http', 'restURL', function($
          */
     	update: function(externalaccount) {
 			validate(externalaccount)
-			var url = entityURL + '/' + externalaccount.userid + '/' + externalaccount.usersource;
+			var url = entityURL + '/' + externalaccount.uid;
 			return $http.put(url, externalaccount);
     	},
 
 		/**
          * Delete externalaccount
-         * @param userid userid
-         * @param usersource usersource
+         * @param uid uid
          */
-    	delete: function(userid, usersource) {
-        	var url = entityURL + '/' + userid + '/' + usersource;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

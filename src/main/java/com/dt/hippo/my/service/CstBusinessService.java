@@ -1,11 +1,15 @@
 package com.dt.hippo.my.service;
 
-import java.util.List;
-
-import com.dt.hippo.auto.model.Category;
+import com.dt.hippo.business.model.com.DishCom;
+import com.dt.hippo.business.model.com.StoreInfo;
 
 public interface CstBusinessService
 {
-	public List<Category> getAllValidCategoryAndDishInfoOfCorp(
-			long storeid);
+	public StoreInfo getStoreInfo(
+			Long storeid);
+	
+	public DishCom getStoreinfoForUser(Long storeid,Long userid);
+	
+	public DishCom getStoreinfoForUser(Long storeid);
+	
 }

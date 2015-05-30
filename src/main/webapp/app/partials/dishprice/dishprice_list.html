@@ -1,0 +1,40 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Dishprice' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'dishprice.uid' | translate }}</th>
+						<th>{{ 'dishprice.corpid' | translate }}</th>
+						<th>{{ 'dishprice.storetype' | translate }}</th>
+						<th>{{ 'dishprice.targetvalue' | translate }}</th>
+						<th>{{ 'dishprice.price' | translate }}</th>
+						<th>{{ 'dishprice.createdate' | translate }}</th>
+						<th>{{ 'dishprice.modifydate' | translate }}</th>
+						<th>{{ 'dishprice.createuser' | translate }}</th>
+						<th>{{ 'dishprice.modifyuser' | translate }}</th>
+						<th>{{ 'dishprice.status' | translate }}</th>
+						<th>{{ 'dishprice.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/dishprice/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="dishprice in dishprices">
+						<td>{{dishprice.uid}}</td>
+						<td>{{dishprice.corpid | number }}</td>
+						<td>{{dishprice.storetype | number }}</td>
+						<td>{{dishprice.targetvalue | number }}</td>
+						<td>{{dishprice.price | number }}</td>
+						<td>{{dishprice.createdate | date:'shortDate'}}</td>
+						<td>{{dishprice.modifydate | date:'shortDate'}}</td>
+						<td>{{dishprice.createuser}}</td>
+						<td>{{dishprice.modifyuser}}</td>
+						<td>{{dishprice.status | number }}</td>
+						<td>{{dishprice.platform}}</td>
+						<td><a class="btn btn-info" href="#/dishprice/{{dishprice.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

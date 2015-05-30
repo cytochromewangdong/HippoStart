@@ -8,7 +8,6 @@
 					<tr>
 						<th>{{ 'paymentlog.uid' | translate }}</th>
 						<th>{{ 'paymentlog.userid' | translate }}</th>
-						<th>{{ 'paymentlog.projectid' | translate }}</th>
 						<th>{{ 'paymentlog.tradeno' | translate }}</th>
 						<th>{{ 'paymentlog.orderno' | translate }}</th>
 						<th>{{ 'paymentlog.operation' | translate }}</th>
@@ -28,7 +27,6 @@
 					<tr ng-repeat="paymentlog in paymentlogs">
 						<td>{{paymentlog.uid}}</td>
 						<td>{{paymentlog.userid | number }}</td>
-						<td>{{paymentlog.projectid | number }}</td>
 						<td>{{paymentlog.tradeno}}</td>
 						<td>{{paymentlog.orderno}}</td>
 						<td>{{paymentlog.operation}}</td>

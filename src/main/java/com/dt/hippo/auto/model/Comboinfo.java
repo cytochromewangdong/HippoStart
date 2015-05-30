@@ -6,10 +6,9 @@ package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
 public class Comboinfo extends com.dt.hippo.auto.model.base.Comboinfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -18,9 +17,17 @@ public class Comboinfo extends com.dt.hippo.auto.model.base.Comboinfo implements
     //----------------------------------------------------------------------
     protected Dishspecificationinfo dishspecificationinfo;
 
+    protected Long realPricedifference;
 
-
-    //----------------------------------------------------------------------
+    public Long getRealPricedifference()
+	{
+		return realPricedifference;
+	}
+	public void setRealPricedifference(Long realPricedifference)
+	{
+		this.realPricedifference = realPricedifference;
+	}
+	//----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
     public void setDishspecificationinfo( Dishspecificationinfo dishspecificationinfo ) {

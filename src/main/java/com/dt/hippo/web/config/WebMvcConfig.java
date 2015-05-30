@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -215,4 +216,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 				"me@wherever.com", "API License", "API License URL");
 		return apiInfo;
 	}
+	
+//	@Bean
+//	public CommonsMultipartResolver multipartResolver(){
+//	    CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+//	    commonsMultipartResolver.setDefaultEncoding("utf-8");
+//	    commonsMultipartResolver.setMaxUploadSize(50000000);
+//	    return commonsMultipartResolver;
+//	}
+	
 }

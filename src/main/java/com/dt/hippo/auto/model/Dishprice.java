@@ -6,10 +6,9 @@ package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
 public class Dishprice extends com.dt.hippo.auto.model.base.Dishprice implements Serializable {
 
     private static final long serialVersionUID = 1L;

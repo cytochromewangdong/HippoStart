@@ -8,12 +8,17 @@ package com.dt.hippo.auto.model.jpa;
 
 import java.io.Serializable;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
-
-import java.util.Date;
-
-import javax.persistence.*;
 
 //import com.dt.hippo.auto.model.jpa.base.UservoucherEntity;
 /**
@@ -24,25 +29,36 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="userVoucher", catalog="hippo" )
+@Table(name = "userVoucher", catalog = "hippo")
 // Define named queries here
-@NamedQueries ( {
-  @NamedQuery ( name="UservoucherEntity.countAll", query="SELECT COUNT(x) FROM UservoucherEntity x" )
-} )
+@NamedQueries({
+        @NamedQuery(name = "UservoucherEntity.countAll", query = "SELECT COUNT(x) FROM UservoucherEntity x") })
 @AttributeOverrides({
 
 })
-public class UservoucherEntity extends com.dt.hippo.auto.model.jpa.base.UservoucherEntity implements Serializable {
+public class UservoucherEntity extends
+		com.dt.hippo.auto.model.jpa.base.UservoucherEntity
+		implements Serializable
+{
 
-   protected static final long serialVersionUID = 8L;
+	protected static final long serialVersionUID = 8L;
 
-     //----------------------------------------------------------------------
-    // ENTITY LINKS ( RELATIONSHIP )
-    //----------------------------------------------------------------------
+	@Override
+	@Transient 
+	@AttributeOverride(name = "version", column = @Column(name = "version"))
+	@Column(name = "version")
+	@Version
+	public Integer getVersion()
+	{
+		return super.getVersion();
+	}
 
+	// ----------------------------------------------------------------------
+	// ENTITY LINKS ( RELATIONSHIP )
+	// ----------------------------------------------------------------------
 
-    //----------------------------------------------------------------------
-    // GETTERS & SETTERS FOR LINKS
-    //----------------------------------------------------------------------
+	// ----------------------------------------------------------------------
+	// GETTERS & SETTERS FOR LINKS
+	// ----------------------------------------------------------------------
 
 }

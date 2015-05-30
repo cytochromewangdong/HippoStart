@@ -9,16 +9,22 @@
 						<th>{{ 'promotioninfo.uid' | translate }}</th>
 						<th>{{ 'promotioninfo.corpid' | translate }}</th>
 						<th>{{ 'promotioninfo.name' | translate }}</th>
+						<th>{{ 'promotioninfo.type' | translate }}</th>
 						<th>{{ 'promotioninfo.description' | translate }}</th>
 						<th>{{ 'promotioninfo.imageurl' | translate }}</th>
-						<th>{{ 'promotioninfo.promotiontime' | translate }}</th>
+						<th>{{ 'promotioninfo.discount' | translate }}</th>
+						<th>{{ 'promotioninfo.targetcategorylist' | translate }}</th>
+						<th>{{ 'promotioninfo.promotionstartdate' | translate }}</th>
+						<th>{{ 'promotioninfo.promotionenddate' | translate }}</th>
+						<th>{{ 'promotioninfo.promotionstarttime' | translate }}</th>
 						<th>{{ 'promotioninfo.promotionendtime' | translate }}</th>
-						<th>{{ 'promotioninfo.isapplied' | translate }}</th>
+						<th>{{ 'promotioninfo.targettype' | translate }}</th>
+						<th>{{ 'promotioninfo.applytoall' | translate }}</th>
 						<th>{{ 'promotioninfo.createdate' | translate }}</th>
 						<th>{{ 'promotioninfo.modifydate' | translate }}</th>
 						<th>{{ 'promotioninfo.createuser' | translate }}</th>
 						<th>{{ 'promotioninfo.modifyuser' | translate }}</th>
-						<th>{{ 'promotioninfo.delflg' | translate }}</th>
+						<th>{{ 'promotioninfo.status' | translate }}</th>
 						<th>{{ 'promotioninfo.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/promotioninfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
@@ -28,16 +34,22 @@
 						<td>{{promotioninfo.uid}}</td>
 						<td>{{promotioninfo.corpid | number }}</td>
 						<td>{{promotioninfo.name}}</td>
+						<td>{{promotioninfo.type | number }}</td>
 						<td>{{promotioninfo.description}}</td>
 						<td>{{promotioninfo.imageurl}}</td>
-						<td>{{promotioninfo.promotiontime | number }}</td>
+						<td>{{promotioninfo.discount | number }}</td>
+						<td>{{promotioninfo.targetcategorylist}}</td>
+						<td>{{promotioninfo.promotionstartdate | date:'shortDate'}}</td>
+						<td>{{promotioninfo.promotionenddate | date:'shortDate'}}</td>
+						<td>{{promotioninfo.promotionstarttime | number }}</td>
 						<td>{{promotioninfo.promotionendtime | number }}</td>
-						<td>{{promotioninfo.isapplied}}</td>
+						<td>{{promotioninfo.targettype | number }}</td>
+						<td>{{promotioninfo.applytoall | number }}</td>
 						<td>{{promotioninfo.createdate | date:'shortDate'}}</td>
 						<td>{{promotioninfo.modifydate | date:'shortDate'}}</td>
 						<td>{{promotioninfo.createuser}}</td>
 						<td>{{promotioninfo.modifyuser}}</td>
-						<td>{{promotioninfo.delflg}}</td>
+						<td>{{promotioninfo.status | number }}</td>
 						<td>{{promotioninfo.platform}}</td>
 						<td><a class="btn btn-info" href="#/promotioninfo/{{promotioninfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>

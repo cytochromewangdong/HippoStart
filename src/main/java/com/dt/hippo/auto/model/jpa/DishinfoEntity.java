@@ -31,8 +31,8 @@ import javax.persistence.*;
   @NamedQuery ( name="DishinfoEntity.countAll", query="SELECT COUNT(x) FROM DishinfoEntity x" )
 } )
 @AttributeOverrides({
- @AttributeOverride(name = "corpid", column = @Column(name = "corpId", insertable = false, updatable = false))
- ,  @AttributeOverride(name = "categoryid", column = @Column(name = "categoryId", insertable = false, updatable = false))
+ //@AttributeOverride(name = "corpid", column = @Column(name = "corpId", insertable = false, updatable = false))
+ //,  @AttributeOverride(name = "categoryid", column = @Column(name = "categoryId", insertable = false, updatable = false))
 
 })
 public class DishinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishinfoEntity implements Serializable {
@@ -42,14 +42,8 @@ public class DishinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishinfoEnt
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-    @ManyToOne
-    @JoinColumns( { 
-        @JoinColumn(name="corpId", referencedColumnName="corpId"),
-        @JoinColumn(name="categoryId", referencedColumnName="uid") } )
     protected CategoryEntity category    ;
     
-    @OneToMany(mappedBy="dishinfo", targetEntity=DishspecificationinfoEntity.class)
-    @OrderBy("orderindex ASC")
     protected List<DishspecificationinfoEntity> listOfDishspecificationinfo;
 
 
@@ -59,6 +53,10 @@ public class DishinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishinfoEnt
     public void setCategory( CategoryEntity category ) {
         this.category = category;
     }
+    @ManyToOne
+    @JoinColumns( { 
+        @JoinColumn(name="corpId", referencedColumnName="corpId", insertable = false, updatable = false),
+        @JoinColumn(name="categoryId", referencedColumnName="uid",insertable = false, updatable = false) } )
     public CategoryEntity getCategory() {
         return this.category;
     }
@@ -66,6 +64,9 @@ public class DishinfoEntity extends com.dt.hippo.auto.model.jpa.base.DishinfoEnt
     public void setListOfDishspecificationinfo( List<DishspecificationinfoEntity> listOfDishspecificationinfo ) {
         this.listOfDishspecificationinfo = listOfDishspecificationinfo;
     }
+    
+    @OneToMany(mappedBy="dishinfo", targetEntity=DishspecificationinfoEntity.class)
+    @OrderBy("orderindex ASC")
     public List<DishspecificationinfoEntity> getListOfDishspecificationinfo() {
         return this.listOfDishspecificationinfo;
     }

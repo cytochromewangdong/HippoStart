@@ -15,7 +15,7 @@ comboinfoModule.factory('Comboinfo', ['$http', 'restURL', function($http, restUR
      */
 	var validate = function (comboinfo) {
 		var errors = [];
-        if( comboinfo.id == null || comboinfo.id == '' ) {
+        if( comboinfo.uid == null || comboinfo.uid == '' ) {
 			errors.push('comboinfo.id.not.defined');
 		}
 		if(errors.length > 0) {
@@ -42,11 +42,11 @@ comboinfoModule.factory('Comboinfo', ['$http', 'restURL', function($http, restUR
 
         /**
          * Get comboinfo
-         * @param id id
+         * @param uid uid
          * @return comboinfo
          */
-    	get: function(id) {
-    	    var url = entityURL + '/' + id;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -68,16 +68,16 @@ comboinfoModule.factory('Comboinfo', ['$http', 'restURL', function($http, restUR
          */
     	update: function(comboinfo) {
 			validate(comboinfo)
-			var url = entityURL + '/' + comboinfo.id;
+			var url = entityURL + '/' + comboinfo.uid;
 			return $http.put(url, comboinfo);
     	},
 
 		/**
          * Delete comboinfo
-         * @param id id
+         * @param uid uid
          */
-    	delete: function(id) {
-        	var url = entityURL + '/' + id;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

@@ -7,7 +7,7 @@
 				<thead>
 					<tr>
 						<th>{{ 'storeinfo.uid' | translate }}</th>
-						<th>{{ 'storeinfo.parentcorpid' | translate }}</th>
+						<th>{{ 'storeinfo.corpid' | translate }}</th>
 						<th>{{ 'storeinfo.storeno' | translate }}</th>
 						<th>{{ 'storeinfo.storename' | translate }}</th>
 						<th>{{ 'storeinfo.storedescription' | translate }}</th>
@@ -15,16 +15,13 @@
 						<th>{{ 'storeinfo.address' | translate }}</th>
 						<th>{{ 'storeinfo.phone' | translate }}</th>
 						<th>{{ 'storeinfo.type' | translate }}</th>
-						<th>{{ 'storeinfo.businesshours' | translate }}</th>
-						<th>{{ 'storeinfo.deliverydescription' | translate }}</th>
-						<th>{{ 'storeinfo.ordercount' | translate }}</th>
 						<th>{{ 'storeinfo.lng' | translate }}</th>
 						<th>{{ 'storeinfo.lat' | translate }}</th>
 						<th>{{ 'storeinfo.createdate' | translate }}</th>
 						<th>{{ 'storeinfo.modifydate' | translate }}</th>
 						<th>{{ 'storeinfo.createuser' | translate }}</th>
 						<th>{{ 'storeinfo.modifyuser' | translate }}</th>
-						<th>{{ 'storeinfo.delflg' | translate }}</th>
+						<th>{{ 'storeinfo.status' | translate }}</th>
 						<th>{{ 'storeinfo.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/storeinfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
@@ -32,24 +29,21 @@
 				<tbody>
 					<tr ng-repeat="storeinfo in storeinfos">
 						<td>{{storeinfo.uid}}</td>
-						<td>{{storeinfo.parentcorpid | number }}</td>
+						<td>{{storeinfo.corpid | number }}</td>
 						<td>{{storeinfo.storeno}}</td>
 						<td>{{storeinfo.storename}}</td>
 						<td>{{storeinfo.storedescription}}</td>
 						<td>{{storeinfo.cityid}}</td>
 						<td>{{storeinfo.address}}</td>
 						<td>{{storeinfo.phone}}</td>
-						<td>{{storeinfo.type}}</td>
-						<td>{{storeinfo.businesshours}}</td>
-						<td>{{storeinfo.deliverydescription}}</td>
-						<td>{{storeinfo.ordercount | number }}</td>
+						<td>{{storeinfo.type | number }}</td>
 						<td>{{storeinfo.lng | number }}</td>
 						<td>{{storeinfo.lat | number }}</td>
 						<td>{{storeinfo.createdate | date:'shortDate'}}</td>
 						<td>{{storeinfo.modifydate | date:'shortDate'}}</td>
 						<td>{{storeinfo.createuser}}</td>
 						<td>{{storeinfo.modifyuser}}</td>
-						<td>{{storeinfo.delflg}}</td>
+						<td>{{storeinfo.status | number }}</td>
 						<td>{{storeinfo.platform}}</td>
 						<td><a class="btn btn-info" href="#/storeinfo/{{storeinfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>

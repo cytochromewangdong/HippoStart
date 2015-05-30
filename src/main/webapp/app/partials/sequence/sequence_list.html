@@ -6,16 +6,16 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>{{ 'sequence.uid' | translate }}</th>
 						<th>{{ 'sequence.keyword' | translate }}</th>
+						<th>{{ 'sequence.no' | translate }}</th>
 						<th><a class="btn btn-info" href='#/sequence/new'>{{ 'create' | translate }}</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="sequence in sequences">
-						<td>{{sequence.uid}}</td>
 						<td>{{sequence.keyword}}</td>
-						<td><a class="btn btn-info" href="#/sequence/{{sequence.uid}}/{{sequence.keyword}}">{{ 'edit' | translate }}</a></td>
+						<td>{{sequence.no | number }}</td>
+						<td><a class="btn btn-info" href="#/sequence/{{sequence.keyword}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

@@ -5,10 +5,7 @@
 package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
-
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
+import java.util.List;
 
 public class Promotioninfo extends com.dt.hippo.auto.model.base.Promotioninfo implements Serializable {
 
@@ -16,8 +13,26 @@ public class Promotioninfo extends com.dt.hippo.auto.model.base.Promotioninfo im
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
+	protected List<Promotiondetailinfo> listOfPromotiondetailinfo;
+	public List<Promotiondetailinfo> getListOfPromotiondetailinfo()
+	{
+		return listOfPromotiondetailinfo;
+	}
+	public void setListOfPromotiondetailinfo(
+			List<Promotiondetailinfo> listOfPromotiondetailinfo)
+	{
+		this.listOfPromotiondetailinfo = listOfPromotiondetailinfo;
+	}
 
-
+	private int priority;
+	public int getPriority()
+	{
+		return priority;
+	}
+	public void setPriority(int priority)
+	{
+		this.priority = priority;
+	}
 
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS

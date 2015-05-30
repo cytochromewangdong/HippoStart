@@ -15,9 +15,6 @@ orderdetailModule.factory('Orderdetail', ['$http', 'restURL', function($http, re
      */
 	var validate = function (orderdetail) {
 		var errors = [];
-        if( orderdetail.orderno == null || orderdetail.orderno == '' ) {
-			errors.push('orderdetail.id.not.defined');
-		}
         if( orderdetail.uid == null || orderdetail.uid == '' ) {
 			errors.push('orderdetail.id.not.defined');
 		}
@@ -45,12 +42,11 @@ orderdetailModule.factory('Orderdetail', ['$http', 'restURL', function($http, re
 
         /**
          * Get orderdetail
-         * @param orderno orderno
          * @param uid uid
          * @return orderdetail
          */
-    	get: function(orderno, uid) {
-    	    var url = entityURL + '/' + orderno + '/' + uid;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -72,17 +68,16 @@ orderdetailModule.factory('Orderdetail', ['$http', 'restURL', function($http, re
          */
     	update: function(orderdetail) {
 			validate(orderdetail)
-			var url = entityURL + '/' + orderdetail.orderno + '/' + orderdetail.uid;
+			var url = entityURL + '/' + orderdetail.uid;
 			return $http.put(url, orderdetail);
     	},
 
 		/**
          * Delete orderdetail
-         * @param orderno orderno
          * @param uid uid
          */
-    	delete: function(orderno, uid) {
-        	var url = entityURL + '/' + orderno + '/' + uid;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

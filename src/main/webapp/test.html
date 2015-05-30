@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Upload File Request Page</title>
+
+<script src="app/lib/jquery-1.10.2.min.js"></script>
+<script>
+	$(function() {
+		$("#upload2").on("click", function(e) {
+			e.preventDefault();
+			var formData = new FormData();
+
+			formData.append("file", document.forms[0].file.files[0]);
+			formData.append('user', new Blob([ JSON.stringify({
+				"name" : "root",
+				"password" : "root"
+			}) ], {
+				type : "application/json"
+			}));
+			$.ajax({
+				url : 'register',
+				data : formData,
+				processData : false,
+				contentType : false,
+				type : 'POST',
+				success : function(data) {
+					alert(data);
+				}
+			});
+			//return false;
+		});
+	})
+</script>
+</head>
+<body>
+
+	<form method="POST" action="register" enctype="multipart/form-data">
+		File to upload: <input type="file" name="file"> <br /> Name:
+		<input type="text" name="name"><br /> <br /> <input
+			type="submit" value="Upload"> Press here to upload the file!
+		<button name="upload2"  id="upload2">upload2</button>
+		
+	</form>
+
+</body>
+</html>

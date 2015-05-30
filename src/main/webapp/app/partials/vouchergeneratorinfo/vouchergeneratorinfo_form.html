@@ -11,6 +11,12 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="vouchergeneratorinfo_version" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.version' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_version" name="version" ng-model="vouchergeneratorinfo.version" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="vouchergeneratorinfo_corpid" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.corpid' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="vouchergeneratorinfo_corpid" name="corpid" ng-model="vouchergeneratorinfo.corpid" class="form-control" maxLength="20" />
@@ -23,15 +29,21 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="vouchergeneratorinfo_objecttosend" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.objecttosend' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_objecttosend" name="objecttosend" ng-model="vouchergeneratorinfo.objecttosend" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="vouchergeneratorinfo_deliverystartdate" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.deliverystartdate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_deliverystartdate" name="deliverystartdate" ng-model="vouchergeneratorinfo.deliverystartdate" class="form-control" maxLength="11" />
+					<input id="vouchergeneratorinfo_deliverystartdate" bs-datepicker data-autoclose="1" ng-model="vouchergeneratorinfo.deliverystartdate" name="deliverystartdate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="vouchergeneratorinfo_deliveryenddate" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.deliveryenddate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_deliveryenddate" name="deliveryenddate" ng-model="vouchergeneratorinfo.deliveryenddate" class="form-control" maxLength="11" />
+					<input id="vouchergeneratorinfo_deliveryenddate" bs-datepicker data-autoclose="1" ng-model="vouchergeneratorinfo.deliveryenddate" name="deliveryenddate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -49,25 +61,31 @@
 			<div class="form-group">
 				<label for="vouchergeneratorinfo_applystartdate" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.applystartdate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_applystartdate" name="applystartdate" ng-model="vouchergeneratorinfo.applystartdate" class="form-control" maxLength="11" />
+					<input id="vouchergeneratorinfo_applystartdate" bs-datepicker data-autoclose="1" ng-model="vouchergeneratorinfo.applystartdate" name="applystartdate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="vouchergeneratorinfo_applyenddate" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.applyenddate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_applyenddate" name="applyenddate" ng-model="vouchergeneratorinfo.applyenddate" class="form-control" maxLength="11" />
+					<input id="vouchergeneratorinfo_applyenddate" bs-datepicker data-autoclose="1" ng-model="vouchergeneratorinfo.applyenddate" name="applyenddate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="vouchergeneratorinfo_limitationmethod" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.limitationmethod' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_limitationmethod" name="limitationmethod" ng-model="vouchergeneratorinfo.limitationmethod" class="form-control" maxLength="4" />
+					<input type="text" id="vouchergeneratorinfo_limitationmethod" name="limitationmethod" ng-model="vouchergeneratorinfo.limitationmethod" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="vouchergeneratorinfo_timezone" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.timezone' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="vouchergeneratorinfo_timezone" name="timezone" ng-model="vouchergeneratorinfo.timezone" class="form-control" maxLength="10" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="vouchergeneratorinfo_count" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.count' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_count" name="count" ng-model="vouchergeneratorinfo.count" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -83,9 +101,33 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="vouchergeneratorinfo_applytoallstore" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.applytoallstore' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_applytoallstore" name="applytoallstore" ng-model="vouchergeneratorinfo.applytoallstore" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="vouchergeneratorinfo_applytoalldish" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.applytoalldish' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_applytoalldish" name="applytoalldish" ng-model="vouchergeneratorinfo.applytoalldish" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="vouchergeneratorinfo_targettype" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.targettype' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_targettype" name="targettype" ng-model="vouchergeneratorinfo.targettype" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="vouchergeneratorinfo_overlayuse" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.overlayuse' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="vouchergeneratorinfo_overlayuse" name="overlayuse" ng-model="vouchergeneratorinfo.overlayuse" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="vouchergeneratorinfo_value" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.value' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_value" name="value" ng-model="vouchergeneratorinfo.value" class="form-control" maxLength="11" />
+					<input type="text" id="vouchergeneratorinfo_value" name="value" ng-model="vouchergeneratorinfo.value" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -113,9 +155,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="vouchergeneratorinfo_delflg" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.delflg' | translate }}</label>
+				<label for="vouchergeneratorinfo_status" class="col-sm-2 control-label">{{ 'vouchergeneratorinfo.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="vouchergeneratorinfo_delflg" name="delflg" ng-model="vouchergeneratorinfo.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="vouchergeneratorinfo_status" name="status" ng-model="vouchergeneratorinfo.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">

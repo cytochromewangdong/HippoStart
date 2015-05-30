@@ -39,10 +39,10 @@ sequenceModule.controller('SequenceCtrl', ['Sequence',  '$scope', '$routeParams'
     /**
      * Refresh sequence
      */
-    $scope.refreshSequence = function(uid, keyword) {
+    $scope.refreshSequence = function(keyword) {
     	try {
         	$scope.sequence = null;
-	        Sequence.get(uid, keyword).then(
+	        Sequence.get(keyword).then(
 				function(success) {
         	        $scope.sequence = success.data;
             	}, 
@@ -62,9 +62,9 @@ sequenceModule.controller('SequenceCtrl', ['Sequence',  '$scope', '$routeParams'
     /**
      * Go to the sequence edit page
      */
-    $scope.goToSequence = function(uid, keyword) {
-        $scope.refreshSequence(uid, keyword);
-        $location.path('/sequence/'+uid+'/'+keyword);
+    $scope.goToSequence = function(keyword) {
+        $scope.refreshSequence(keyword);
+        $location.path('/sequence/'+keyword);
     }
 
     // Actions
@@ -94,10 +94,10 @@ sequenceModule.controller('SequenceCtrl', ['Sequence',  '$scope', '$routeParams'
     /**
      * Delete sequence
      */
-    $scope.delete = function(uid, keyword) {
+    $scope.delete = function(keyword) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Sequence.delete(uid, keyword).then(
+    	    Sequence.delete(keyword).then(
 				function(success) {
                 	$scope.goToSequenceList();
             	}, 
@@ -115,10 +115,10 @@ sequenceModule.controller('SequenceCtrl', ['Sequence',  '$scope', '$routeParams'
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.uid != null && $routeParams.keyword != null ) {
+    } else if( $routeParams.keyword != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshSequence($routeParams.uid, $routeParams.keyword);
+		$scope.refreshSequence($routeParams.keyword);
     } else {
         // List page
         $scope.refreshSequenceList();

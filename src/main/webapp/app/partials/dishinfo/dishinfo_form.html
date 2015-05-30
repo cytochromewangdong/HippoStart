@@ -4,7 +4,7 @@
 		<div ng-include src="'partials/message-include.html'"></div>
    		
 		<form class="well form-horizontal">
-			<div class="form-group" style="display:none">
+			<div class="form-group">
 				<label for="dishinfo_uid" class="col-sm-2 control-label">{{ 'dishinfo.uid' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="dishinfo_uid" name="uid" ng-model="dishinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
@@ -13,10 +13,7 @@
 			<div class="form-group">
 				<label for="dishinfo_corpid" class="col-sm-2 control-label">{{ 'dishinfo.corpid' | translate }}</label>
 				<div class="col-sm-10">
-                    <select id="dishinfo_corpid" ng-model="dishinfo.corpid" name="corpid" class="form-control">
-						<option value=""></option>
-                        <option ng-repeat="category in items.categorys" title="{{category.label}}" ng-selected="{{category.value == dishinfo.corpid}}" value="{{category.value}}">{{category.label}}</option>
-                    </select>
+					<input type="text" id="dishinfo_corpid" name="corpid" ng-model="dishinfo.corpid" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -28,10 +25,7 @@
 			<div class="form-group">
 				<label for="dishinfo_categoryid" class="col-sm-2 control-label">{{ 'dishinfo.categoryid' | translate }}</label>
 				<div class="col-sm-10">
-                    <select id="dishinfo_categoryid" ng-model="dishinfo.categoryid" name="categoryid" class="form-control">
-						<option value=""></option>
-                        <option ng-repeat="category in items.categorys" title="{{category.label}}" ng-selected="{{category.value == dishinfo.categoryid}}" value="{{category.value}}">{{category.label}}</option>
-                    </select>
+					<input type="text" id="dishinfo_categoryid" name="categoryid" ng-model="dishinfo.categoryid" class="form-control" maxLength="5" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -46,7 +40,7 @@
 					<input type="text" id="dishinfo_dishdescription" name="dishdescription" ng-model="dishinfo.dishdescription" class="form-control" maxLength="300" />
 				</div>
 			</div>
-			<div class="form-group"  style="display:none">
+			<div class="form-group">
 				<label for="dishinfo_imageurl" class="col-sm-2 control-label">{{ 'dishinfo.imageurl' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="dishinfo_imageurl" name="imageurl" ng-model="dishinfo.imageurl" class="form-control" maxLength="300" />
@@ -61,49 +55,85 @@
 			<div class="form-group">
 				<label for="dishinfo_type" class="col-sm-2 control-label">{{ 'dishinfo.type' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_type" name="type" ng-model="dishinfo.type" class="form-control" maxLength="4" />
+					<input type="text" id="dishinfo_type" name="type" ng-model="dishinfo.type" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="dishinfo_hasspecification" class="col-sm-2 control-label">{{ 'dishinfo.hasspecification' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_hasspecification" name="hasspecification" ng-model="dishinfo.hasspecification" class="form-control" maxLength="4" />
+					<input type="text" id="dishinfo_hasspecification" name="hasspecification" ng-model="dishinfo.hasspecification" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishinfo_defaultggno" class="col-sm-2 control-label">{{ 'dishinfo.defaultggno' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishinfo_defaultggno" name="defaultggno" ng-model="dishinfo.defaultggno" class="form-control" maxLength="10" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="dishinfo_startdate" class="col-sm-2 control-label">{{ 'dishinfo.startdate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_startdate" name="startdate" ng-model="dishinfo.startdate" class="form-control" maxLength="11" />
+					<input id="dishinfo_startdate" bs-datepicker data-autoclose="1" ng-model="dishinfo.startdate" name="startdate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="dishinfo_enddate" class="col-sm-2 control-label">{{ 'dishinfo.enddate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_enddate" name="enddate" ng-model="dishinfo.enddate" class="form-control" maxLength="11" />
+					<input id="dishinfo_enddate" bs-datepicker data-autoclose="1" ng-model="dishinfo.enddate" name="enddate" class="form-control" />
 				</div>
 			</div>
-			<div class="form-group" style="display:none">
+			<div class="form-group">
+				<label for="dishinfo_notforsale" class="col-sm-2 control-label">{{ 'dishinfo.notforsale' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishinfo_notforsale" name="notforsale" ng-model="dishinfo.notforsale" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="dishinfo_paused" class="col-sm-2 control-label">{{ 'dishinfo.paused' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_paused" name="paused" ng-model="dishinfo.paused" class="form-control" maxLength="4" />
+					<input type="text" id="dishinfo_paused" name="paused" ng-model="dishinfo.paused" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="dishinfo_promotionstarttime" class="col-sm-2 control-label">{{ 'dishinfo.promotionstarttime' | translate }}</label>
+				<label for="dishinfo_createdate" class="col-sm-2 control-label">{{ 'dishinfo.createdate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_promotionstarttime" name="promotionstarttime" ng-model="dishinfo.promotionstarttime" class="form-control" maxLength="11" />
+					<input id="dishinfo_createdate" bs-datepicker data-autoclose="1" ng-model="dishinfo.createdate" name="createdate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="dishinfo_promotionendtime" class="col-sm-2 control-label">{{ 'dishinfo.promotionendtime' | translate }}</label>
+				<label for="dishinfo_modifydate" class="col-sm-2 control-label">{{ 'dishinfo.modifydate' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_promotionendtime" name="promotionendtime" ng-model="dishinfo.promotionendtime" class="form-control" maxLength="11" />
+					<input id="dishinfo_modifydate" bs-datepicker data-autoclose="1" ng-model="dishinfo.modifydate" name="modifydate" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="dishinfo_promotionprice" class="col-sm-2 control-label">{{ 'dishinfo.promotionprice' | translate }}</label>
+				<label for="dishinfo_createuser" class="col-sm-2 control-label">{{ 'dishinfo.createuser' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="dishinfo_promotionprice" name="promotionprice" ng-model="dishinfo.promotionprice" class="form-control" maxLength="20" />
+					<input type="text" id="dishinfo_createuser" name="createuser" ng-model="dishinfo.createuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishinfo_modifyuser" class="col-sm-2 control-label">{{ 'dishinfo.modifyuser' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishinfo_modifyuser" name="modifyuser" ng-model="dishinfo.modifyuser" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishinfo_status" class="col-sm-2 control-label">{{ 'dishinfo.status' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishinfo_status" name="status" ng-model="dishinfo.status" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishinfo_platform" class="col-sm-2 control-label">{{ 'dishinfo.platform' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="dishinfo_platform" name="platform" ng-model="dishinfo.platform" class="form-control" maxLength="50" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dishinfo_newstatusenddate" class="col-sm-2 control-label">{{ 'dishinfo.newstatusenddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="dishinfo_newstatusenddate" bs-datepicker data-autoclose="1" ng-model="dishinfo.newstatusenddate" name="newstatusenddate" class="form-control" />
 				</div>
 			</div>
 

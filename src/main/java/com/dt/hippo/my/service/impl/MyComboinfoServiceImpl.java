@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Service;
@@ -14,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dt.hippo.auto.business.service.impl.ComboinfoServiceImpl;
 import com.dt.hippo.auto.data.repository.jpa.CategoryJpaRepository;
 import com.dt.hippo.auto.data.repository.jpa.DishinfoJpaRepository;
-import com.dt.hippo.auto.model.jpa.CategoryEntityKey;
 import com.dt.hippo.auto.model.jpa.ComboinfoEntity;
 //import com.dt.hippo.auto.model.jpa.ComboinfoEntity;
 import com.dt.hippo.auto.model.jpa.DishinfoEntity;
@@ -104,9 +102,9 @@ public class MyComboinfoServiceImpl extends ComboinfoServiceImpl implements
 		// CategoryEntity category = dishinfoEntity.getCategory();
 
 //		List<ComboinfoEntity> list2 = dishinfoEntity.getListOfComboinfo();
-		CategoryEntityKey categoryKey = new CategoryEntityKey(1l, "C01");
+//		CategoryEntityKey categoryKey = new CategoryEntityKey(1l, "C01");
 
-		categoryKey = new CategoryEntityKey(1l, "C04");
+//		categoryKey = new CategoryEntityKey(1l, "C04");
 		// category = categoryJpaRepository.findOne(categoryKey);
 		// List<DishinfoEntity> list = category.getListOfDishinfo();
 		// System.out.println(list);

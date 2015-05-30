@@ -43,9 +43,6 @@ public class PromotiondetailinfoServiceMapper extends AbstractServiceMapper {
 		Promotiondetailinfo promotiondetailinfo = map(promotiondetailinfoEntity, Promotiondetailinfo.class);
 
 		//--- Link mapping ( link to Dishspecificationinfo )
-		if(promotiondetailinfoEntity.getDishspecificationinfo() != null) {
-			promotiondetailinfo.setSpecificationid(promotiondetailinfoEntity.getDishspecificationinfo().getUid());
-		}
 		return promotiondetailinfo;
 	}
 	
@@ -63,13 +60,6 @@ public class PromotiondetailinfoServiceMapper extends AbstractServiceMapper {
 		map(promotiondetailinfo, promotiondetailinfoEntity);
 
 		//--- Link mapping ( link : promotiondetailinfo )
-		if( hasLinkToDishspecificationinfo(promotiondetailinfo) ) {
-			DishspecificationinfoEntity dishspecificationinfo1 = new DishspecificationinfoEntity();
-			dishspecificationinfo1.setUid( promotiondetailinfo.getSpecificationid() );
-			promotiondetailinfoEntity.setDishspecificationinfo( dishspecificationinfo1 );
-		} else {
-			promotiondetailinfoEntity.setDishspecificationinfo( null );
-		}
 
 	}
 	

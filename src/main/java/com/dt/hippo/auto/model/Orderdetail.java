@@ -6,21 +6,38 @@ package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
 public class Orderdetail extends com.dt.hippo.auto.model.base.Orderdetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-
-
+    private Dishspecificationinfo dishSpec;
+    private Uservoucher voucher;
 
     //----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
 
+    public Uservoucher getVoucher()
+    {
+        return voucher;
+    }
+    public void setVoucher(Uservoucher voucher)
+    {
+        this.voucher = voucher;
+    }
+    public Dishspecificationinfo getDishSpec()
+    {
+        return dishSpec;
+    }
+    public void setDishSpec(Dishspecificationinfo dishSpec)
+    {
+        this.dishSpec = dishSpec;
+    }
+
+    
 }

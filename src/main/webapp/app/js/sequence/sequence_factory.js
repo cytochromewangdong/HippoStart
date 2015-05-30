@@ -15,9 +15,6 @@ sequenceModule.factory('Sequence', ['$http', 'restURL', function($http, restURL)
      */
 	var validate = function (sequence) {
 		var errors = [];
-        if( sequence.uid == null || sequence.uid == '' ) {
-			errors.push('sequence.id.not.defined');
-		}
         if( sequence.keyword == null || sequence.keyword == '' ) {
 			errors.push('sequence.id.not.defined');
 		}
@@ -45,12 +42,11 @@ sequenceModule.factory('Sequence', ['$http', 'restURL', function($http, restURL)
 
         /**
          * Get sequence
-         * @param uid uid
          * @param keyword keyword
          * @return sequence
          */
-    	get: function(uid, keyword) {
-    	    var url = entityURL + '/' + uid + '/' + keyword;
+    	get: function(keyword) {
+    	    var url = entityURL + '/' + keyword;
         	return $http.get(url);
     	},
 
@@ -72,17 +68,16 @@ sequenceModule.factory('Sequence', ['$http', 'restURL', function($http, restURL)
          */
     	update: function(sequence) {
 			validate(sequence)
-			var url = entityURL + '/' + sequence.uid + '/' + sequence.keyword;
+			var url = entityURL + '/' + sequence.keyword;
 			return $http.put(url, sequence);
     	},
 
 		/**
          * Delete sequence
-         * @param uid uid
          * @param keyword keyword
          */
-    	delete: function(uid, keyword) {
-        	var url = entityURL + '/' + uid + '/' + keyword;
+    	delete: function(keyword) {
+        	var url = entityURL + '/' + keyword;
         	return $http.delete(url);
     	}
 	};

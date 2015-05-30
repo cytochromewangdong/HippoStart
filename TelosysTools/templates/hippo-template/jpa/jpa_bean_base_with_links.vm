@@ -77,7 +77,7 @@ public class ${entity.name} extends com.dt.hippo.core.base.BaseBeanCommon implem
     // ENTITY PRIMARY KEY ( BASED ON A SINGLE FIELD )
     //----------------------------------------------------------------------
 #foreach( $field in $entity.keyAttributes )
-$jpa.fieldAnnotations(4, $field)
+## $jpa.fieldAnnotations(4, $field)
     protected $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
 #end
 
@@ -95,7 +95,7 @@ $jpa.fieldAnnotations(4, $field)
 ##     // "$field.name" (column "$field.databaseName") is not mapped as an attribute because it is used in a link   
 ##     
 ## #end
-$jpa.fieldAnnotations(4, $field)
+## $jpa.fieldAnnotations(4, $field)
     protected $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
 
 #end
@@ -141,7 +141,9 @@ $jpa.fieldAnnotations(4, $field)
         this.compositePrimaryKey.${field.setter}( $field.name ) ;
     }
 #end
-#if ( $field.getter )    public $field.type ${field.getter}() {
+#if ( $field.getter ) 
+##   $jpa.fieldAnnotations(4, $field)
+   public $field.type ${field.getter}() {
         return this.compositePrimaryKey.${field.getter}() ;
     }
 #end
@@ -156,7 +158,9 @@ $jpa.fieldAnnotations(4, $field)
         this.$field.name = $field.name ;
     }
 #end
-#if ( $field.getter )    public $field.type ${field.getter}() {
+#if ( $field.getter )  
+   $jpa.fieldAnnotations(4, $field)
+  public $field.type ${field.getter}() {
         return this.$field.name;
     }
 #end
@@ -174,7 +178,9 @@ $jpa.fieldAnnotations(4, $field)
         this.$field.name = $field.name;
     }
 #end
-#if ( $field.getter )    public $field.type ${field.getter}() {
+#if ( $field.getter )   
+   $jpa.fieldAnnotations(4, $field)
+ public $field.type ${field.getter}() {
         return this.$field.name;
     }
 #end

@@ -39,10 +39,10 @@ orderdetailModule.controller('OrderdetailCtrl', ['Orderdetail',  '$scope', '$rou
     /**
      * Refresh orderdetail
      */
-    $scope.refreshOrderdetail = function(orderno, uid) {
+    $scope.refreshOrderdetail = function(uid) {
     	try {
         	$scope.orderdetail = null;
-	        Orderdetail.get(orderno, uid).then(
+	        Orderdetail.get(uid).then(
 				function(success) {
         	        $scope.orderdetail = success.data;
             	}, 
@@ -62,9 +62,9 @@ orderdetailModule.controller('OrderdetailCtrl', ['Orderdetail',  '$scope', '$rou
     /**
      * Go to the orderdetail edit page
      */
-    $scope.goToOrderdetail = function(orderno, uid) {
-        $scope.refreshOrderdetail(orderno, uid);
-        $location.path('/orderdetail/'+orderno+'/'+uid);
+    $scope.goToOrderdetail = function(uid) {
+        $scope.refreshOrderdetail(uid);
+        $location.path('/orderdetail/'+uid);
     }
 
     // Actions
@@ -94,10 +94,10 @@ orderdetailModule.controller('OrderdetailCtrl', ['Orderdetail',  '$scope', '$rou
     /**
      * Delete orderdetail
      */
-    $scope.delete = function(orderno, uid) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Orderdetail.delete(orderno, uid).then(
+    	    Orderdetail.delete(uid).then(
 				function(success) {
                 	$scope.goToOrderdetailList();
             	}, 
@@ -115,10 +115,10 @@ orderdetailModule.controller('OrderdetailCtrl', ['Orderdetail',  '$scope', '$rou
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.orderno != null && $routeParams.uid != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshOrderdetail($routeParams.orderno, $routeParams.uid);
+		$scope.refreshOrderdetail($routeParams.uid);
     } else {
         // List page
         $scope.refreshOrderdetailList();

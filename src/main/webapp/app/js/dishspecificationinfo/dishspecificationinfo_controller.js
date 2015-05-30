@@ -3,8 +3,8 @@
 /**
  * Controller for Dishspecificationinfo
  **/
-dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecificationinfo',  'Dishinfo', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Dishspecificationinfo, Dishinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
-	 'Dishinfo',     // edition mode
+dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecificationinfo',  '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Dishspecificationinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+	    // edition mode
     $scope.mode = null;
     
 	// list of dishspecificationinfos
@@ -14,18 +14,11 @@ dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecif
 
 	// referencies entities
 	$scope.items = {};
-    // dishinfos
-	$scope.items.dishinfos = [];
 
     /**
      * Load all referencies entities
      */
 	$scope.loadAllReferencies = function() {
-		Dishinfo.getAllAsListItems().then(
-				function(success) {
-        	        $scope.items.dishinfos = success.data;
-            	}, 
-	            MessageHandler.manageError);
     };
     
     /**
@@ -46,10 +39,10 @@ dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecif
     /**
      * Refresh dishspecificationinfo
      */
-    $scope.refreshDishspecificationinfo = function(dishid, uid) {
+    $scope.refreshDishspecificationinfo = function(uid) {
     	try {
         	$scope.dishspecificationinfo = null;
-	        Dishspecificationinfo.get(dishid, uid).then(
+	        Dishspecificationinfo.get(uid).then(
 				function(success) {
         	        $scope.dishspecificationinfo = success.data;
             	}, 
@@ -69,9 +62,9 @@ dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecif
     /**
      * Go to the dishspecificationinfo edit page
      */
-    $scope.goToDishspecificationinfo = function(dishid, uid) {
-        $scope.refreshDishspecificationinfo(dishid, uid);
-        $location.path('/dishspecificationinfo/'+dishid+'/'+uid);
+    $scope.goToDishspecificationinfo = function(uid) {
+        $scope.refreshDishspecificationinfo(uid);
+        $location.path('/dishspecificationinfo/'+uid);
     }
 
     // Actions
@@ -101,10 +94,10 @@ dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecif
     /**
      * Delete dishspecificationinfo
      */
-    $scope.delete = function(dishid, uid) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Dishspecificationinfo.delete(dishid, uid).then(
+    	    Dishspecificationinfo.delete(uid).then(
 				function(success) {
                 	$scope.goToDishspecificationinfoList();
             	}, 
@@ -122,10 +115,10 @@ dishspecificationinfoModule.controller('DishspecificationinfoCtrl', ['Dishspecif
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.dishid != null && $routeParams.uid != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshDishspecificationinfo($routeParams.dishid, $routeParams.uid);
+		$scope.refreshDishspecificationinfo($routeParams.uid);
     } else {
         // List page
         $scope.refreshDishspecificationinfoList();

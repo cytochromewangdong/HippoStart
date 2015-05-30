@@ -6,21 +6,23 @@ package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class Account extends com.dt.hippo.auto.model.base.Account implements Serializable {
+@JsonIgnoreProperties({ "password", "externaluid", "createdate",
+		"modifydate", "createuser", "modifyuser", "status",
+		"platform", "password" })
+public class Account extends
+		com.dt.hippo.auto.model.base.Account implements
+		Serializable
+{
 
-    private static final long serialVersionUID = 1L;
-     //----------------------------------------------------------------------
-    // ENTITY LINKS ( RELATIONSHIP )
-    //----------------------------------------------------------------------
+	private static final long serialVersionUID = 1L;
+	// ----------------------------------------------------------------------
+	// ENTITY LINKS ( RELATIONSHIP )
+	// ----------------------------------------------------------------------
 
-
-
-    //----------------------------------------------------------------------
-    // GETTERS & SETTERS FOR LINKS
-    //----------------------------------------------------------------------
+	// ----------------------------------------------------------------------
+	// GETTERS & SETTERS FOR LINKS
+	// ----------------------------------------------------------------------
 
 }

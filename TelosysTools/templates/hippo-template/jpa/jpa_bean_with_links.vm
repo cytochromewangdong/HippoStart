@@ -74,7 +74,7 @@ public class ${entity.name} extends ${ENTITY_PKG}.jpa.base.${entity.name} implem
     //----------------------------------------------------------------------
 ## #foreach( $link in $entity.links )
 #foreach( $link in $entity.selectedLinks )
-$jpa.linkAnnotations(4, $link, $allMappedFields)
+##$jpa.linkAnnotations(4, $link, $allMappedFields)
     protected ${link.formattedFieldType(0)} $link.formattedFieldName(12);
 #end
 
@@ -88,7 +88,9 @@ $jpa.linkAnnotations(4, $link, $allMappedFields)
         this.${link.formattedFieldName(0)} = ${link.formattedFieldName(0)};
     }
 #end
-#if ( $link.getter )    public ${link.formattedFieldType(0)} ${link.getter}() {
+#if ( $link.getter ) 
+$jpa.linkAnnotations(4, $link, $allMappedFields)
+   public ${link.formattedFieldType(0)} ${link.getter}() {
         return this.${link.formattedFieldName(0)};
     }
 #end

@@ -1,5 +1,9 @@
 package com.dt.hippo.core.base;
 
+import java.util.List;
+
+import org.springframework.validation.ObjectError;
+
 public class BaseResult
 {
 	protected String errorCode;
@@ -26,6 +30,18 @@ public class BaseResult
 
 	protected int result;
 	protected String error;
+
+	protected List<ObjectError> allError;
+
+	public List<ObjectError> getAllError()
+	{
+		return allError;
+	}
+
+	public void setAllError(List<ObjectError> allError)
+	{
+		this.allError = allError;
+	}
 
 	protected String forwardURL;
 
@@ -65,5 +81,6 @@ public class BaseResult
 	public void setError(String error)
 	{
 		this.error = error;
+		this.result = -1;
 	}
 }

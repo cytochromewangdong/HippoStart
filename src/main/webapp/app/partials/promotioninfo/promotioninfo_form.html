@@ -23,6 +23,12 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="promotioninfo_type" class="col-sm-2 control-label">{{ 'promotioninfo.type' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_type" name="type" ng-model="promotioninfo.type" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="promotioninfo_description" class="col-sm-2 control-label">{{ 'promotioninfo.description' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="promotioninfo_description" name="description" ng-model="promotioninfo.description" class="form-control" maxLength="300" />
@@ -35,9 +41,33 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="promotioninfo_promotiontime" class="col-sm-2 control-label">{{ 'promotioninfo.promotiontime' | translate }}</label>
+				<label for="promotioninfo_discount" class="col-sm-2 control-label">{{ 'promotioninfo.discount' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="promotioninfo_promotiontime" name="promotiontime" ng-model="promotioninfo.promotiontime" class="form-control" maxLength="11" />
+					<input type="text" id="promotioninfo_discount" name="discount" ng-model="promotioninfo.discount" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_targetcategorylist" class="col-sm-2 control-label">{{ 'promotioninfo.targetcategorylist' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_targetcategorylist" name="targetcategorylist" ng-model="promotioninfo.targetcategorylist" class="form-control" maxLength="100" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_promotionstartdate" class="col-sm-2 control-label">{{ 'promotioninfo.promotionstartdate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotioninfo_promotionstartdate" bs-datepicker data-autoclose="1" ng-model="promotioninfo.promotionstartdate" name="promotionstartdate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_promotionenddate" class="col-sm-2 control-label">{{ 'promotioninfo.promotionenddate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="promotioninfo_promotionenddate" bs-datepicker data-autoclose="1" ng-model="promotioninfo.promotionenddate" name="promotionenddate" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_promotionstarttime" class="col-sm-2 control-label">{{ 'promotioninfo.promotionstarttime' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_promotionstarttime" name="promotionstarttime" ng-model="promotioninfo.promotionstarttime" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -47,9 +77,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="promotioninfo_isapplied" class="col-sm-2 control-label">{{ 'promotioninfo.isapplied' | translate }}</label>
+				<label for="promotioninfo_targettype" class="col-sm-2 control-label">{{ 'promotioninfo.targettype' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="promotioninfo_isapplied" name="isapplied" ng-model="promotioninfo.isapplied" class="form-control" maxLength="4" />
+					<input type="text" id="promotioninfo_targettype" name="targettype" ng-model="promotioninfo.targettype" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="promotioninfo_applytoall" class="col-sm-2 control-label">{{ 'promotioninfo.applytoall' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="promotioninfo_applytoall" name="applytoall" ng-model="promotioninfo.applytoall" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -77,9 +113,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="promotioninfo_delflg" class="col-sm-2 control-label">{{ 'promotioninfo.delflg' | translate }}</label>
+				<label for="promotioninfo_status" class="col-sm-2 control-label">{{ 'promotioninfo.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="promotioninfo_delflg" name="delflg" ng-model="promotioninfo.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="promotioninfo_status" name="status" ng-model="promotioninfo.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">

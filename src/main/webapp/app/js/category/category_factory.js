@@ -15,9 +15,6 @@ categoryModule.factory('Category', ['$http', 'restURL', function($http, restURL)
      */
 	var validate = function (category) {
 		var errors = [];
-        if( category.corpid == null || category.corpid == '' ) {
-			errors.push('category.id.not.defined');
-		}
         if( category.uid == null || category.uid == '' ) {
 			errors.push('category.id.not.defined');
 		}
@@ -45,12 +42,11 @@ categoryModule.factory('Category', ['$http', 'restURL', function($http, restURL)
 
         /**
          * Get category
-         * @param corpid corpid
          * @param uid uid
          * @return category
          */
-    	get: function(corpid, uid) {
-    	    var url = entityURL + '/' + corpid + '/' + uid;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -72,17 +68,16 @@ categoryModule.factory('Category', ['$http', 'restURL', function($http, restURL)
          */
     	update: function(category) {
 			validate(category)
-			var url = entityURL + '/' + category.corpid + '/' + category.uid;
+			var url = entityURL + '/' + category.uid;
 			return $http.put(url, category);
     	},
 
 		/**
          * Delete category
-         * @param corpid corpid
          * @param uid uid
          */
-    	delete: function(corpid, uid) {
-        	var url = entityURL + '/' + corpid + '/' + uid;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

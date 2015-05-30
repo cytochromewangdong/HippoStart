@@ -12,6 +12,7 @@ import java.io.Serializable;
 //import org.hibernate.validator.constraints.* ;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,25 +25,43 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="promotionInfo", catalog="hippo" )
+@Table(name = "promotionInfo", catalog = "hippo")
 // Define named queries here
-@NamedQueries ( {
-  @NamedQuery ( name="PromotioninfoEntity.countAll", query="SELECT COUNT(x) FROM PromotioninfoEntity x" )
-} )
+@NamedQueries({
+		@NamedQuery(name = "PromotioninfoEntity.countAll", query = "SELECT COUNT(x) FROM PromotioninfoEntity x"),
+		@NamedQuery(name = "PromotioninfoEntity.findPromotionForStore", query = "SELECT x FROM PromotioninfoEntity x where (corpid=:corpid) and ((targettype=0 and (applytoall = 0 or (applytoall=1 and :storetype IN (select s.targetvalue from TargetlistEntity s where s.uid = x.uid and type=0 and corpid=:corpid)))) or (targettype=1 and :storeid  IN (select s.targetvalue from TargetlistEntity s where s.uid = x.uid and type=0 and corpid=:corpid)))"), })
 @AttributeOverrides({
-
+// query =
+// "select c.id from Cars c join CarStatus d where c.status = d.status and d.color = 'red'"
 })
-public class PromotioninfoEntity extends com.dt.hippo.auto.model.jpa.base.PromotioninfoEntity implements Serializable {
+public class PromotioninfoEntity extends
+		com.dt.hippo.auto.model.jpa.base.PromotioninfoEntity
+		implements Serializable
+{
 
-   protected static final long serialVersionUID = 8L;
+	protected static final long serialVersionUID = 8L;
 
-     //----------------------------------------------------------------------
-    // ENTITY LINKS ( RELATIONSHIP )
-    //----------------------------------------------------------------------
+	// ----------------------------------------------------------------------
+	// ENTITY LINKS ( RELATIONSHIP )
+	// ----------------------------------------------------------------------
 
+	// ----------------------------------------------------------------------
+	// GETTERS & SETTERS FOR LINKS
+	// ----------------------------------------------------------------------
 
-    //----------------------------------------------------------------------
-    // GETTERS & SETTERS FOR LINKS
-    //----------------------------------------------------------------------
+	protected List<PromotiondetailinfoEntity> listOfPromotiondetailinfo;
+
+	@OneToMany
+	@JoinColumn(name = "promotionid", referencedColumnName = "uid")
+	public List<PromotiondetailinfoEntity> getListOfPromotiondetailinfo()
+	{
+		return listOfPromotiondetailinfo;
+	}
+
+	public void setListOfPromotiondetailinfo(
+			List<PromotiondetailinfoEntity> listOfPromotiondetailinfo)
+	{
+		this.listOfPromotiondetailinfo = listOfPromotiondetailinfo;
+	}
 
 }

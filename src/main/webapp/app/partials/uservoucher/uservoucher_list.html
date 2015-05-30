@@ -1,0 +1,60 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Uservoucher' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'uservoucher.uid' | translate }}</th>
+						<th>{{ 'uservoucher.ownerid' | translate }}</th>
+						<th>{{ 'uservoucher.version' | translate }}</th>
+						<th>{{ 'uservoucher.corpid' | translate }}</th>
+						<th>{{ 'uservoucher.voucherid' | translate }}</th>
+						<th>{{ 'uservoucher.voucherdetailid' | translate }}</th>
+						<th>{{ 'uservoucher.value' | translate }}</th>
+						<th>{{ 'uservoucher.objecttosend' | translate }}</th>
+						<th>{{ 'uservoucher.orderuid' | translate }}</th>
+						<th>{{ 'uservoucher.usedate' | translate }}</th>
+						<th>{{ 'uservoucher.applystartdate' | translate }}</th>
+						<th>{{ 'uservoucher.applyenddate' | translate }}</th>
+						<th>{{ 'uservoucher.applytoallstore' | translate }}</th>
+						<th>{{ 'uservoucher.applytoalldish' | translate }}</th>
+						<th>{{ 'uservoucher.overlayuse' | translate }}</th>
+						<th>{{ 'uservoucher.createdate' | translate }}</th>
+						<th>{{ 'uservoucher.modifydate' | translate }}</th>
+						<th>{{ 'uservoucher.createuser' | translate }}</th>
+						<th>{{ 'uservoucher.modifyuser' | translate }}</th>
+						<th>{{ 'uservoucher.status' | translate }}</th>
+						<th>{{ 'uservoucher.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/uservoucher/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="uservoucher in uservouchers">
+						<td>{{uservoucher.uid}}</td>
+						<td>{{uservoucher.ownerid | number }}</td>
+						<td>{{uservoucher.version | number }}</td>
+						<td>{{uservoucher.corpid | number }}</td>
+						<td>{{uservoucher.voucherid | number }}</td>
+						<td>{{uservoucher.voucherdetailid | number }}</td>
+						<td>{{uservoucher.value | number }}</td>
+						<td>{{uservoucher.objecttosend | number }}</td>
+						<td>{{uservoucher.orderuid | number }}</td>
+						<td>{{uservoucher.usedate | date:'shortDate'}}</td>
+						<td>{{uservoucher.applystartdate | date:'shortDate'}}</td>
+						<td>{{uservoucher.applyenddate | date:'shortDate'}}</td>
+						<td>{{uservoucher.applytoallstore | number }}</td>
+						<td>{{uservoucher.applytoalldish | number }}</td>
+						<td>{{uservoucher.overlayuse | number }}</td>
+						<td>{{uservoucher.createdate | date:'shortDate'}}</td>
+						<td>{{uservoucher.modifydate | date:'shortDate'}}</td>
+						<td>{{uservoucher.createuser}}</td>
+						<td>{{uservoucher.modifyuser}}</td>
+						<td>{{uservoucher.status | number }}</td>
+						<td>{{uservoucher.platform}}</td>
+						<td><a class="btn btn-info" href="#/uservoucher/{{uservoucher.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

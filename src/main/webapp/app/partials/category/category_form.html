@@ -5,15 +5,21 @@
    		
 		<form class="well form-horizontal">
 			<div class="form-group">
-				<label for="category_corpid" class="col-sm-2 control-label">{{ 'category.corpid' | translate }}</label>
+				<label for="category_uid" class="col-sm-2 control-label">{{ 'category.uid' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="category_corpid" name="corpid" ng-model="category.corpid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
+					<input type="text" id="category_uid" name="uid" ng-model="category.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="category_uid" class="col-sm-2 control-label">{{ 'category.uid' | translate }}</label>
+				<label for="category_corpid" class="col-sm-2 control-label">{{ 'category.corpid' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="category_uid" name="uid" ng-model="category.uid" class="form-control" maxLength="5"  ng-disabled="mode != 'create'"/>
+					<input type="text" id="category_corpid" name="corpid" ng-model="category.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_categoryid" class="col-sm-2 control-label">{{ 'category.categoryid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_categoryid" name="categoryid" ng-model="category.categoryid" class="form-control" maxLength="5" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -32,6 +38,12 @@
 				<label for="category_imageurl" class="col-sm-2 control-label">{{ 'category.imageurl' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="category_imageurl" name="imageurl" ng-model="category.imageurl" class="form-control" maxLength="300" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="category_type" class="col-sm-2 control-label">{{ 'category.type' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="category_type" name="type" ng-model="category.type" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -59,9 +71,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="category_delflg" class="col-sm-2 control-label">{{ 'category.delflg' | translate }}</label>
+				<label for="category_status" class="col-sm-2 control-label">{{ 'category.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="category_delflg" name="delflg" ng-model="category.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="category_status" name="status" ng-model="category.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -74,7 +86,7 @@
 			<!-- ACTION BUTTONS -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-2">
-					<a role="button" class="btn btn-danger btn-block" ng-click="delete(category.corpid, category.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(category.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
 				</div>
     			<div class="col-sm-offset-4 col-sm-2">
 					<a role="button" class="btn btn-default btn-block" href="#/category">{{ 'cancel' | translate }}</a>

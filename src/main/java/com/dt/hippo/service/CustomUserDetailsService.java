@@ -26,8 +26,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 
 import com.dt.hippo.auto.model.Account;
+import com.dt.hippo.core.security.SecurityUser;
 import com.dt.hippo.my.service.MyAccountService;
-import com.dt.hippo.web.security.SecurityUser;
 
 /**
  * @author Siva

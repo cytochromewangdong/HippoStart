@@ -5,27 +5,15 @@
    		
 		<form class="well form-horizontal">
 			<div class="form-group">
-				<label for="comboinfo_id" class="col-sm-2 control-label">{{ 'comboinfo.id' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="comboinfo_id" name="id" ng-model="comboinfo.id" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
-				</div>
-			</div>
-			<div class="form-group">
 				<label for="comboinfo_uid" class="col-sm-2 control-label">{{ 'comboinfo.uid' | translate }}</label>
 				<div class="col-sm-10">
-                    <select id="comboinfo_uid" ng-model="comboinfo.uid" name="uid" class="form-control">
-						<option value=""></option>
-                        <option ng-repeat="dishinfo in items.dishinfos" title="{{dishinfo.label}}" ng-selected="{{dishinfo.value == comboinfo.uid}}" value="{{dishinfo.value}}">{{dishinfo.label}}</option>
-                    </select>
+					<input type="text" id="comboinfo_uid" name="uid" ng-model="comboinfo.uid" class="form-control" maxLength="20"  ng-disabled="mode != 'create'"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="comboinfo_childid" class="col-sm-2 control-label">{{ 'comboinfo.childid' | translate }}</label>
+				<label for="comboinfo_dishid" class="col-sm-2 control-label">{{ 'comboinfo.dishid' | translate }}</label>
 				<div class="col-sm-10">
-                    <select id="comboinfo_childid" ng-model="comboinfo.childid" name="childid" class="form-control">
-						<option value=""></option>
-                        <option ng-repeat="dishspecificationinfo in items.dishspecificationinfos" title="{{dishspecificationinfo.label}}" ng-selected="{{dishspecificationinfo.value == comboinfo.childid}}" value="{{dishspecificationinfo.value}}">{{dishspecificationinfo.label}}</option>
-                    </select>
+					<input type="text" id="comboinfo_dishid" name="dishid" ng-model="comboinfo.dishid" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -38,15 +26,21 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="comboinfo_corpid" class="col-sm-2 control-label">{{ 'comboinfo.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="comboinfo_corpid" name="corpid" ng-model="comboinfo.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="comboinfo_placeholder" class="col-sm-2 control-label">{{ 'comboinfo.placeholder' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="comboinfo_placeholder" name="placeholder" ng-model="comboinfo.placeholder" class="form-control" maxLength="4" />
+					<input type="text" id="comboinfo_placeholder" name="placeholder" ng-model="comboinfo.placeholder" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="comboinfo_orderinplaceholder" class="col-sm-2 control-label">{{ 'comboinfo.orderinplaceholder' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="comboinfo_orderinplaceholder" name="orderinplaceholder" ng-model="comboinfo.orderinplaceholder" class="form-control" maxLength="4" />
+					<input type="text" id="comboinfo_orderinplaceholder" name="orderinplaceholder" ng-model="comboinfo.orderinplaceholder" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -86,9 +80,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="comboinfo_delflg" class="col-sm-2 control-label">{{ 'comboinfo.delflg' | translate }}</label>
+				<label for="comboinfo_status" class="col-sm-2 control-label">{{ 'comboinfo.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="comboinfo_delflg" name="delflg" ng-model="comboinfo.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="comboinfo_status" name="status" ng-model="comboinfo.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -101,7 +95,7 @@
 			<!-- ACTION BUTTONS -->
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-2">
-					<a role="button" class="btn btn-danger btn-block" ng-click="delete(comboinfo.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(comboinfo.uid)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
 				</div>
     			<div class="col-sm-offset-4 col-sm-2">
 					<a role="button" class="btn btn-default btn-block" href="#/comboinfo">{{ 'cancel' | translate }}</a>

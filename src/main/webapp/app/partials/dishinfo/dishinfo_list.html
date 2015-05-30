@@ -7,36 +7,54 @@
 				<thead>
 					<tr>
 						<th>{{ 'dishinfo.uid' | translate }}</th>
+						<th>{{ 'dishinfo.corpid' | translate }}</th>
 						<th>{{ 'dishinfo.no' | translate }}</th>
+						<th>{{ 'dishinfo.categoryid' | translate }}</th>
 						<th>{{ 'dishinfo.dishname' | translate }}</th>
 						<th>{{ 'dishinfo.dishdescription' | translate }}</th>
+						<th>{{ 'dishinfo.imageurl' | translate }}</th>
 						<th>{{ 'dishinfo.price' | translate }}</th>
 						<th>{{ 'dishinfo.type' | translate }}</th>
 						<th>{{ 'dishinfo.hasspecification' | translate }}</th>
+						<th>{{ 'dishinfo.defaultggno' | translate }}</th>
 						<th>{{ 'dishinfo.startdate' | translate }}</th>
 						<th>{{ 'dishinfo.enddate' | translate }}</th>
+						<th>{{ 'dishinfo.notforsale' | translate }}</th>
 						<th>{{ 'dishinfo.paused' | translate }}</th>
-						<th>{{ 'dishinfo.promotionstarttime' | translate }}</th>
-						<th>{{ 'dishinfo.promotionendtime' | translate }}</th>
-						<th>{{ 'dishinfo.promotionprice' | translate }}</th>
+						<th>{{ 'dishinfo.createdate' | translate }}</th>
+						<th>{{ 'dishinfo.modifydate' | translate }}</th>
+						<th>{{ 'dishinfo.createuser' | translate }}</th>
+						<th>{{ 'dishinfo.modifyuser' | translate }}</th>
+						<th>{{ 'dishinfo.status' | translate }}</th>
+						<th>{{ 'dishinfo.platform' | translate }}</th>
+						<th>{{ 'dishinfo.newstatusenddate' | translate }}</th>
 						<th><a class="btn btn-info" href='#/dishinfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="dishinfo in dishinfos">
 						<td>{{dishinfo.uid}}</td>
+						<td>{{dishinfo.corpid | number }}</td>
 						<td>{{dishinfo.no}}</td>
+						<td>{{dishinfo.categoryid}}</td>
 						<td>{{dishinfo.dishname}}</td>
 						<td>{{dishinfo.dishdescription}}</td>
+						<td>{{dishinfo.imageurl}}</td>
 						<td>{{dishinfo.price | number }}</td>
-						<td>{{dishinfo.type}}</td>
-						<td>{{dishinfo.hasspecification}}</td>
-						<td>{{dishinfo.startdate | number }}</td>
-						<td>{{dishinfo.enddate | number }}</td>
-						<td>{{dishinfo.paused}}</td>
-						<td>{{dishinfo.promotionstarttime | number }}</td>
-						<td>{{dishinfo.promotionendtime | number }}</td>
-						<td>{{dishinfo.promotionprice | number }}</td>
+						<td>{{dishinfo.type | number }}</td>
+						<td>{{dishinfo.hasspecification | number }}</td>
+						<td>{{dishinfo.defaultggno}}</td>
+						<td>{{dishinfo.startdate | date:'shortDate'}}</td>
+						<td>{{dishinfo.enddate | date:'shortDate'}}</td>
+						<td>{{dishinfo.notforsale | number }}</td>
+						<td>{{dishinfo.paused | number }}</td>
+						<td>{{dishinfo.createdate | date:'shortDate'}}</td>
+						<td>{{dishinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{dishinfo.createuser}}</td>
+						<td>{{dishinfo.modifyuser}}</td>
+						<td>{{dishinfo.status | number }}</td>
+						<td>{{dishinfo.platform}}</td>
+						<td>{{dishinfo.newstatusenddate | date:'shortDate'}}</td>
 						<td><a class="btn btn-info" href="#/dishinfo/{{dishinfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>

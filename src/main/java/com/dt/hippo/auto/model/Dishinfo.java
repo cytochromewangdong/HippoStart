@@ -5,23 +5,43 @@
 package com.dt.hippo.auto.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
-
+import com.dt.hippo.business.common.JSCompatibleIdGenerator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+@JsonIdentityInfo(generator = JSCompatibleIdGenerator.class)
 public class Dishinfo extends com.dt.hippo.auto.model.base.Dishinfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
      //----------------------------------------------------------------------
     // ENTITY LINKS ( RELATIONSHIP )
     //----------------------------------------------------------------------
-    protected Category category    ;
+    protected boolean isNewDish;
+    
+    public boolean isNewDish()
+	{
+		return isNewDish;
+	}
+	public void setNewDish(boolean isNewDish)
+	{
+		this.isNewDish = isNewDish;
+	}
+	protected Category category    ;
     protected List<Dishspecificationinfo> listOfDishspecificationinfo;
 
+    protected Dishspecificationinfo defaultDishspecificationinfo;
+    
 
-
-    //----------------------------------------------------------------------
+    public Dishspecificationinfo getDefaultDishspecificationinfo()
+	{
+		return defaultDishspecificationinfo;
+	}
+	public void setDefaultDishspecificationinfo(
+			Dishspecificationinfo defaultDishspecificationinfo)
+	{
+		this.defaultDishspecificationinfo = defaultDishspecificationinfo;
+	}
+	//----------------------------------------------------------------------
     // GETTERS & SETTERS FOR LINKS
     //----------------------------------------------------------------------
     public void setCategory( Category category ) {

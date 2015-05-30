@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dt.hippo.core.base.BaseController;
+import com.dt.hippo.business.base.BaseController;
 import com.dt.hippo.core.base.BaseResult;
 import com.dt.hippo.cst.ErroConstant;
 import com.dt.hippo.my.service.MyComboinfoService;

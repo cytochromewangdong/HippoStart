@@ -25,7 +25,7 @@ public class MyAccountServiceImpl extends AccountServiceImpl implements MyAccoun
 		username = username.toLowerCase();
 		return accountServiceMapper
 				.mapAccountEntityToAccount(accountJpaRepository
-						.findUserByUsernameAndUsernamehashcode(username,
+						.findUserInformationWithusernameOrEmail(username,
 								username.hashCode()));
 	}
 }

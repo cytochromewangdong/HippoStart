@@ -7,14 +7,15 @@
 				<thead>
 					<tr>
 						<th>{{ 'promotiondetailinfo.uid' | translate }}</th>
-						<th>{{ 'promotiondetailinfo.dishid' | translate }}</th>
-						<th>{{ 'promotiondetailinfo.specificationid' | translate }}</th>
-						<th>{{ 'promotiondetailinfo.price' | translate }}</th>
+						<th>{{ 'promotiondetailinfo.promotionid' | translate }}</th>
+						<th>{{ 'promotiondetailinfo.corpid' | translate }}</th>
+						<th>{{ 'promotiondetailinfo.type' | translate }}</th>
+						<th>{{ 'promotiondetailinfo.priceordiscount' | translate }}</th>
 						<th>{{ 'promotiondetailinfo.createdate' | translate }}</th>
 						<th>{{ 'promotiondetailinfo.modifydate' | translate }}</th>
 						<th>{{ 'promotiondetailinfo.createuser' | translate }}</th>
 						<th>{{ 'promotiondetailinfo.modifyuser' | translate }}</th>
-						<th>{{ 'promotiondetailinfo.delflg' | translate }}</th>
+						<th>{{ 'promotiondetailinfo.status' | translate }}</th>
 						<th>{{ 'promotiondetailinfo.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/promotiondetailinfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
@@ -22,16 +23,17 @@
 				<tbody>
 					<tr ng-repeat="promotiondetailinfo in promotiondetailinfos">
 						<td>{{promotiondetailinfo.uid}}</td>
-						<td>{{promotiondetailinfo.dishid}}</td>
-						<td>{{promotiondetailinfo.specificationid}}</td>
-						<td>{{promotiondetailinfo.price | number }}</td>
+						<td>{{promotiondetailinfo.promotionid | number }}</td>
+						<td>{{promotiondetailinfo.corpid | number }}</td>
+						<td>{{promotiondetailinfo.type | number }}</td>
+						<td>{{promotiondetailinfo.priceordiscount | number }}</td>
 						<td>{{promotiondetailinfo.createdate | date:'shortDate'}}</td>
 						<td>{{promotiondetailinfo.modifydate | date:'shortDate'}}</td>
 						<td>{{promotiondetailinfo.createuser}}</td>
 						<td>{{promotiondetailinfo.modifyuser}}</td>
-						<td>{{promotiondetailinfo.delflg}}</td>
+						<td>{{promotiondetailinfo.status | number }}</td>
 						<td>{{promotiondetailinfo.platform}}</td>
-						<td><a class="btn btn-info" href="#/promotiondetailinfo/{{promotiondetailinfo.uid}}/{{promotiondetailinfo.dishid}}/{{promotiondetailinfo.specificationid}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" href="#/promotiondetailinfo/{{promotiondetailinfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

@@ -39,10 +39,10 @@ externalaccountModule.controller('ExternalaccountCtrl', ['Externalaccount',  '$s
     /**
      * Refresh externalaccount
      */
-    $scope.refreshExternalaccount = function(userid, usersource) {
+    $scope.refreshExternalaccount = function(uid) {
     	try {
         	$scope.externalaccount = null;
-	        Externalaccount.get(userid, usersource).then(
+	        Externalaccount.get(uid).then(
 				function(success) {
         	        $scope.externalaccount = success.data;
             	}, 
@@ -62,9 +62,9 @@ externalaccountModule.controller('ExternalaccountCtrl', ['Externalaccount',  '$s
     /**
      * Go to the externalaccount edit page
      */
-    $scope.goToExternalaccount = function(userid, usersource) {
-        $scope.refreshExternalaccount(userid, usersource);
-        $location.path('/externalaccount/'+userid+'/'+usersource);
+    $scope.goToExternalaccount = function(uid) {
+        $scope.refreshExternalaccount(uid);
+        $location.path('/externalaccount/'+uid);
     }
 
     // Actions
@@ -94,10 +94,10 @@ externalaccountModule.controller('ExternalaccountCtrl', ['Externalaccount',  '$s
     /**
      * Delete externalaccount
      */
-    $scope.delete = function(userid, usersource) {
+    $scope.delete = function(uid) {
 	    try {
 			MessageHandler.cleanMessage();
-    	    Externalaccount.delete(userid, usersource).then(
+    	    Externalaccount.delete(uid).then(
 				function(success) {
                 	$scope.goToExternalaccountList();
             	}, 
@@ -115,10 +115,10 @@ externalaccountModule.controller('ExternalaccountCtrl', ['Externalaccount',  '$s
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.userid != null && $routeParams.usersource != null ) {
+    } else if( $routeParams.uid != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshExternalaccount($routeParams.userid, $routeParams.usersource);
+		$scope.refreshExternalaccount($routeParams.uid);
     } else {
         // List page
         $scope.refreshExternalaccountList();

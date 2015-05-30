@@ -11,5 +11,5 @@ promotiondetailinfoModule.config(['$routeProvider', function($routeProvider) {
     // Pages routes
     $routeProvider.when('/promotiondetailinfo',    {templateUrl: 'partials/promotiondetailinfo/promotiondetailinfo_list.html', controller: 'PromotiondetailinfoCtrl'});
     $routeProvider.when('/promotiondetailinfo/new', {templateUrl: 'partials/promotiondetailinfo/promotiondetailinfo_form.html', controller: 'PromotiondetailinfoCtrl'});
-    $routeProvider.when('/promotiondetailinfo/:uid/:dishid/:specificationid', {templateUrl: 'partials/promotiondetailinfo/promotiondetailinfo_form.html', controller: 'PromotiondetailinfoCtrl'});
+    $routeProvider.when('/promotiondetailinfo/:uid', {templateUrl: 'partials/promotiondetailinfo/promotiondetailinfo_form.html', controller: 'PromotiondetailinfoCtrl'});
 }]);

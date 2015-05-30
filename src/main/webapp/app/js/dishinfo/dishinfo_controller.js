@@ -3,8 +3,8 @@
 /**
  * Controller for Dishinfo
  **/
-dishinfoModule.controller('DishinfoCtrl', ['Dishinfo',  'Category', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Dishinfo, Category, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
-	 'Category',     // edition mode
+dishinfoModule.controller('DishinfoCtrl', ['Dishinfo',  '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Dishinfo, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+	    // edition mode
     $scope.mode = null;
     
 	// list of dishinfos
@@ -14,18 +14,11 @@ dishinfoModule.controller('DishinfoCtrl', ['Dishinfo',  'Category', '$scope', '$
 
 	// referencies entities
 	$scope.items = {};
-    // categorys
-	$scope.items.categorys = [];
 
     /**
      * Load all referencies entities
      */
 	$scope.loadAllReferencies = function() {
-		Category.getAllAsListItems().then(
-				function(success) {
-        	        $scope.items.categorys = success.data;
-            	}, 
-	            MessageHandler.manageError);
     };
     
     /**

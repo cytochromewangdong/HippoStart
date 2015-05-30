@@ -17,6 +17,18 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="orderheader_corpid" class="col-sm-2 control-label">{{ 'orderheader.corpid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_corpid" name="corpid" ng-model="orderheader.corpid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_parentuid" class="col-sm-2 control-label">{{ 'orderheader.parentuid' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="orderheader_parentuid" name="parentuid" ng-model="orderheader.parentuid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="orderheader_parentorderno" class="col-sm-2 control-label">{{ 'orderheader.parentorderno' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="orderheader_parentorderno" name="parentorderno" ng-model="orderheader.parentorderno" class="form-control" maxLength="50" />
@@ -29,33 +41,21 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="orderheader_payacount" class="col-sm-2 control-label">{{ 'orderheader.payacount' | translate }}</label>
+				<label for="orderheader_realpaymentamount" class="col-sm-2 control-label">{{ 'orderheader.realpaymentamount' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="orderheader_payacount" name="payacount" ng-model="orderheader.payacount" class="form-control" maxLength="20" />
+					<input type="text" id="orderheader_realpaymentamount" name="realpaymentamount" ng-model="orderheader.realpaymentamount" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="orderheader_totalacount" class="col-sm-2 control-label">{{ 'orderheader.totalacount' | translate }}</label>
+				<label for="orderheader_paymentamount" class="col-sm-2 control-label">{{ 'orderheader.paymentamount' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="orderheader_totalacount" name="totalacount" ng-model="orderheader.totalacount" class="form-control" maxLength="20" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="orderheader_discount" class="col-sm-2 control-label">{{ 'orderheader.discount' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="orderheader_discount" name="discount" ng-model="orderheader.discount" class="form-control" maxLength="20" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="orderheader_discountid" class="col-sm-2 control-label">{{ 'orderheader.discountid' | translate }}</label>
-				<div class="col-sm-10">
-					<input type="text" id="orderheader_discountid" name="discountid" ng-model="orderheader.discountid" class="form-control" maxLength="50" />
+					<input type="text" id="orderheader_paymentamount" name="paymentamount" ng-model="orderheader.paymentamount" class="form-control" maxLength="20" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="orderheader_orderstatus" class="col-sm-2 control-label">{{ 'orderheader.orderstatus' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="orderheader_orderstatus" name="orderstatus" ng-model="orderheader.orderstatus" class="form-control" maxLength="4" />
+					<input type="text" id="orderheader_orderstatus" name="orderstatus" ng-model="orderheader.orderstatus" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -67,7 +67,7 @@
 			<div class="form-group">
 				<label for="orderheader_paymentmethod" class="col-sm-2 control-label">{{ 'orderheader.paymentmethod' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="orderheader_paymentmethod" name="paymentmethod" ng-model="orderheader.paymentmethod" class="form-control" maxLength="4" />
+					<input type="text" id="orderheader_paymentmethod" name="paymentmethod" ng-model="orderheader.paymentmethod" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -92,6 +92,24 @@
 				<label for="orderheader_storeid" class="col-sm-2 control-label">{{ 'orderheader.storeid' | translate }}</label>
 				<div class="col-sm-10">
 					<input type="text" id="orderheader_storeid" name="storeid" ng-model="orderheader.storeid" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_delievertime" class="col-sm-2 control-label">{{ 'orderheader.delievertime' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_delievertime" bs-datepicker data-autoclose="1" ng-model="orderheader.delievertime" name="delievertime" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_canceltime" class="col-sm-2 control-label">{{ 'orderheader.canceltime' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_canceltime" bs-datepicker data-autoclose="1" ng-model="orderheader.canceltime" name="canceltime" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="orderheader_confirmtime" class="col-sm-2 control-label">{{ 'orderheader.confirmtime' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="orderheader_confirmtime" bs-datepicker data-autoclose="1" ng-model="orderheader.confirmtime" name="confirmtime" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -125,9 +143,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="orderheader_delflg" class="col-sm-2 control-label">{{ 'orderheader.delflg' | translate }}</label>
+				<label for="orderheader_status" class="col-sm-2 control-label">{{ 'orderheader.status' | translate }}</label>
 				<div class="col-sm-10">
-					<input type="text" id="orderheader_delflg" name="delflg" ng-model="orderheader.delflg" class="form-control" maxLength="4" />
+					<input type="text" id="orderheader_status" name="status" ng-model="orderheader.status" class="form-control" maxLength="11" />
 				</div>
 			</div>
 			<div class="form-group">

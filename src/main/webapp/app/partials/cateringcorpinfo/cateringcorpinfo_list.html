@@ -17,7 +17,7 @@
 						<th>{{ 'cateringcorpinfo.modifydate' | translate }}</th>
 						<th>{{ 'cateringcorpinfo.createuser' | translate }}</th>
 						<th>{{ 'cateringcorpinfo.modifyuser' | translate }}</th>
-						<th>{{ 'cateringcorpinfo.delflg' | translate }}</th>
+						<th>{{ 'cateringcorpinfo.status' | translate }}</th>
 						<th>{{ 'cateringcorpinfo.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/cateringcorpinfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
@@ -35,7 +35,7 @@
 						<td>{{cateringcorpinfo.modifydate | date:'shortDate'}}</td>
 						<td>{{cateringcorpinfo.createuser}}</td>
 						<td>{{cateringcorpinfo.modifyuser}}</td>
-						<td>{{cateringcorpinfo.delflg}}</td>
+						<td>{{cateringcorpinfo.status | number }}</td>
 						<td>{{cateringcorpinfo.platform}}</td>
 						<td><a class="btn btn-info" href="#/cateringcorpinfo/{{cateringcorpinfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>

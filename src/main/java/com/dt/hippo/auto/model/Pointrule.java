@@ -7,9 +7,12 @@ package com.dt.hippo.auto.model;
 import java.io.Serializable;
 
 import javax.validation.constraints.*;
-import java.util.*;
-import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators.IntSequenceGenerator;
+
+import java.util.*;
+@JsonIdentityInfo(generator = IntSequenceGenerator.class)
 public class Pointrule extends com.dt.hippo.auto.model.base.Pointrule implements Serializable {
 
     private static final long serialVersionUID = 1L;

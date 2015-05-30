@@ -15,9 +15,6 @@ dishspecificationinfoModule.factory('Dishspecificationinfo', ['$http', 'restURL'
      */
 	var validate = function (dishspecificationinfo) {
 		var errors = [];
-        if( dishspecificationinfo.dishid == null || dishspecificationinfo.dishid == '' ) {
-			errors.push('dishspecificationinfo.id.not.defined');
-		}
         if( dishspecificationinfo.uid == null || dishspecificationinfo.uid == '' ) {
 			errors.push('dishspecificationinfo.id.not.defined');
 		}
@@ -45,12 +42,11 @@ dishspecificationinfoModule.factory('Dishspecificationinfo', ['$http', 'restURL'
 
         /**
          * Get dishspecificationinfo
-         * @param dishid dishid
          * @param uid uid
          * @return dishspecificationinfo
          */
-    	get: function(dishid, uid) {
-    	    var url = entityURL + '/' + dishid + '/' + uid;
+    	get: function(uid) {
+    	    var url = entityURL + '/' + uid;
         	return $http.get(url);
     	},
 
@@ -72,17 +68,16 @@ dishspecificationinfoModule.factory('Dishspecificationinfo', ['$http', 'restURL'
          */
     	update: function(dishspecificationinfo) {
 			validate(dishspecificationinfo)
-			var url = entityURL + '/' + dishspecificationinfo.dishid + '/' + dishspecificationinfo.uid;
+			var url = entityURL + '/' + dishspecificationinfo.uid;
 			return $http.put(url, dishspecificationinfo);
     	},
 
 		/**
          * Delete dishspecificationinfo
-         * @param dishid dishid
          * @param uid uid
          */
-    	delete: function(dishid, uid) {
-        	var url = entityURL + '/' + dishid + '/' + uid;
+    	delete: function(uid) {
+        	var url = entityURL + '/' + uid;
         	return $http.delete(url);
     	}
 	};

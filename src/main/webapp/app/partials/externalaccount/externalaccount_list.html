@@ -6,6 +6,7 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
+						<th>{{ 'externalaccount.uid' | translate }}</th>
 						<th>{{ 'externalaccount.userid' | translate }}</th>
 						<th>{{ 'externalaccount.usersource' | translate }}</th>
 						<th>{{ 'externalaccount.externaluserid' | translate }}</th>
@@ -26,7 +27,8 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="externalaccount in externalaccounts">
-						<td>{{externalaccount.userid}}</td>
+						<td>{{externalaccount.uid}}</td>
+						<td>{{externalaccount.userid | number }}</td>
 						<td>{{externalaccount.usersource}}</td>
 						<td>{{externalaccount.externaluserid}}</td>
 						<td>{{externalaccount.accesstoken}}</td>
@@ -41,7 +43,7 @@
 						<td>{{externalaccount.modifyuser}}</td>
 						<td>{{externalaccount.delflg}}</td>
 						<td>{{externalaccount.platform}}</td>
-						<td><a class="btn btn-info" href="#/externalaccount/{{externalaccount.userid}}/{{externalaccount.usersource}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" href="#/externalaccount/{{externalaccount.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

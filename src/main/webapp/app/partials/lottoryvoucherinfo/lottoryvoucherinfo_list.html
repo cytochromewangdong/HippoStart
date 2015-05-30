@@ -1,0 +1,38 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Lottoryvoucherinfo' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'lottoryvoucherinfo.uid' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.parentvoucherid' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.rate' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.value' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.createdate' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.modifydate' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.createuser' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.modifyuser' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.status' | translate }}</th>
+						<th>{{ 'lottoryvoucherinfo.platform' | translate }}</th>
+						<th><a class="btn btn-info" href='#/lottoryvoucherinfo/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="lottoryvoucherinfo in lottoryvoucherinfos">
+						<td>{{lottoryvoucherinfo.uid}}</td>
+						<td>{{lottoryvoucherinfo.parentvoucherid | number }}</td>
+						<td>{{lottoryvoucherinfo.rate | number }}</td>
+						<td>{{lottoryvoucherinfo.value | number }}</td>
+						<td>{{lottoryvoucherinfo.createdate | date:'shortDate'}}</td>
+						<td>{{lottoryvoucherinfo.modifydate | date:'shortDate'}}</td>
+						<td>{{lottoryvoucherinfo.createuser}}</td>
+						<td>{{lottoryvoucherinfo.modifyuser}}</td>
+						<td>{{lottoryvoucherinfo.status | number }}</td>
+						<td>{{lottoryvoucherinfo.platform}}</td>
+						<td><a class="btn btn-info" href="#/lottoryvoucherinfo/{{lottoryvoucherinfo.uid}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

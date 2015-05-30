@@ -6,7 +6,9 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>{{ 'comboinfo.id' | translate }}</th>
+						<th>{{ 'comboinfo.uid' | translate }}</th>
+						<th>{{ 'comboinfo.dishid' | translate }}</th>
+						<th>{{ 'comboinfo.corpid' | translate }}</th>
 						<th>{{ 'comboinfo.placeholder' | translate }}</th>
 						<th>{{ 'comboinfo.orderinplaceholder' | translate }}</th>
 						<th>{{ 'comboinfo.amount' | translate }}</th>
@@ -15,25 +17,27 @@
 						<th>{{ 'comboinfo.modifydate' | translate }}</th>
 						<th>{{ 'comboinfo.createuser' | translate }}</th>
 						<th>{{ 'comboinfo.modifyuser' | translate }}</th>
-						<th>{{ 'comboinfo.delflg' | translate }}</th>
+						<th>{{ 'comboinfo.status' | translate }}</th>
 						<th>{{ 'comboinfo.platform' | translate }}</th>
 						<th><a class="btn btn-info" href='#/comboinfo/new'>{{ 'create' | translate }}</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="comboinfo in comboinfos">
-						<td>{{comboinfo.id}}</td>
-						<td>{{comboinfo.placeholder}}</td>
-						<td>{{comboinfo.orderinplaceholder}}</td>
+						<td>{{comboinfo.uid}}</td>
+						<td>{{comboinfo.dishid | number }}</td>
+						<td>{{comboinfo.corpid | number }}</td>
+						<td>{{comboinfo.placeholder | number }}</td>
+						<td>{{comboinfo.orderinplaceholder | number }}</td>
 						<td>{{comboinfo.amount | number }}</td>
 						<td>{{comboinfo.pricedifference | number }}</td>
 						<td>{{comboinfo.createdate | date:'shortDate'}}</td>
 						<td>{{comboinfo.modifydate | date:'shortDate'}}</td>
 						<td>{{comboinfo.createuser}}</td>
 						<td>{{comboinfo.modifyuser}}</td>
-						<td>{{comboinfo.delflg}}</td>
+						<td>{{comboinfo.status | number }}</td>
 						<td>{{comboinfo.platform}}</td>
-						<td><a class="btn btn-info" href="#/comboinfo/{{comboinfo.id}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" href="#/comboinfo/{{comboinfo.uid}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>
